@@ -3,6 +3,16 @@
 @using Rec_Partapgarh.Models
 @{ var managerHome = ViewBag.ManagerHomeContent as HomeManagerContentViewModel ?? new HomeManagerContentViewModel(); }
 <style>
+    .home-page {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .home-page > .row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
     @@media(max-width:576px) {
         .ghgh {
             width: 100% !important;
@@ -25,6 +35,7 @@
         }
     }
 </style>
+<div class="home-page">
 <div class="container-fluid mt-0" style="margin-top: -20px !important;">
     <div class="row">
         <!-- Carousel Section -->
@@ -81,6 +92,10 @@
             }
 
             @@media (max-width: 768px) {
+                #carouselExampleFade .carousel-item img {
+                    height: 300px !important;
+                }
+
                 .carousel-caption {
                     bottom: 50px;
                 }
@@ -92,6 +107,12 @@
                     .carousel-caption p {
                         font-size: 14px !important;
                     }
+            }
+
+            @@media (max-width: 480px) {
+                #carouselExampleFade .carousel-item img {
+                    height: 240px !important;
+                }
             }
         </style>
 
@@ -167,12 +188,35 @@
                         font-size: 16px;
                     }
 
-                    .nav-tabs {
-                        flex-direction: column;
+                    #noticeTabs {
+                        display: flex;
+                        flex-direction: row !important;
+                        flex-wrap: nowrap;
+                        width: 100%;
+                        padding: 6px 4px;
                     }
 
-                        .nav-tabs .nav-link {
-                            margin-bottom: 5px;
+                    #noticeTabs > .nav-item {
+                        display: flex;
+                        flex: 1 1 0;
+                        width: 33.333% !important;
+                        min-width: 0;
+                        padding: 0 2px !important;
+                        border-bottom: 0;
+                    }
+
+                        #noticeTabs > .nav-item > .nav-link {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            width: 100%;
+                            min-width: 0;
+                            margin: 0;
+                            padding: 7px 3px;
+                            font-size: clamp(10px, 3.2vw, 12px) !important;
+                            line-height: 1.2;
+                            text-align: center;
+                            white-space: nowrap;
                         }
 
                     .ssw {
@@ -1012,11 +1056,11 @@
 
         .mentor-card h5 {
             font-weight: bold;
-            font-size: 1.1em;
+            font-size: 19px;
         }
 
         .mentor-card p {
-            font-size: 0.9em;
+            font-size: 15px;
             margin-bottom: 0;
             color: #dcdcdc;
         }
@@ -1186,8 +1230,21 @@
         transition: all 0.3s ease-in-out;
         display: flex;
         flex-direction: column;
-        height: 480px;
-        margin: 15px;
+        width: 100%;
+        min-width: 0;
+        height: 100%;
+        min-height: 480px;
+        margin: 12px 0;
+    }
+
+    .course-carousel .owl-stage {
+        display: flex;
+    }
+
+    .course-carousel .owl-item {
+        display: flex;
+        height: auto;
+        min-width: 0;
     }
 
         .course-card:hover {
@@ -1204,6 +1261,7 @@
     .course-content {
         padding: 20px;
         flex-grow: 1;
+        min-width: 0;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -1226,6 +1284,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        gap: 10px;
         margin-top: 15px;
     }
 
@@ -1249,9 +1308,13 @@
         color: #0a3d62;
     }
 
-    @@media (max-width: 768px) {
+    @@media (max-width: 991.98px) {
         .course-card {
-            height: auto;
+            min-height: 450px;
+        }
+
+        .course-content {
+            padding: 18px;
         }
 
         .course-content h4 {
@@ -1259,7 +1322,48 @@
         }
 
         .course-content p {
-            font-size: 13px;
+            font-size: 14px !important;
+        }
+    }
+
+    @@media (max-width: 575.98px) {
+        .courses-section {
+            padding: 40px 0;
+        }
+
+        .courses-section .container {
+            width: 100%;
+            padding-left: 12px;
+            padding-right: 12px;
+        }
+
+        .courses-section .section-title {
+            margin-bottom: 24px;
+        }
+
+        .course-card {
+            min-height: 0;
+            margin: 6px 0 12px;
+        }
+
+        .course-card img {
+            height: 165px;
+        }
+
+        .course-content {
+            padding: 16px;
+        }
+
+        .course-content h4 {
+            margin-bottom: 8px;
+        }
+
+        .course-footer {
+            flex-wrap: wrap;
+        }
+
+        .btn-course {
+            padding: 7px 14px;
         }
     }
 </style>
@@ -1351,8 +1455,9 @@
             autoplayTimeout: 3500,
             responsive: {
                 0: { items: 1 },
-                768: { items: 2 },
-                1000: { items: 4 }
+                576: { items: 2 },
+                992: { items: 3 },
+                1200: { items: 4 }
             }
         });
     });
@@ -1473,8 +1578,6 @@
         });
     });
 </script>
-
-
 <!--Our Fiilites-->
 <!-- events part-->
 <!-- Event Calendar Section -->
@@ -2634,3 +2737,4 @@
         });
     });
 </script>
+</div>

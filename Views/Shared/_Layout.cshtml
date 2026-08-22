@@ -170,47 +170,143 @@
 
 
         <style>
-            .college-heading {
+            .college-header .college-heading {
                 text-align: left !important;
             }
 
+            .college-header {
+                display: grid !important;
+                grid-template-columns: 120px minmax(0, 1fr) 150px;
+                column-gap: clamp(12px, 1.5vw, 24px);
+                align-items: center;
+                margin: 0;
+                padding-left: clamp(12px, 2vw, 28px);
+                padding-right: clamp(12px, 2vw, 28px);
+            }
+
+            .college-header-logo,
+            .college-header-title,
+            .college-header-aktu {
+                min-width: 0;
+            }
+
+            .college-header .college-logo {
+                display: block;
+                width: 120px !important;
+                height: 120px !important;
+                margin: 0 auto;
+                object-fit: contain;
+                border-radius: 50%;
+                padding: 0 !important;
+            }
+
+            .college-header .college-name-hindi {
+                color: #dd572a;
+                margin-top: 10px;
+                font-family: Arial, sans-serif;
+                font-weight: 700;
+                font-size: clamp(22px, 2.2vw, 30px);
+                line-height: 1.3;
+            }
+
+            .college-header .college-name-english {
+                color: #0747ae;
+                margin-top: 3px;
+                font-family: "Noto Sans JP", sans-serif;
+                font-size: clamp(16px, 1.45vw, 20px);
+                font-weight: 700;
+                line-height: 1.35;
+            }
+
+            .college-header .college-affiliation {
+                margin-top: 10px;
+                font-size: clamp(15px, 1.4vw, 20px);
+                line-height: 1.4;
+            }
+
+            .college-header .aktu-logo-image {
+                display: block;
+                width: 110px !important;
+                height: 110px !important;
+                margin-top: 10px;
+                margin-left: auto;
+                margin-right: auto;
+                object-fit: contain;
+            }
+
+            .college-header .college-code {
+                margin: 1rem 0 0;
+                font-size: clamp(14px, 1.15vw, 18px);
+                white-space: nowrap;
+            }
+
             @@media (max-width: 991.98px) {
-                .college-heading {
+                .college-header {
+                    grid-template-columns: 110px minmax(0, 1fr) 130px;
+                    column-gap: 12px;
+                }
+
+                .college-header .college-heading {
                     text-align: center !important;
                 }
 
-                .college-heading h6,
-                .college-heading h5,
-                .college-heading p {
+                .college-header .college-heading h6,
+                .college-header .college-heading h5,
+                .college-header .college-heading p {
                     margin-left: 0 !important;
+                }
+            }
+
+            @@media (max-width: 767.98px) {
+                .college-header {
+                    grid-template-columns: minmax(0, 1fr);
+                    row-gap: 8px;
+                }
+
+                .college-header-aktu {
+                    display: none !important;
+                }
+
+                .college-header .college-logo {
+                    width: 110px !important;
+                    height: 110px !important;
+                }
+
+                .top-bar {
+                    justify-content: center !important;
+                    gap: 8px;
+                    text-align: center;
+                }
+
+                .top-bar > div:first-child,
+                .top-bar > div:last-child {
+                    width: 100%;
+                    justify-content: center;
                 }
             }
         </style>
 
         <div class="container-fluid">
-            <div class="row py-3 align-items-center text-center">
+            <div class="college-header py-3 text-center">
 
                 <!-- Left Logo -->
-                <div class="col-lg-1 col-md-2 col-12 mb-lg-4">
-                    <img src="/Content/img/logoREC2.png" class="mainlogo pb-lg-4 rounded-circle" height="120"
-                        width="150"
+                <div class="college-header-logo">
+                    <img src="/Content/img/logoREC2.png" class="mainlogo college-logo"
                         alt="BHARAT RATNA BABASAHEB BHIMRAO AMBEDKAR RAJKIYA ENGINEERING COLLEGE PRATAPGARH" />
                 </div>
 
                 <!-- College Name -->
-                <div class="col-sm-9 college-heading mb-2">
+                <div class="college-header-title college-heading">
 
-                    <h5
-                        style="color: #dd572a; margin-top: 10px; font-family: Arial; font-weight: 700; font-size: 30px; ">
+                    <h5 class="college-name-hindi">
                         भारत रत्न बाबासाहब भीमराव अम्बेडकर राजकीय इंजीनियरिंग कॉलेज प्रतापगढ़
                     </h5>
-                    <h6
-                        style="color:#0747ae; font-size:20px; font-weight:700; font-family:Noto Sans JP,sans-serif; margin-top:3px;">
+                    <h6 class="college-name-english">
 
                         BHARAT RATNA BABASAHEB BHIMRAO AMBEDKAR RAJKIYA ENGINEERING COLLEGE PRATAPGARH
                     </h6>
 
-                    <p class="fw-bold text-dark " style="font-size:20px; margin-top:10px;">
+                    <p class="fw-bold text-dark college-affiliation">
                         (State Funded Government Autonomous Institute and Affiliated to AKTU Lucknow)
                     </p>
                 </div>
@@ -218,10 +314,10 @@
 
                 <!-- Spacer -->
                 <!-- AKTU Logo -->
-                <div class="col-sm-2 aktulogo text-center">
-                    <img src="~/Content/recp/img/aktulogo.png" height="110" width="110" style="margin-top:10px;"
+                <div class="college-header-aktu aktulogo text-center">
+                    <img src="~/Content/recp/img/aktulogo.png" class="aktu-logo-image"
                         alt="AKTU Logo" />
-                    <h4 style="" class="fw-bold mt-3">College Code-1216</h4>
+                    <h4 class="fw-bold college-code">College Code-1216</h4>
                 </div>
 
 
@@ -230,7 +326,7 @@
 
 
         <style>
-            .navbar-nav .nav-link {
+            .site-navbar-wrap .navbar-nav .nav-link {
                 font-size: 16px !important;
                 color: white;
                 font-weight: 700;
@@ -238,18 +334,18 @@
             }
 
 
-            .dropdown-submenu {
+            .site-navbar-wrap .dropdown-submenu {
                 position: relative;
             }
 
-            .dropdown-submenu .dropdown-menu {
+            .site-navbar-wrap .dropdown-submenu .dropdown-menu {
                 top: 0;
                 left: 100%;
                 font-size: 17px;
                 margin-top: -1px;
             }
 
-            .dropdown-item {
+            .site-navbar-wrap .dropdown-item {
                 font-size: 15px !important;
                 border-bottom: 1px solid white;
             }
@@ -299,50 +395,146 @@
             
         </style>
         <style>
-            .navbar .container-fluid {
+            .site-navbar-wrap .navbar {
+                min-height: 56px;
+            }
+
+            .site-navbar-wrap .navbar-brand {
+                display: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            .site-navbar-wrap .navbar .container-fluid {
                 padding-left: 0 !important;
                 padding-right: 0 !important;
             }
 
-            .navbar-nav {
+            .site-navbar-wrap #navbarSupportedContent,
+            .site-navbar-wrap .navbar-nav {
                 width: 100%;
-                justify-content: center;
-                gap: 72px;
             }
 
-            .navbar-nav .nav-item {
-                flex: unset;
+            .site-navbar-wrap .navbar-nav {
+                align-items: stretch;
+                flex-wrap: nowrap;
+                gap: 0;
+            }
+
+            .site-navbar-wrap .navbar-nav > .nav-item {
+                display: flex;
+                flex: 1 1 0;
+                min-width: 0;
                 text-align: center;
             }
 
-            .navbar-nav .nav-link {
+            .site-navbar-wrap .navbar-nav > .nav-item > .nav-link {
+                display: flex;
+                flex: 1 1 auto;
+                align-items: center;
+                justify-content: center;
                 font-weight: 600;
                 letter-spacing: .4px;
                 white-space: nowrap;
-                padding-left: 4px !important;
-                padding-right: 4px !important;
+                padding: .75rem clamp(.35rem, .75vw, .9rem) !important;
             }
 
-            @@media (max-width: 767px) {
-                .navbar-nav {
-                    width: auto;
-                    gap: 0;
+            @@media (max-width: 1199.98px) {
+                .site-navbar-wrap .navbar {
+                    min-height: 54px;
                 }
 
-                .navbar-nav .nav-item {
-                    flex: unset;
+                /* Override the legacy Bootstrap 3 min-width:768px collapse rule. */
+                .site-navbar-wrap #navbarSupportedContent.collapse:not(.show) {
+                    display: none !important;
+                    height: 0 !important;
+                }
+
+                .site-navbar-wrap #navbarSupportedContent.collapse.show {
+                    display: block !important;
+                    height: auto !important;
+                }
+
+                .site-navbar-wrap #navbarSupportedContent.collapsing {
+                    display: block !important;
+                    height: 0;
+                    overflow: hidden !important;
+                }
+
+                .site-navbar-wrap .navbar-toggler {
+                    margin-left: auto;
+                    margin-right: 12px;
+                    padding: 6px 9px;
+                    background-color: #ffffff !important;
+                    border: 1px solid #ffffff !important;
+                    border-radius: 4px;
+                    box-shadow: none;
+                }
+
+                .site-navbar-wrap .navbar-toggler:focus {
+                    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.35);
+                }
+
+                .site-navbar-wrap .navbar-toggler-icon {
+                    filter: invert(1);
+                }
+
+                .site-navbar-wrap .navbar-collapse {
+                    margin-top: 8px;
+                    width: 100%;
+                    max-width: 100%;
+                    box-sizing: border-box;
+                }
+
+                .site-navbar-wrap .navbar-nav {
+                    width: 100%;
+                    align-items: stretch;
+                    flex-wrap: nowrap;
+                    gap: 0;
+                    margin-left: 0 !important;
+                    margin-right: 0 !important;
+                    padding-left: 0;
+                    padding-right: 0;
+                }
+
+                .site-navbar-wrap .navbar-nav > .nav-item {
+                    display: block;
+                    flex: 0 0 auto;
+                    width: 100%;
                     text-align: left;
                 }
 
-                .navbar-nav .nav-link {
+                .site-navbar-wrap .navbar-nav > .nav-item > .nav-link {
+                    display: block;
                     padding-left: 12px !important;
                     padding-right: 12px !important;
+                    text-align: left;
+                }
+
+                .site-navbar-wrap #navbarSupportedContent .dropdown-menu,
+                .site-navbar-wrap #navbarSupportedContent .dropdown-submenu > .dropdown-menu {
+                    position: static !important;
+                    width: 100% !important;
+                    max-width: 100%;
+                    left: auto !important;
+                    right: auto !important;
+                    margin: 0 !important;
+                    transform: none !important;
+                    box-sizing: border-box;
+                }
+
+                .site-navbar-wrap #navbarSupportedContent .dropdown-item {
+                    width: 100%;
+                    max-width: 100%;
+                    white-space: normal;
+                    overflow-wrap: anywhere;
+                    box-sizing: border-box;
                 }
             }
         </style>
         <div class="row">
             <div class="col-md-12 p-0 sticky-top site-navbar-wrap">
-                <nav class="navbar navbar-expand-md navbar-dark p-2"
+                <nav class="navbar navbar-expand-xl navbar-dark py-2 px-0"
                     style="background-color:#0747ae; border-radius:0px !important;">
                     <div class="container-fluid">
                         <a class="navbar-brand" href="#"></a>
@@ -671,6 +863,21 @@
                 document.addEventListener('keydown', function (event) {
                     if (event.key === 'Escape') closeMenus();
                 }, true);
+
+                navbar.querySelectorAll('a.nav-link:not(.dropdown-toggle), .dropdown-menu a.dropdown-item').forEach(function (link) {
+                    link.addEventListener('click', function () {
+                        if (!window.matchMedia('(max-width: 1199.98px)').matches) return;
+
+                        closeMenus();
+                        var toggler = document.querySelector('[data-bs-target="#navbarSupportedContent"]');
+                        if (window.bootstrap && window.bootstrap.Collapse) {
+                            window.bootstrap.Collapse.getOrCreateInstance(navbar, { toggle: false }).hide();
+                        } else {
+                            navbar.classList.remove('show');
+                        }
+                        if (toggler) toggler.setAttribute('aria-expanded', 'false');
+                    });
+                });
             }());
         </script>
 
