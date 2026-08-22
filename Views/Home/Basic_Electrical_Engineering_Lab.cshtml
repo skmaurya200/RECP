@@ -1,0 +1,156 @@
+﻿@{
+    
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    .bg-welfare-left {
+        background-color: #0747AE;
+        padding: 15px;
+    }
+
+    .bg-welfare-left h3 {
+        font-size: 21px;
+        font-weight: 600;
+        color: #fff;
+    }
+
+    .bg-welfare-left ul li {
+        margin-top: 18px;
+        font-size: 17px;
+        color: #fff;
+    }
+
+    .bg-welfare-left ul li a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .bg-welfare-left ul li a:hover {
+        text-decoration: underline;
+    }
+
+    .content-box {
+        border: 1px dashed #000;
+        background: #fff;
+        padding: 20px;
+    }
+
+    .welfare-font {
+        font-size: 17px;
+        color: #000;
+        text-align: justify;
+        line-height: 1.8;
+    }
+
+    hr {
+        border: 1px solid #000;
+    }
+</style>
+
+<!-- ================= BANNER ================= -->
+<div class="row">
+    <div class="col-md-12 p-0"
+        style="margin-top:-20px;
+        background:url('https://img.freepik.com/premium-photo/extensive-collection-books-library_868797-8212.jpg') center/cover fixed;">
+        <div style="background:rgba(0,0,0,0.5)">
+            <div class="container">
+                <div class="d-flex flex-column justify-content-center" style="min-height:300px;">
+                    <h3 class="display-6 text-white fw-bold text-uppercase">
+                        Basic Electrical Engineering Lab
+                    </h3>
+                    <div class="d-inline-flex text-white">
+                        <a href="/" class="text-white text-decoration-none ">Home</a>
+                        <i class="fa fa-angle-double-right px-2 pt-1"></i>
+                        <span class="text-uppercase">Basic Electrical Engineering Lab</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ================= MAIN CONTENT ================= -->
+<div class="container py-5">
+    <div class="row">
+        <style>
+            .bg-welfare-left ul li {
+                margin-top: 20px;
+                font-size: 17px;
+                line-height: 1.5;
+                color: #fff;
+                font-family: Arial, sans-serif;
+            }
+
+            .bg-welfare-left hr {
+                border-bottom: 2px solid white !important;
+            }
+        </style>
+                @Html.Partial("~/Views/Shared/DeptSidebar/_ELE_Sidebar.cshtml")
+
+        <!-- RIGHT CONTENT -->
+        <div class="col-lg-9">
+            <div class="content-box">
+
+                <h2 class="fw-bold" style="color:#0747AE;">Basic Electrical Engineering Lab</h2>
+                <hr />
+                <div class="row mt-2">
+                    
+                    <div class="col-sm-7">
+                        <p class="welfare-font">
+                            The Basic Electrical Engineering Laboratory provides a strong foundation for undergraduate
+                            engineering students by offering practical exposure to core electrical engineering
+                            principles.
+                            Equipped with modern experimental setups, the laboratory enables students to analyze and
+                            validate
+                            concepts related to DC and AC circuits, electrical machines, transformers, measuring
+                            instruments,
+                            and basic power systems. Students perform key experiments, including Ohm’s law, Kirchhoff’s
+                            laws,
+                            network theorems, single- and three-phase circuits, transformer characteristics, DC and AC
+                            machines,
+                            and electrical measurements, thereby reinforcing theoretical knowledge through hands-on
+                            implementation. Emphasis is placed on safe operating practices, precise measurements,
+                            circuit
+                            analysis, and systematic troubleshooting. The laboratory supports regular practical
+                            sessions,
+                            
+                        </p>
+                    </div>
+                    <div class="col-lg-5">
+                        <img src="~/Content/img/Basic_Electrical_Engineering_Lab.jpg" class="p-1"
+                            style="height:350px;width:100%;border:1px dashed #000;object-fit:cover" />
+                    </div>
+                    <p class="welfare-font m-0 p-0">
+
+                    skill-based training, demonstrations, and introductory project work under the supervision of
+                            experienced faculty and technical staff, playing a crucial role in preparing students for
+                            advanced
+                            studies, industry-oriented learning, and professional practice in electrical engineering.
+                    </p>
+                </div>
+
+
+                <p class="welfare-font fw-bold">List of Experiments</p>
+                <ul class="welfare-font" style="list-style-type:disc !important;">
+                    <li>Verification of Kirchhoff’s laws</li>
+                    <li>Measurement of power and power factor in a single-phase ac series inductive circuit, and study
+                        the improvement of power factor using a capacitor.</li>
+                    <li>Study the phenomenon of resonance in an RLC series circuit and determine the resonant frequency.
+                    </li>
+                    <li>Connection and measurement of the power consumption of a fluorescent lamp (tube light). </li>
+                    <li>Measurement of power in a 3-phase circuit by the two-wattmeter method and determination of its
+                        power factor for star as well as delta-connected load.</li>
+                    <li>Determination of parameters of an AC single-phase series RLC circuit </li>
+                    <li>Determination of (i) Voltage ratio, (ii) polarity, and (iii) efficiency by load test of a
+                        single-phase Transformer </li>
+                    <li>Determination of the efficiency of a DC shunt motor by load test </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

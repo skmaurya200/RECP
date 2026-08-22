@@ -1,0 +1,20 @@
+@model List<Rec_Partapgarh.Models.PublicFacultyViewModel>
+@{ ViewBag.Title = "Faculty"; }
+<style>
+    .faculty-directory{font-family:'Poppins',sans-serif;background:#f9f9f9}.faculty-card{height:100%;background:#fff;border-radius:15px;box-shadow:0 4px 12px rgba(0,0,0,.08);transition:transform .3s ease,box-shadow .3s ease;overflow:hidden}.faculty-card:hover{transform:translateY(-5px);box-shadow:0 6px 18px rgba(0,0,0,.1)}.faculty-header{text-align:center;background:linear-gradient(90deg,#0052D4,#65C7F7);color:#fff;padding:30px 15px 20px}.faculty-image{width:90px;height:90px;border-radius:50%;border:3px solid #fff;object-fit:fill;margin-bottom:10px;transition:.3s}.faculty-image:hover{transform:scale(1.05)}.faculty-body{padding:20px}.faculty-body p{margin:5px 0;font-size:15px;overflow-wrap:anywhere}.btn-profile{font-size:14px;padding:5px 15px;border-radius:20px}.faculty-empty{padding:35px;text-align:center;background:#fff;color:#777;box-shadow:0 4px 12px rgba(0,0,0,.08)}
+</style>
+<div class="faculty-directory">
+    <div class="row"><div class="col-md-12 p-0" style="margin-top:-20px;background:url('https://img.freepik.com/premium-photo/extensive-collection-books-library_868797-8212.jpg') no-repeat center center;background-size:cover;background-attachment:fixed;"><div class="container-fluid" style="background-color:rgba(0,0,0,.5);"><div class="container"><div class="d-flex flex-column justify-content-center" style="min-height:300px"><h3 class="display-6 text-white text-uppercase fw-bold">Faculty</h3><div class="d-inline-flex text-white"><p class="m-0 text-uppercase"><a class="text-white" href="/" style="text-decoration:none;">Home</a></p><i class="fa fa-angle-double-right pt-1 px-3"></i><p class="m-0 text-uppercase text-light">Faculty</p></div></div></div></div></div></div>
+    <div class="container py-5"><div class="row g-4">
+        @foreach(var faculty in Model)
+        {
+            <div class="col-md-4"><div class="faculty-card"><div class="faculty-header"><img src="@Url.Content(faculty.PhotoPath)" class="faculty-image" alt="@faculty.FullName"><h5 class="mb-1" style="font-size:18px;font-weight:600;">@faculty.FullName</h5><small style="font-size:15px;">@faculty.Designation, @faculty.DepartmentName</small></div><div class="faculty-body">
+                <p><strong>Email:</strong> <a href="mailto:@faculty.Email">@faculty.Email</a></p>
+                @if(!string.IsNullOrWhiteSpace(faculty.AlternateEmail)){<p><strong>Alt Email:</strong> <a href="mailto:@faculty.AlternateEmail">@faculty.AlternateEmail</a></p>}
+                else if(!string.IsNullOrWhiteSpace(faculty.LandlineNumber)){<p><strong>Landline:</strong> @faculty.LandlineNumber</p>}
+                <a href="@Url.Action("Faculty_Profile","Home",new{token=faculty.ProfileToken})" class="btn btn-outline-primary btn-profile">View Profile</a>
+            </div></div></div>
+        }
+        @if(!Model.Any()){<div class="col-12"><div class="faculty-empty">No faculty records available.</div></div>}
+    </div></div>
+</div>

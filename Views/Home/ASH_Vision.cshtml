@@ -1,0 +1,138 @@
+﻿@{
+  
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    .bg-welfare-left {
+        background-color: #0747AE;
+        padding: 15px;
+    }
+
+        .bg-welfare-left h3 {
+            font-size: 21px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .bg-welfare-left ul li {
+            margin-top: 18px;
+            font-size: 17px;
+            color: #fff;
+        }
+
+            .bg-welfare-left ul li a {
+                color: #fff;
+                text-decoration: none;
+            }
+
+                .bg-welfare-left ul li a:hover {
+                    text-decoration: underline;
+                }
+
+    .content-box {
+        border: 1px dashed #000;
+        background: #fff;
+        padding: 20px;
+    }
+
+    .welfare-font {
+        font-size: 17px;
+        color: #000;
+        text-align: justify;
+        line-height: 1.8;
+    }
+
+    hr {
+        border: 1px solid #000;
+    }
+</style>
+
+<!-- ================= BANNER ================= -->
+<div class="row">
+    <div class="col-md-12 p-0" style="margin-top:-20px;
+        background:url('https://img.freepik.com/premium-photo/extensive-collection-books-library_868797-8212.jpg') center/cover fixed;">
+        <div style="background:rgba(0,0,0,0.5)">
+            <div class="container">
+                <div class="d-flex flex-column justify-content-center" style="min-height:300px;">
+                    <h3 class="display-6 text-white fw-bold">
+                        Vision & Mission
+                    </h3>
+                    <div class="d-inline-flex text-white">
+                        <a href="/" class="text-white text-decoration-none">Home</a>
+                        <i class="fa fa-angle-double-right px-2 pt-1"></i>
+                        <span>Vision & Mission</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ================= MAIN CONTENT ================= -->
+<div class="container py-5">
+    <div class="row">
+        <style>
+            .bg-welfare-left ul li {
+                margin-top: 20px;
+                font-size: 17px;
+                line-height: 1.5;
+                color: #fff;
+                font-family: Arial, sans-serif;
+            }
+
+            .bg-welfare-left hr {
+                border-bottom: 2px solid white !important;
+            }
+        </style>
+                @Html.Partial("~/Views/Shared/DeptSidebar/_ASH_Sidebar.cshtml")
+
+        <!-- RIGHT CONTENT -->
+        <div class="col-lg-9">
+            <div class="content-box">
+
+                <h2 class="fw-bold" style="color:#0747AE;">VISION</h2>
+                <hr>
+                <p class="welfare-font mt-3 text-justify text-dark" style="font-size:17.5px; line-height:34px;">
+                    To emerge as a premier academic unit that strengthens foundational sciences, integrates Indian Knowledge Systems, promotes interdisciplinary and humanistic understanding, and nurtures ethical, competent, and socially responsible engineering graduates who contribute meaningfully to technological innovation and societal advancement.
+                </p>
+
+            </div>
+			<div class="content-box mt-2">
+
+                <h2 class="fw-bold" style="color:#0747AE;">MISSION</h2>
+                <hr>
+                <ol class="welfare-font mt-3 text-justify text-dark" style="font-size:18px; line-height:34px;">
+                    <li>To impart strong foundational knowledge in Mathematics, Physics, Chemistry, and Humanities, including Indian Knowledge Systems (IKS), to support advanced engineering education.</li>
+                    <li>To cultivate scientific temperament, analytical thinking, and critical reasoning among engineering students.</li>
+                    <li>To enhance communication skills, professional competencies, and soft skills essential for academic and industry success.</li>
+                    <li>To integrate ethical values, universal human values, and humanistic perspectives in order to develop socially responsible and professionally competent engineers.</li>
+                    <li>To promote experiential, inquiry-based, and problem-oriented learning through interactive pedagogy and innovative instructional approaches.</li>
+                </ol>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

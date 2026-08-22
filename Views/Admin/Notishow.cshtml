@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewBag.Title = "Notishow";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+<div class="container-fluid">
+    <h2 style="width:95%; margin:30px auto;">Show All Notification</h2>
+    <div class="table-responsive">
+        <table class=" table table-bordered table-group-divider" id="abc" style="width:100%;" border="1">
+            <thead>
+                <tr style="background-color: #450145; color: white;">
+                    <th class="text-center">Notification</th>
+                    <th class="text-center">Url</th>
+                    <th class="text-center">Date Of Notification</th>
+                    <th class="text-center">Action</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in ViewBag.Noti)
+                {
+                    <tr class="text-center">
+
+                        <td class="text-dark">@item.notification1</td>
+                        <td class="text-dark">@item.url</td>
+                        <td class="text-dark">@item.doa</td>
+                        <td class="text-dark"><a href="~/Admin/DeleteNoti?id=@item.Id"><input type="button" value="Delete" class="btn btn-danger" /></a></td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

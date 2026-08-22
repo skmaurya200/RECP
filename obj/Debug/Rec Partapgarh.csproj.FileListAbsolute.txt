@@ -1,0 +1,332 @@
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\Rec Partapgarh.dll.config
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\Rec Partapgarh.dll
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\Rec Partapgarh.pdb
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\roslyn\csc.exe
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\roslyn\csc.exe.config
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\roslyn\csc.rsp
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\roslyn\csi.exe
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\roslyn\csi.exe.config
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\roslyn\csi.rsp
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\roslyn\Microsoft.CodeAnalysis.dll
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\roslyn\Microsoft.CSharp.Core.targets
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\roslyn\Microsoft.Managed.Core.targets
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\roslyn\Microsoft.VisualBasic.Core.targets
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\roslyn\Microsoft.Win32.Primitives.dll
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\roslyn\System.AppContext.dll
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\roslyn\System.Collections.Immutable.dll
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\roslyn\System.Console.dll
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\roslyn\System.Diagnostics.StackTrace.dll
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\roslyn\System.Globalization.Calendars.dll
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\roslyn\System.IO.Compression.dll
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\roslyn\System.IO.Compression.ZipFile.dll
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\roslyn\System.IO.FileSystem.dll
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\roslyn\System.IO.FileSystem.Primitives.dll
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\roslyn\System.Net.Http.dll
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\roslyn\System.Net.Sockets.dll
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\roslyn\System.Reflection.Metadata.dll
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\roslyn\System.Security.Cryptography.Encoding.dll
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\roslyn\System.Security.Cryptography.Primitives.dll
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\roslyn\System.Text.Encoding.CodePages.dll
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\roslyn\System.Threading.Tasks.Extensions.dll
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\roslyn\System.ValueTuple.dll
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\roslyn\System.Xml.ReaderWriter.dll
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\roslyn\System.Xml.XmlDocument.dll
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\roslyn\System.Xml.XPath.dll
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\roslyn\System.Xml.XPath.XDocument.dll
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\roslyn\vbc.exe
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\roslyn\vbc.exe.config
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\roslyn\vbc.rsp
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\roslyn\VBCSCompiler.exe
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\roslyn\VBCSCompiler.exe.config
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\Antlr3.Runtime.dll
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\Microsoft.Web.Infrastructure.dll
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\Newtonsoft.Json.dll
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\System.Web.Helpers.dll
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\System.Web.Mvc.dll
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\System.Web.Optimization.dll
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\System.Web.Razor.dll
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\System.Web.WebPages.Deployment.dll
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\System.Web.WebPages.dll
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\System.Web.WebPages.Razor.dll
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\WebGrease.dll
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\System.Web.Helpers.xml
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\System.Web.Mvc.xml
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\System.Web.Optimization.xml
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\System.Web.Razor.xml
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\System.Web.WebPages.xml
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\System.Web.WebPages.Deployment.xml
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\System.Web.WebPages.Razor.xml
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\Newtonsoft.Json.xml
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\Antlr3.Runtime.pdb
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\obj\Debug\Rec Partapgarh.csproj.AssemblyReference.cache
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\obj\Debug\Rec Partapgarh.csproj.CoreCompileInputs.cache
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\obj\Debug\Rec Part.A932F976.Up2Date
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\obj\Debug\Rec Partapgarh.dll
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\obj\Debug\Rec Partapgarh.pdb
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\EntityFramework.dll
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\EntityFramework.SqlServer.dll
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\EntityFramework.xml
+S:\Live Project\Rec Partapgarh\Rec Partapgarh\bin\EntityFramework.SqlServer.xml
+C:\Rec Partapgarh\Rec Partapgarh\bin\Rec Partapgarh.dll.config
+C:\Rec Partapgarh\Rec Partapgarh\bin\Rec Partapgarh.dll
+C:\Rec Partapgarh\Rec Partapgarh\bin\Rec Partapgarh.pdb
+C:\Rec Partapgarh\Rec Partapgarh\bin\roslyn\csc.exe
+C:\Rec Partapgarh\Rec Partapgarh\bin\roslyn\csc.exe.config
+C:\Rec Partapgarh\Rec Partapgarh\bin\roslyn\csc.rsp
+C:\Rec Partapgarh\Rec Partapgarh\bin\roslyn\csi.exe
+C:\Rec Partapgarh\Rec Partapgarh\bin\roslyn\csi.exe.config
+C:\Rec Partapgarh\Rec Partapgarh\bin\roslyn\csi.rsp
+C:\Rec Partapgarh\Rec Partapgarh\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Rec Partapgarh\Rec Partapgarh\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Rec Partapgarh\Rec Partapgarh\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Rec Partapgarh\Rec Partapgarh\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Rec Partapgarh\Rec Partapgarh\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Rec Partapgarh\Rec Partapgarh\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Rec Partapgarh\Rec Partapgarh\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Rec Partapgarh\Rec Partapgarh\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Rec Partapgarh\Rec Partapgarh\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Rec Partapgarh\Rec Partapgarh\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Rec Partapgarh\Rec Partapgarh\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Rec Partapgarh\Rec Partapgarh\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Rec Partapgarh\Rec Partapgarh\bin\roslyn\System.AppContext.dll
+C:\Rec Partapgarh\Rec Partapgarh\bin\roslyn\System.Collections.Immutable.dll
+C:\Rec Partapgarh\Rec Partapgarh\bin\roslyn\System.Console.dll
+C:\Rec Partapgarh\Rec Partapgarh\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Rec Partapgarh\Rec Partapgarh\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Rec Partapgarh\Rec Partapgarh\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Rec Partapgarh\Rec Partapgarh\bin\roslyn\System.Globalization.Calendars.dll
+C:\Rec Partapgarh\Rec Partapgarh\bin\roslyn\System.IO.Compression.dll
+C:\Rec Partapgarh\Rec Partapgarh\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Rec Partapgarh\Rec Partapgarh\bin\roslyn\System.IO.FileSystem.dll
+C:\Rec Partapgarh\Rec Partapgarh\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Rec Partapgarh\Rec Partapgarh\bin\roslyn\System.Net.Http.dll
+C:\Rec Partapgarh\Rec Partapgarh\bin\roslyn\System.Net.Sockets.dll
+C:\Rec Partapgarh\Rec Partapgarh\bin\roslyn\System.Reflection.Metadata.dll
+C:\Rec Partapgarh\Rec Partapgarh\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Rec Partapgarh\Rec Partapgarh\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Rec Partapgarh\Rec Partapgarh\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Rec Partapgarh\Rec Partapgarh\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Rec Partapgarh\Rec Partapgarh\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Rec Partapgarh\Rec Partapgarh\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Rec Partapgarh\Rec Partapgarh\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Rec Partapgarh\Rec Partapgarh\bin\roslyn\System.ValueTuple.dll
+C:\Rec Partapgarh\Rec Partapgarh\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Rec Partapgarh\Rec Partapgarh\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Rec Partapgarh\Rec Partapgarh\bin\roslyn\System.Xml.XPath.dll
+C:\Rec Partapgarh\Rec Partapgarh\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Rec Partapgarh\Rec Partapgarh\bin\roslyn\vbc.exe
+C:\Rec Partapgarh\Rec Partapgarh\bin\roslyn\vbc.exe.config
+C:\Rec Partapgarh\Rec Partapgarh\bin\roslyn\vbc.rsp
+C:\Rec Partapgarh\Rec Partapgarh\bin\roslyn\VBCSCompiler.exe
+C:\Rec Partapgarh\Rec Partapgarh\bin\roslyn\VBCSCompiler.exe.config
+C:\Rec Partapgarh\Rec Partapgarh\bin\Antlr3.Runtime.dll
+C:\Rec Partapgarh\Rec Partapgarh\bin\EntityFramework.dll
+C:\Rec Partapgarh\Rec Partapgarh\bin\EntityFramework.SqlServer.dll
+C:\Rec Partapgarh\Rec Partapgarh\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Rec Partapgarh\Rec Partapgarh\bin\Microsoft.Web.Infrastructure.dll
+C:\Rec Partapgarh\Rec Partapgarh\bin\Newtonsoft.Json.dll
+C:\Rec Partapgarh\Rec Partapgarh\bin\System.Web.Helpers.dll
+C:\Rec Partapgarh\Rec Partapgarh\bin\System.Web.Mvc.dll
+C:\Rec Partapgarh\Rec Partapgarh\bin\System.Web.Optimization.dll
+C:\Rec Partapgarh\Rec Partapgarh\bin\System.Web.Razor.dll
+C:\Rec Partapgarh\Rec Partapgarh\bin\System.Web.WebPages.Deployment.dll
+C:\Rec Partapgarh\Rec Partapgarh\bin\System.Web.WebPages.dll
+C:\Rec Partapgarh\Rec Partapgarh\bin\System.Web.WebPages.Razor.dll
+C:\Rec Partapgarh\Rec Partapgarh\bin\WebGrease.dll
+C:\Rec Partapgarh\Rec Partapgarh\bin\EntityFramework.xml
+C:\Rec Partapgarh\Rec Partapgarh\bin\EntityFramework.SqlServer.xml
+C:\Rec Partapgarh\Rec Partapgarh\bin\System.Web.Helpers.xml
+C:\Rec Partapgarh\Rec Partapgarh\bin\System.Web.Mvc.xml
+C:\Rec Partapgarh\Rec Partapgarh\bin\System.Web.Optimization.xml
+C:\Rec Partapgarh\Rec Partapgarh\bin\System.Web.Razor.xml
+C:\Rec Partapgarh\Rec Partapgarh\bin\System.Web.WebPages.xml
+C:\Rec Partapgarh\Rec Partapgarh\bin\System.Web.WebPages.Deployment.xml
+C:\Rec Partapgarh\Rec Partapgarh\bin\System.Web.WebPages.Razor.xml
+C:\Rec Partapgarh\Rec Partapgarh\bin\Newtonsoft.Json.xml
+C:\Rec Partapgarh\Rec Partapgarh\bin\Antlr3.Runtime.pdb
+C:\Rec Partapgarh\Rec Partapgarh\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Rec Partapgarh\Rec Partapgarh\obj\Debug\Rec Partapgarh.csproj.AssemblyReference.cache
+C:\Rec Partapgarh\Rec Partapgarh\obj\Debug\Rec Partapgarh.csproj.CoreCompileInputs.cache
+C:\Rec Partapgarh\Rec Partapgarh\obj\Debug\Rec Part.A932F976.Up2Date
+C:\Rec Partapgarh\Rec Partapgarh\obj\Debug\Rec Partapgarh.dll
+C:\Rec Partapgarh\Rec Partapgarh\obj\Debug\Rec Partapgarh.pdb
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\Rec Partapgarh.dll.config
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\Rec Partapgarh.dll
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\Rec Partapgarh.pdb
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\roslyn\csc.exe
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\roslyn\csc.exe.config
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\roslyn\csc.rsp
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\roslyn\csi.exe
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\roslyn\csi.exe.config
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\roslyn\csi.rsp
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\roslyn\Microsoft.Managed.Core.targets
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\roslyn\System.AppContext.dll
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\roslyn\System.Collections.Immutable.dll
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\roslyn\System.Console.dll
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\roslyn\System.Globalization.Calendars.dll
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\roslyn\System.IO.Compression.dll
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\roslyn\System.IO.FileSystem.dll
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\roslyn\System.Net.Http.dll
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\roslyn\System.Net.Sockets.dll
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\roslyn\System.Reflection.Metadata.dll
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\roslyn\System.ValueTuple.dll
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\roslyn\System.Xml.XmlDocument.dll
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\roslyn\System.Xml.XPath.dll
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\roslyn\vbc.exe
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\roslyn\vbc.exe.config
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\roslyn\vbc.rsp
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\roslyn\VBCSCompiler.exe
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\roslyn\VBCSCompiler.exe.config
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\Antlr3.Runtime.dll
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\EntityFramework.dll
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\EntityFramework.SqlServer.dll
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\Microsoft.Web.Infrastructure.dll
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\Newtonsoft.Json.dll
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\System.Web.Helpers.dll
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\System.Web.Mvc.dll
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\System.Web.Optimization.dll
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\System.Web.Razor.dll
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\System.Web.WebPages.Deployment.dll
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\System.Web.WebPages.dll
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\System.Web.WebPages.Razor.dll
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\WebGrease.dll
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\Antlr3.Runtime.pdb
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\EntityFramework.xml
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\EntityFramework.SqlServer.xml
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\Newtonsoft.Json.xml
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\System.Web.Helpers.xml
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\System.Web.Mvc.xml
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\System.Web.Optimization.xml
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\System.Web.Razor.xml
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\System.Web.WebPages.xml
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\System.Web.WebPages.Deployment.xml
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\bin\System.Web.WebPages.Razor.xml
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\obj\Debug\Rec Partapgarh.csproj.AssemblyReference.cache
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\obj\Debug\Rec Partapgarh.csproj.CoreCompileInputs.cache
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\obj\Debug\Rec Part.A932F976.Up2Date
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\obj\Debug\Rec Partapgarh.dll
+D:\ShravanData1\SPI_Project\RECP\Rec_Partapgarh\obj\Debug\Rec Partapgarh.pdb
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\Rec Partapgarh.dll.config
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\Rec Partapgarh.dll
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\Rec Partapgarh.pdb
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\roslyn\csc.exe
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\roslyn\csc.exe.config
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\roslyn\csc.rsp
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\roslyn\csi.exe
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\roslyn\csi.exe.config
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\roslyn\csi.rsp
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\roslyn\System.AppContext.dll
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\roslyn\System.Console.dll
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\roslyn\System.IO.Compression.dll
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\roslyn\System.Net.Http.dll
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\roslyn\System.Net.Sockets.dll
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\roslyn\System.ValueTuple.dll
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\roslyn\vbc.exe
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\roslyn\vbc.exe.config
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\roslyn\vbc.rsp
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\roslyn\VBCSCompiler.exe
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\Antlr3.Runtime.dll
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\EntityFramework.dll
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\EntityFramework.SqlServer.dll
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\Newtonsoft.Json.dll
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\System.Web.Helpers.dll
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\System.Web.Mvc.dll
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\System.Web.Optimization.dll
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\System.Web.Razor.dll
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\System.Web.WebPages.dll
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\System.Web.WebPages.Razor.dll
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\WebGrease.dll
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\Antlr3.Runtime.pdb
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\EntityFramework.xml
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\EntityFramework.SqlServer.xml
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\Newtonsoft.Json.xml
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\System.Web.Helpers.xml
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\System.Web.Mvc.xml
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\System.Web.Optimization.xml
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\System.Web.Razor.xml
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\System.Web.WebPages.xml
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\bin\System.Web.WebPages.Razor.xml
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\obj\Debug\Rec Partapgarh.csproj.AssemblyReference.cache
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\obj\Debug\Rec Partapgarh.csproj.CoreCompileInputs.cache
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\obj\Debug\Rec Part.A932F976.Up2Date
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\obj\Debug\Rec Partapgarh.dll
+C:\Users\Shravan\Desktop\RECP\Rec_Partapgarh\obj\Debug\Rec Partapgarh.pdb

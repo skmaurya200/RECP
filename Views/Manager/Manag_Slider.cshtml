@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Manag_Slider";
+    Layout = "~/Views/Shared/ManagerMaster.cshtml";
+}
+
+<!-- ============ MANAGE SLIDER ============ -->
+<section class="section-panel active" id="panel-slider"
+         data-list-url="@Url.Action("List", "SliderApi")"
+         data-save-url="@Url.Action("Save", "SliderApi")"
+         data-toggle-url="@Url.Action("ToggleStatus", "SliderApi")"
+         data-delete-url="@Url.Action("Delete", "SliderApi")">
+    @Html.AntiForgeryToken()
+    <div class="breadcrumb-row">
+        <div><h4>Manage Home Slider</h4><div class="bc-path">Home <i class="bi bi-chevron-right"></i> Manage Slider</div></div>
+        <button class="btn-saffron" type="button" id="addSliderBtn"><i class="bi bi-plus-lg"></i> Add Slider</button>
+    </div>
+    <div class="card-panel">
+        <div class="cph"><h6>All <span>Sliders</span></h6></div>
+        <div class="table-responsive">
+            <table class="table table-modern" data-datatable="manual">
+                <thead><tr><th>Sr.No</th><th>Image</th><th>Title</th><th>Sort Description</th><th>Status</th><th>Action</th></tr></thead>
+                <tbody id="sliderTableBody"><tr><td colspan="6" class="text-center text-muted py-4">Loading sliders...</td></tr></tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+

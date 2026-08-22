@@ -1,0 +1,138 @@
+﻿@{
+  
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    .bg-welfare-left {
+        background-color: #0747AE;
+        padding: 15px;
+    }
+
+    .bg-welfare-left h3 {
+        font-size: 21px;
+        font-weight: 600;
+        color: #fff;
+    }
+
+    .bg-welfare-left ul li {
+        margin-top: 18px;
+        font-size: 17px;
+        color: #fff;
+    }
+
+    .bg-welfare-left ul li a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .bg-welfare-left ul li a:hover {
+        text-decoration: underline;
+    }
+
+    .content-box {
+        border: 1px dashed #000;
+        background: #fff;
+        padding: 20px;
+    }
+
+    .welfare-font {
+        font-size: 17px;
+        color: #000;
+        text-align: justify;
+        line-height: 1.8;
+    }
+
+    hr {
+        border: 1px solid #000;
+    }
+</style>
+
+<!-- ================= BANNER ================= -->
+<div class="row">
+    <div class="col-md-12 p-0"
+        style="margin-top:-20px;
+        background:url('https://img.freepik.com/premium-photo/extensive-collection-books-library_868797-8212.jpg') center/cover fixed;">
+        <div style="background:rgba(0,0,0,0.5)">
+            <div class="container">
+                <div class="d-flex flex-column justify-content-center" style="min-height:300px;">
+                    <h3 class="display-6 text-white fw-bold text-uppercase">
+                        Electrical Measurement & Instrumentation Lab
+                    </h3>
+                    <div class="d-inline-flex text-white">
+                        <a href="/" class="text-white text-decoration-none ">Home</a>
+                        <i class="fa fa-angle-double-right px-2 pt-1"></i>
+                        <span class="text-uppercase">Electrical Measurement & Instrumentation Lab</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ================= MAIN CONTENT ================= -->
+<div class="container py-5">
+    <div class="row">
+        <style>
+            .bg-welfare-left ul li {
+                margin-top: 20px;
+                font-size: 17px;
+                line-height: 1.5;
+                color: #fff;
+                font-family: Arial, sans-serif;
+            }
+
+            .bg-welfare-left hr {
+                border-bottom: 2px solid white !important;
+            }
+        </style>
+                @Html.Partial("~/Views/Shared/DeptSidebar/_ELE_Sidebar.cshtml")
+
+        <!-- RIGHT CONTENT -->
+        <div class="col-lg-9">
+            <div class="content-box">
+
+                <h2 class="fw-bold" style="color:#0747AE;">Electrical Measurement &amp; Instrumentation Lab</h2>
+                <hr />
+
+                <div class="row mt-2">
+
+                    <div class="col-sm-7">
+                        <p class="welfare-font">
+                            The Electrical Measurement and Instrumentation Laboratory enhances students’ understanding
+                            of accurate electrical measurements and instrument operation. Equipped with conventional
+                            and digital measuring devices, the lab facilitates experiments on meter calibration, power
+                            and energy measurement, instrument transformer testing, and error analysis. Through
+                            hands-on practice, students develop skills in instrument selection, safe handling, and
+                            data interpretation, preparing them for real-world electrical engineering applications.
+                        </p>
+                    </div>
+                    <div class="col-lg-5">
+                        <img src="~/Content/img/Electrical_Measurement_Instrumentation_Lab.jpg" class="p-1"
+                            style="height:250px;width:100%;border:1px dashed #000;object-fit:cover" />
+                    </div>
+                </div>
+
+                <h4 class="welfare-font fw-bold">List of Experiments</h4>
+
+                <ul class="welfare-font" style="list-style-type:disc !important;">
+                    <li>Calibration of the AC voltmeter and AC ammeter</li>
+                    <li>Measurement of inductance using Maxwell’s Bridge</li>
+                    <li>Measurement of capacitance using the Schering Bridge</li>
+                    <li>Measurement of low resistance using Kelvin’s Double Bridge</li>
+                    <li>Measurement of power using CT and PT</li>
+                    <li>Measuring displacement using LVDT</li>
+                    <li>Measuring temperature using a thermocouple</li>
+                    <li>Measuring pressure using a piezoelectric pickup</li>
+                </ul>
+
+
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,332 @@
+@{
+  
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    .bg-welfare-left {
+        background-color: #0747AE;
+        padding: 15px;
+    }
+
+        .bg-welfare-left h3 {
+            font-size: 21px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .bg-welfare-left ul li {
+            margin-top: 18px;
+            font-size: 17px;
+            color: #fff;
+        }
+
+            .bg-welfare-left ul li a {
+                color: #fff;
+                text-decoration: none;
+            }
+
+                .bg-welfare-left ul li a:hover {
+                    text-decoration: underline;
+                }
+
+    .content-box {
+        border: 1px dashed #000;
+        background: #fff;
+        padding: 20px;
+    }
+
+    .welfare-font {
+        font-size: 17px;
+        color: #000;
+        text-align: justify;
+        line-height: 1.8;
+    }
+
+    hr {
+        border: 1px solid #000;
+    }
+</style>
+
+<!-- ================= BANNER ================= -->
+<div class="row">
+    <div class="col-md-12 p-0" style="margin-top:-20px;
+        background:url('https://img.freepik.com/premium-photo/extensive-collection-books-library_868797-8212.jpg') center/cover fixed;">
+        <div style="background:rgba(0,0,0,0.5)">
+            <div class="container">
+                <div class="d-flex flex-column justify-content-center" style="min-height:300px;">
+                    <h3 class="display-6 text-white fw-bold">
+                        Department of Applied Sciences & Humanities (APSH)
+                    </h3>
+                    <div class="d-inline-flex text-white">
+                        <a href="/" class="text-white text-decoration-none">Home</a>
+                        <i class="fa fa-angle-double-right px-2 pt-1"></i>
+                        <span>Department of Applied Sciences & Humanities (APSH)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ================= MAIN CONTENT ================= -->
+<div class="container py-5">
+    <div class="row">
+        <style>
+            .bg-welfare-left ul li {
+                margin-top: 20px;
+                font-size: 17px;
+                line-height: 1.5;
+                color: #fff;
+                font-family: Arial, sans-serif;
+            }
+
+            .bg-welfare-left hr {
+                border-bottom: 2px solid white !important;
+            }
+        </style>
+        <!-- LEFT SIDEBAR -->
+        <div class="col-lg-3">
+            <div class="bg-welfare-left h-100">
+                <h3 class="text-uppercase">Side Tabs</h3>
+                <hr>
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="~/Home/ASH" style="text-transform:uppercase;">
+                            <i class="fa-solid fa-arrow-right"></i> About
+                        </a>
+                    </li>
+                    <hr />
+                    <li>
+                        <a href="~/Home/ASH_Vision" style="text-transform:uppercase;">
+                            <i class="fa-solid fa-arrow-right"></i> Vision
+                        </a>
+                    </li>
+                    <hr>
+
+                    <li>
+                        <a href="~/Home/ASH_Mision" style="text-transform:uppercase;">
+                            <i class="fa-solid fa-arrow-right"></i> Mission
+                        </a>
+                    </li>
+                    <hr>
+
+                    <li>
+                        <a href="~/Home/ASH_Faculty" style="text-transform:uppercase;">
+                            <i class="fa-solid fa-arrow-right"></i> Faculty
+                        </a>
+                    </li>
+                    <hr>
+
+                    <li>
+                        <button class="side-link w-100 d-flex justify-content-between align-items-center"
+                                type="button"
+                                onclick="toggleFacilities()">
+                            <span><i class="fa-solid fa-arrow-right"></i> Facilities</span>
+                            <i class="fa fa-angle-down" id="facilityIcon"></i>
+                        </button>
+
+                        <ul class="list-unstyled mt-2 ps-3" id="facilitiesMenu" style="display:none;">
+                            <li><a href="~/Home/Engineering_Physics_Laboratory" class="side-sub-link">Engineering Physics Laboratory</a></li>
+                            <li><a href="~/Home/Engineering_Chemistry_Laboratory" class="side-sub-link">Engineering Chemistry Laboratory</a></li>
+                            <li><a href="~/Home/Language_and_Soft_Skills_Lab" class="side-sub-link">Language & Communication Skills Lab</a></li>
+                        </ul>
+                    </li>
+                    <script>
+                        function toggleFacilities() {
+                            var menu = document.getElementById("facilitiesMenu");
+                            var icon = document.getElementById("facilityIcon");
+
+                            if (menu.style.display === "none") {
+                                menu.style.display = "block";
+                                icon.classList.remove("fa-angle-down");
+                                icon.classList.add("fa-angle-up");
+                            } else {
+                                menu.style.display = "none";
+                                icon.classList.remove("fa-angle-up");
+                                icon.classList.add("fa-angle-down");
+                            }
+                        }
+                    </script>
+                    <style>
+                        .side-link {
+                            background: none;
+                            border: none;
+                            color: #fff;
+                            text-transform: uppercase;
+                            padding: 0;
+                            font-size: 17px;
+                            cursor: pointer;
+                            text-align: left;
+                        }
+
+                            .side-link:hover {
+                                text-decoration: underline;
+                            }
+
+                        .side-sub-link {
+                            color: #fff;
+                            font-size: 18px;
+                            font-weight: 700;
+                            display: block;
+                            margin-top: 10px;
+                            border-bottom: 1px solid white;
+                            padding-bottom: 10px;
+                        }
+                    </style>
+
+                    <hr>
+                </ul>
+                <style>
+                    .side-link {
+                        background: none;
+                        border: none;
+                        color: #fff;
+                        text-transform: uppercase;
+                        padding: 0;
+                        font-size: 17px;
+                        cursor: pointer;
+                        text-align: left;
+                    }
+
+                        .side-link:hover {
+                            text-decoration: underline;
+                        }
+
+                    .side-sub-link {
+                        color: #fff;
+                        font-size: 15px;
+                        display: block;
+                        margin-top: 10px;
+                    }
+
+                    /* ================= GENERAL FIX ================= */
+                    .bg-welfare-left {
+                        height: auto;
+                    }
+
+                    .content-box {
+                        width: 100%;
+                    }
+
+                    /* ================= TABLET (≤ 992px) ================= */
+                    @@media (max-width: 992px) {
+
+                        .bg-welfare-left h3 {
+                            font-size: 19px;
+                        }
+
+                        .bg-welfare-left ul li {
+                            font-size: 16px;
+                            margin-top: 15px;
+                        }
+
+                        .side-link {
+                            font-size: 16px;
+                        }
+
+                        .side-sub-link {
+                            font-size: 14px;
+                        }
+                    }
+
+                    /* ================= MOBILE (≤ 768px) ================= */
+                    @@media (max-width: 768px) {
+                        /* Stack sidebar & content */
+                        .col-lg-3,
+                        .col-lg-9 {
+                            width: 100%;
+                        }
+
+                        .bg-welfare-left {
+                            margin-bottom: 20px;
+                        }
+                        /* Banner text center */
+                        .display-6 {
+                            font-size: 26px;
+                            text-align: center;
+                        }
+
+                        .d-inline-flex {
+                            justify-content: center;
+                            width: 100%;
+                        }
+                        /* Sidebar buttons */
+                        .side-link {
+                            font-size: 16px;
+                            padding: 10px 0;
+                        }
+
+                        .side-sub-link {
+                            font-size: 14px;
+                            padding-left: 10px;
+                        }
+
+                        hr {
+                            margin: 10px 0;
+                        }
+                    }
+
+                    /* ================= SMALL MOBILE (≤ 480px) ================= */
+                    @@media (max-width: 480px) {
+
+                        .display-6 {
+                            font-size: 22px;
+                        }
+
+                        .bg-welfare-left h3 {
+                            font-size: 18px;
+                            text-align: center;
+                        }
+
+                        .bg-welfare-left ul li {
+                            font-size: 15px;
+                        }
+
+                        .content-box {
+                            padding: 15px;
+                        }
+
+                        .welfare-font {
+                            font-size: 15px;
+                            line-height: 1.6;
+                        }
+                    }
+                </style>
+            </div>
+        </div>
+
+        <!-- RIGHT CONTENT -->
+        <div class="col-lg-9">
+            <div class="content-box">
+
+                <h2 class="fw-bold" style="color:#0747AE;">Demo</h2>
+                <hr />
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "ShowGellery";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+<div class="container-fluid mt-3">
+    <h4 style="width: 95%; margin: 0px auto; color: #450145;" class="fw-bold">Gellery's Record</h4>
+    <div class="row mt-3">
+        <div class="col-sm-12 border p-3 table-responsive">
+            <table class="table table-bordered" id="example">
+                <thead>
+                    <tr>
+                        <th style="background-color:#450145; color:white;">S.R.No</th>
+                        <th style="background-color:#450145; color:white;" class="text-center">Title</th>
+                        <th style="background-color:#450145; color:white;" class="text-center">Categories</th>
+                        <th style="background-color:#450145; color:white;" class="text-center">Image</th>
+                        <th style="background-color:#450145; color:white;" class="text-center">Add Of Date</th>
+                        <th style="background-color:#450145; color:white;" class="text-center">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        var a = 1;
+                    }
+                    @foreach (var item in ViewBag.GalleryImg)
+                    {
+                        <tr>
+
+                            <td>@a</td>
+                            <td class="text-center">@item.Text </td>
+                            <td class="text-center">@item.categories </td>
+                            <td class="text-center"><img src="~/Content/recp/upload/Gellary/@item.Image" height="100" width="200" /> </td>
+                            <td class="text-center">@item.dos</td>
+                            <td class="text-center"><a href="~/Admin/DeleteIrm?id=@item.Id"><input type="button" value="Delete" class="btn btn-danger" /></a></td>
+                            @{
+                                a++;
+                            }
+                        </tr>
+
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

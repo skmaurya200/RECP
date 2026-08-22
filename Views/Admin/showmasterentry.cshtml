@@ -1,0 +1,70 @@
+﻿@{
+    ViewBag.Title = "GrievanceList";
+    Layout = "~/Views/Shared/admin.cshtml";
+}
+
+<div class="container mt-4">
+    <div class="card rounded-0 border">
+        <div class="card-header" style="color: #450145;">
+            <h4 class="m-0 fw-bold">View Table Data</h4>
+        </div>
+        <div class="card-body">
+            @if (!string.IsNullOrEmpty(ViewBag.Message))
+            {
+                <div class="alert alert-danger">@ViewBag.Message</div>
+            }
+
+            @using (Html.BeginForm("showmasterentry", "admin", FormMethod.Get))
+            {
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Select Table:</label>
+                    <select name="SelectedTable" class="form-select" required>
+                        <option value="">-- Select Table --</option>
+                        @foreach (var table in ViewBag.TableNames)
+                        {
+                            <option value="@table" @(table == ViewBag.SelectedTable ? "selected" : "")>@table</option>
+                        }
+                    </select>
+                </div>
+
+                <div class="text-end">
+                    <button type="submit" class="btn text-white" style="background-color: #450145;">Show Data</button>
+                </div>
+            }
+
+            @if (ViewBag.TableData != null)
+            {
+                <h5 class="mt-4 fw-bold" style="color: #0747ae;">Data from @ViewBag.SelectedTable</h5>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover text-center">
+                        <thead>
+                            <tr>
+                                @foreach (System.Data.DataColumn col in ViewBag.TableData.Columns)
+                                {
+                                    <th style="background-color: #450145; color: white;">@col.ColumnName</th>
+                                }
+                                <th style="background-color: #450145; color: white;">Action</th> <!-- ✅ Delete Button ke liye Extra Column -->
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (System.Data.DataRow row in ViewBag.TableData.Rows)
+                            {
+                                <tr>
+                                    @foreach (var item in row.ItemArray)
+                                    {
+                                        <td>@item</td>
+                                    }
+                                    <td>
+                                        <!-- ✅ Delete Button Har Row ke End me -->
+                                        <a href="@Url.Action("DeleteRecord", "Admin", new { tableName = ViewBag.SelectedTable, id = row["Id"] })"
+                                           class="btn btn-danger btn-sm">Delete</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+        </div>
+    </div>
+</div>

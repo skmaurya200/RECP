@@ -1,0 +1,142 @@
+
+@{
+    ViewBag.Title = "Syllabus";
+    var newSyllabus = ViewBag.NewSyllabus as List<Rec_Partapgarh.Models.PublicAcademicDocumentViewModel> ?? new List<Rec_Partapgarh.Models.PublicAcademicDocumentViewModel>();
+}
+<style>
+    @@media(max-width:1100px) {
+        .gdgd {
+            height: 200px !important;
+        }
+
+        .fgfg {
+            font-size: 1.1em;
+        }
+    }
+</style>
+<div class="row">
+    <div class="col-md-12 p-0" style="margin-top: -20px; background: url('https://img.freepik.com/premium-photo/extensive-collection-books-library_868797-8212.jpg') no-repeat center center; background-size: cover; background-attachment:fixed; ">
+        <div class="container-fluid" style="background-color: rgba(0, 0, 0, 0.5);">
+            <div class="container">
+                <div class="d-flex flex-column justify-content-center" style="min-height: 300px">
+                    <h3 class="display-6 text-white text-uppercase fw-bold">Syllabus</h3>
+                    <div class="d-inline-flex text-white">
+                        <p class="m-0 text-uppercase"><a class="text-white" href="/" style="text-decoration:none;">Home</a></p>
+                        <i class="fa fa-angle-double-right pt-1 px-3"></i>
+                        <p class="m-0 text-uppercase text-light">Syllabus</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*<div class="container-fluid" style="
+   background-image: url('/Content/myimg/bg1.jpg');
+   background-attachment: fixed;
+   background-repeat: no-repeat;
+   background-size: cover;
+ ">
+    <div class="row">
+        <div class="col-sm-12 p-4">
+
+
+
+            <div class="container">
+                <h4 class="mt-3 mb-3 fw-bold" style="color:#0747ae; font-size:21px;">
+                    Syllabus
+                </h4>
+                <hr style="border:1px solid black;" />
+                <div class="row table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr class="text-center">
+                                <th style="background-color:#0747ae; color:white;">S.NO</th>
+                                <th style="background-color:#0747ae; color:white;">Program</th>
+                                <th style="background-color:#0747ae; color:white;">Branch</th>
+                                <th style="background-color:#0747ae; color:white;">Year</th>
+                                <th style="background-color:#0747ae; color:white;">Read more </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="text-center">
+                                <td> 1. </td>
+                                <td>Bachelor of Technology</td>
+                                <td>CSE/EE/CE/ME</td>
+                                <td> First Year </td>
+                                <td style="font-weight:900;"> <a href="~/Content/Syllabus/Btech first year syllabus common to all Branches.pdf" target="_blank"><i class="fa-solid fa-link" style="color:green;"></i> Link Here</a> </td>
+                            </tr>
+                            <tr class="text-center">
+                                <td> 2. </td>
+                                <td>Bachelor of Technology</td>
+                                <td>CSE</td>
+                                <td>Second Year </td>
+                                <td style="font-weight:900;"> <a href="~/Content/Syllabus/B.Tech_2nd_Yr_CSE syllabus.pdf" target="_blank"><i class="fa-solid fa-link" style="color:green;"></i> Link Here</a> </td>
+                            </tr>
+                            <tr class="text-center">
+                                <td> 3. </td>
+                                <td>Bachelor of Technology</td>
+                                <td>CE</td>
+                                <td>Second Year </td>
+                                <td style="font-weight:900;"> <a href="~/Content/Syllabus/B.Tech_2nd_Yr_CE syllabus.pdf" target="_blank"><i class="fa-solid fa-link" style="color:green;"></i> Link Here</a> </td>
+                            </tr>
+                            <tr class="text-center">
+                                <td> 4. </td>
+                                <td>Bachelor of Technology</td>
+                                <td>EE</td>
+                                <td>Second Year </td>
+                                <td style="font-weight:900;"> <a href="~/Content/Syllabus/B.Tech_2nd_Yr_EE syllabus.pdf" target="_blank"><i class="fa-solid fa-link" style="color:green;"></i> Link Here</a> </td>
+                            </tr>
+                            <tr class="text-center">
+                                <td> 5. </td>
+                                <td>Bachelor of Technology</td>
+                                <td>ME</td>
+                                <td>Second Year </td>
+                                <td style="font-weight:900;"> <a href="~/Content/Syllabus/B.Tech_2nd_Yr_ME syllabus.pdf" target="_blank"><i class="fa-solid fa-link" style="color:green;"></i> Link Here</a> </td>
+                            </tr>
+                            <tr class="text-center">
+                                <td> 6. </td>
+                                <td>Bachelor of Technology</td>
+                                <td>Technical Communication</td>
+                                <td>Second Year </td>
+                                <td style="font-weight:900;"> <a href="~/Content/Syllabus/Btech 2 nd year Technical Communication.pdf" target="_blank"><i class="fa-solid fa-link" style="color:green;"></i> Link Here</a> </td>
+                            </tr>
+                            <tr class="text-center">
+                                <td> 7. </td>
+                                <td>Bachelor of Technology</td>
+                                <td>UHVPE</td>
+                                <td>Second Year </td>
+                                <td style="font-weight:900;"> <a href="~/Content/Syllabus/Btech 2nd year AKTU_UHVPE.pdf" target="_blank"><i class="fa-solid fa-link" style="color:green;"></i> Link Here</a> </td>
+                            </tr>
+                            <tr class="text-center">
+                                <td> 8. </td>
+                                <td>Bachelor of Technology</td>
+                                <td>Sports and Yoga</td>
+                                <td>Second Year </td>
+                                <td style="font-weight:900;"> <a href="~/Content/Syllabus/Btech 2nd year BVA_451_Sports_Yoga_II_Syllabus.pdf" target="_blank"><i class="fa-solid fa-link" style="color:green;"></i> Link Here</a> </td>
+                            </tr>
+                            <tr class="text-center">
+                                <td> 9. </td>
+                                <td>Bachelor of Technology</td>
+                                <td>Open Electives Courses</td>
+                                <td>Second Year </td>
+                                <td style="font-weight:900;"> <a href="~/Content/Syllabus/Open_Elective_BTech_2nd_Yr_2023_24_v2.pdf" target="_blank"><i class="fa-solid fa-link" style="color:green;"></i> Link Here</a> </td>
+                            </tr>
+                           
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>*@
+
+<div class="container-fluid" style="background-image:url('/Content/myimg/bg1.jpg');background-attachment:fixed;background-repeat:no-repeat;background-size:cover;">
+    <div class="row"><div class="col-sm-12 p-4"><div class="container">
+        <h4 class="mt-3 mb-3 fw-bold" style="color:#0747ae;font-size:21px;">Syllabus</h4>
+        <hr style="border:1px solid black;" />
+        <div class="row table-responsive"><table class="table table-bordered"><thead><tr class="text-center"><th style="background-color:#0747ae;color:white;">S.NO</th><th style="background-color:#0747ae;color:white;">Program</th><th style="background-color:#0747ae;color:white;">Branch</th><th style="background-color:#0747ae;color:white;">Year</th><th style="background-color:#0747ae;color:white;">Read more</th></tr></thead>
+            <tbody>@for(var i=0;i<newSyllabus.Count;i++){var item=newSyllabus[i];<tr class="text-center"><td>@(i+1).</td><td>@item.CourseName</td><td>@item.BranchNames</td><td>@item.StudyYear</td><td style="font-weight:900;"><a href="@Url.Content(item.FilePath)" target="_blank" rel="noopener"><i class="fa-solid fa-link" style="color:green;"></i> Link Here</a></td></tr>}@if(!newSyllabus.Any()){<tr class="text-center"><td colspan="5">No new syllabus available.</td></tr>}</tbody>
+        </table></div>
+    </div></div></div>
+</div>

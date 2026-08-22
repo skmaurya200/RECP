@@ -1,0 +1,15 @@
+@{ ViewBag.Title = "Dashboard"; Layout = "~/Views/Shared/ManagerMaster.cshtml"; }
+<section class="section-panel active" id="panel-dashboard" data-summary-url="@Url.Action("Summary", "DashboardApi")">
+    <div class="breadcrumb-row"><div><h4>Dashboard Overview</h4><div class="bc-path">Home <i class="bi bi-chevron-right"></i> Dashboard</div></div><button class="btn-saffron" type="button" onclick="window.print()"><i class="bi bi-printer"></i> Print Report</button></div>
+    <div class="row g-3 mb-4">
+        <div class="col-6 col-lg-3"><div class="stat-card"><div class="stat-icon" style="background:linear-gradient(135deg,#163a8c,#1e4fb8);"><i class="bi bi-building"></i></div><div><h3 id="dashboardDepartmentCount">--</h3><p>Departments</p><div class="trend">Total records</div></div></div></div>
+        <div class="col-6 col-lg-3"><div class="stat-card"><div class="stat-icon" style="background:linear-gradient(135deg,var(--saffron),var(--saffron-light));"><i class="bi bi-megaphone-fill"></i></div><div><h3 id="dashboardContentCount">--</h3><p>Notices &amp; Events</p><div class="trend">Total records</div></div></div></div>
+        <div class="col-6 col-lg-3"><div class="stat-card"><div class="stat-icon" style="background:linear-gradient(135deg,#f0a52c,#f7c25d);"><i class="bi bi-person-video3"></i></div><div><h3 id="dashboardStaffCount">--</h3><p>Teaching Staff</p><div class="trend">Total records</div></div></div></div>
+        <div class="col-6 col-lg-3"><div class="stat-card"><div class="stat-icon" style="background:linear-gradient(135deg,#0c1f52,#163a8c);"><i class="bi bi-image-fill"></i></div><div><h3 id="dashboardGalleryCount">--</h3><p>Gallery Images</p><div class="trend">Total records</div></div></div></div>
+    </div>
+    <div class="row g-3"><div class="col-lg-7"><div class="card-panel h-100"><div class="cph"><h6>Recent <span>General Notices</span></h6><a class="btn-outline-soft" href="@Url.Action("NoticeEventsVideos", "Manager")">View all</a></div><div class="table-responsive"><table class="table table-modern" data-datatable="manual"><thead><tr><th>Title</th><th>Type</th><th>Date</th><th>Status</th></tr></thead><tbody id="dashboardRecentNotices"><tr><td colspan="4" class="text-center py-4">Loading dashboard...</td></tr></tbody></table></div></div></div>
+        <div class="col-lg-5"><div class="card-panel h-100"><div class="cph"><h6>Quick <span>Actions</span></h6></div><div class="d-flex flex-column gap-2">
+            <a class="btn-outline-soft text-start" href="@Url.Action("NoticeEventsVideos", "Manager")"><i class="bi bi-plus-circle me-2"></i>Add Notice / Event</a><a class="btn-outline-soft text-start" href="@Url.Action("Manage_Gallery", "Manager")"><i class="bi bi-plus-circle me-2"></i>Upload Gallery Images</a><a class="btn-outline-soft text-start" href="@Url.Action("Teaching_Staff", "Manager")"><i class="bi bi-plus-circle me-2"></i>Add Teaching Staff</a><a class="btn-outline-soft text-start" href="@Url.Action("Manag_Slider", "Manager")"><i class="bi bi-plus-circle me-2"></i>Update Home Slider</a>
+        </div></div></div>
+    </div>
+</section>

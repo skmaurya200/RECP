@@ -1,0 +1,266 @@
+﻿@model Rec_Partapgarh.Models.profile
+@{
+    ViewBag.Title = Model.FullName;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row my-5">
+    <!-- Hero Section -->
+    <div class="col-md-12 p-0" style="margin-top: -50px; background: url('https://img.freepik.com/premium-photo/extensive-collection-books-library_868797-8212.jpg') no-repeat center center; background-size: cover; background-attachment:fixed;">
+        <div class="container-fluid" style="background-color: rgba(0, 0, 0, 0.5);">
+            <div class="container">
+                <div class="d-flex flex-column justify-content-center" style="min-height: 250px">
+                    <h3 class="display-5 text-white text-uppercase fw-bold">@Model.FullName</h3>
+                    <p class="text-white mb-0">@Model.Designation</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Main Content -->
+<div class="container">
+    <div class="profile-container">
+        <!-- Left Section: Image + Contact -->
+        <div class="profile-sidebar">
+            @if (!string.IsNullOrEmpty(Model.ImageUrl))
+            {
+                <img src="@Model.ImageUrl" alt="@Model.FullName" class="profile-image">
+            }
+            else
+            {
+                <img src="~/Content/img/default-profile.png" alt="No Image" class="profile-image">
+            }
+
+            <h4 class="profile-name">@Model.FullName</h4>
+            <p class="profile-designation">@Model.Designation</p>
+            <hr class="profile-divider" />
+
+            <div class="contact-info">
+                @if (!string.IsNullOrEmpty(Model.Email))
+                {
+                    <p class="contact-item">
+                        <strong>Email:</strong>
+                        <a href="mailto:@Model.Email" class="contact-link">@Model.Email</a>
+                    </p>
+                }
+                
+                <hr/>
+            </div>
+        </div>
+
+        <!-- Right Section: Complete Profile -->
+        <div class="profile-content">
+            @Html.Raw(Model.CompleteProfileHtml)
+        </div>
+    </div>
+
+</div>
+
+<style>
+    /* Main Layout */
+    .profile-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        font-family: Arial;
+        color: #333;
+        margin-top: 20px;
+    }
+
+    /* Sidebar Styles */
+    .profile-sidebar {
+        flex: 1;
+        min-width: 280px;
+        max-width: 320px;
+        text-align: center;
+        background-color: #f8f9fa;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        height:440px !important;
+    }
+
+    .profile-image {
+        width: 100%;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .profile-name {
+        margin-top: 10px;
+        color: #002147;
+        font-size: 16px;
+        font-weight: 700;
+        text-align: left;
+        text-transform:capitalize;
+
+        
+    }
+
+    .profile-designation {
+        margin: 0;
+        color: #555;
+        font-size: 15px;
+        margin-top: -10px;
+        text-align: left;
+        border-bottom:1px solid black;
+        padding-bottom:5px;
+        
+    }
+
+
+
+    .contact-info {
+        color: #555;
+        font-size: 15px;
+        text-align: left;
+    }
+
+    .contact-item {
+        margin-bottom: 10px;
+    }
+
+    .contact-link {
+        color: #0066cc;
+        text-decoration: none;
+    }
+
+    .contact-link:hover {
+        text-decoration: underline;
+    }
+
+    /* Content Area */
+    .profile-content {
+        flex: 2;
+        min-width: 300px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        margin-bottom:50px;
+    }
+
+    /* Content Styling for Rich Text */
+        .profile-content h1,
+        .profile-content h2,
+        .profile-content h3,
+        .profile-content h4 {
+            color: #002147;
+            border-bottom: 1px solid #004080;
+            padding-bottom: 5px;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-weight: 600;
+            font-family: Arial;
+        }
+
+        .profile-content h1 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #002147 !important;
+        }
+
+        .profile-content h2 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #002147 !important;
+        }
+
+        .profile-content h3 {
+            font-size: 20px;
+            font-weight: 600;
+            
+        }
+
+        .profile-content h4 {
+            font-size: 20px;
+            font-weight: 600;
+         
+        }
+
+        .profile-content p {
+            font-size: 16px;
+            font-family: Arial;
+            line-height: 30px;
+            text-align: justify;
+            line-height: 30px;
+            color: black;
+        }
+
+        .profile-content ul,
+        .profile-content ol {
+            margin-bottom: 15px;
+            padding-left: 20px;
+            font-size: 17px;
+            list-style-type: disc;
+        }
+
+    .profile-content li {
+      color:black;
+        line-height:30px;
+    }
+
+    .profile-content table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 15px;
+    }
+
+    .profile-content th,
+    .profile-content td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    .profile-content th {
+        background-color: #f2f2f2;
+        color: #002147;
+    }
+
+    .profile-content a {
+        color: #0066cc;
+        text-decoration: none;
+    }
+
+    .profile-content a:hover {
+        text-decoration: underline;
+    }
+
+    .profile-content blockquote {
+        border-left: 4px solid #002147;
+        padding-left: 15px;
+        margin: 15px 0;
+        font-style: italic;
+        color: #555;
+    }
+
+    /* Back Button */
+    .back-button {
+        background-color: #6c757d;
+        border-color: #6c757d;
+        padding: 8px 20px;
+        font-weight: 500;
+    }
+
+    .back-button:hover {
+        background-color: #5a6268;
+        border-color: #545b62;
+    }
+
+    /* Responsive */
+    @@media (max-width: 768px) {
+        .profile-sidebar {
+            max-width: 100%;
+        }
+
+        .profile-content {
+            min-width: 100%;
+        }
+
+        .profile-content p {
+            text-align: left;
+        }
+    }
+</style>

@@ -1,0 +1,72 @@
+﻿@model Rec_Partapgarh.Models.profile
+@{
+    ViewBag.Title = "Edit Faculty";
+    Layout = "~/Views/Shared/admin.cshtml";
+}
+
+<h2>Edit Faculty</h2>
+<hr />
+
+@using (Html.BeginForm("EditFaculty", "Profile", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(m => m.Id)
+
+<div class="row">
+    <div class="col-md-6 mb-3">
+        @Html.LabelFor(m => m.FullName)
+        @Html.TextBoxFor(m => m.FullName, new { @class = "form-control", required = "required" })
+    </div>
+    <div class="col-md-6 mb-3">
+        @Html.LabelFor(m => m.Designation)
+        @Html.TextBoxFor(m => m.Designation, new { @class = "form-control" })
+    </div>
+    <div class="col-md-6 mb-3">
+        @Html.LabelFor(m => m.Email)
+        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+    </div>
+    <div class="col-md-6 mb-3">
+        @Html.LabelFor(m => m.Mobile)
+        @Html.TextBoxFor(m => m.Mobile, new { @class = "form-control" })
+    </div>
+    <div class="col-md-6 mb-3">
+        <label>Upload New Image</label>
+        <input type="file" name="imageFile" class="form-control" />
+        @if (!string.IsNullOrEmpty(Model.ImageUrl))
+        {
+            <div class="mt-2">
+                <img src="@Model.ImageUrl" width="100" height="100" class="rounded border" />
+            </div>
+        }
+    </div>
+    <div class="col-md-6 mb-3">
+        @Html.LabelFor(m => m.ProfileUrl)
+        @Html.TextBoxFor(m => m.ProfileUrl, new { @class = "form-control" })
+    </div>
+    <div class="col-md-6 mb-3">
+        @Html.LabelFor(m => m.SortOrder)
+        @Html.TextBoxFor(m => m.SortOrder, new { @class = "form-control", type = "number" })
+    </div>
+    <div class="col-md-6 mb-3">
+        <label>Is Active</label>
+        @Html.CheckBoxFor(m => m.IsActive, new { @class = "form-check-input" })
+    </div>
+
+    <!-- Complete Profile HTML -->
+    <div class="col-md-12 mb-3">
+        @Html.LabelFor(m => m.CompleteProfileHtml, "Complete Profile Content")
+        <textarea id="editor" name="CompleteProfileHtml" class="form-control" rows="10">
+        @Html.Raw(Model.CompleteProfileHtml)
+    </textarea>
+    </div>
+
+</div>
+
+    <script src="https://cdn.ckeditor.com/4.21.0/standard/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace('editor');
+    </script>
+
+    <button type="submit" class="btn btn-primary">Update</button>
+    <a href="@Url.Action("Faculties", "Profile")" class="btn btn-secondary">Back</a>
+}

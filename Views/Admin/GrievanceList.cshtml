@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "GrievanceList";
+    Layout = "~/Views/Shared/admin.cshtml";
+}
+
+
+
+@model List<Rec_Partapgarh.Models.Grievance>
+
+<div class="container mt-4">
+    <h2 class="fw-bold" Style="color: #450145;">Student Grievances</h2>
+    <hr>
+
+    <div class="table-responsive">
+        <table class="table table-bordered text-center">
+            <thead class="table-dark">
+                <tr>
+                    <th Style="background-color:#450145;color:white;">#</th>
+                    <th Style="background-color:#450145;color:white;">Student Name</th>
+                    <th Style="background-color:#450145;color:white;">Roll No.</th>
+                    <th Style="background-color:#450145;color:white;">Course & Branch</th>
+                    <th Style="background-color:#450145;color:white;">Contact No.</th>
+                    <th Style="background-color:#450145;color:white;">Email</th>
+                    <th Style="background-color:#450145;color:white;">Details</th>
+
+                    <th Style="background-color: #450145; color: white;">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.StudentName</td>
+                        <td>@item.RollNumber</td>
+                        <td>@item.CourseBranch</td>
+                        <td>@item.ContactNo</td>
+                        <td>@item.Email</td>
+                        <td>@item.IncidentDetails</td>
+
+                        <td>
+                            <a href="@Url.Action("DeleteGrievance", "Admin", new { id = item.Id })" class="btn btn-danger btn-sm">Delete</a>
+
+
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

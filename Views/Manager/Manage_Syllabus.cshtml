@@ -1,0 +1,6 @@
+@{ ViewBag.Title="Manage_Syllabus"; Layout="~/Views/Shared/ManagerMaster.cshtml"; }
+<section class="section-panel active" id="panel-syllabus" data-list-url="@Url.Action("List","SyllabusApi")" data-save-url="@Url.Action("Save","SyllabusApi")" data-toggle-url="@Url.Action("ToggleStatus","SyllabusApi")" data-delete-url="@Url.Action("Delete","SyllabusApi")">
+ @Html.AntiForgeryToken()
+ <div class="breadcrumb-row"><div><h4>Manage Syllabus</h4><div class="bc-path">Home <i class="bi bi-chevron-right"></i> Manage Syllabus</div></div><button class="btn-saffron" id="addSyllabusBtn" type="button"><i class="bi bi-plus-lg"></i> Add Syllabus</button></div>
+ <div class="card-panel"><div class="cph"><h6>All <span>Syllabus</span></h6></div><div class="table-responsive"><table class="table table-modern" data-datatable="manual"><thead><tr><th>Sr.No</th><th>Programme</th><th>Branch</th><th>Year</th><th>File</th><th>Status</th><th>Created By</th><th>Updated By</th><th>Action</th></tr></thead><tbody id="syllabusTableBody"><tr><td colspan="9" class="text-center py-4">Loading...</td></tr></tbody></table></div></div>
+</section>

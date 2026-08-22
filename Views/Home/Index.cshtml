@@ -1,0 +1,2636 @@
+<div class="container-fluid">
+</div>
+@using Rec_Partapgarh.Models
+@{ var managerHome = ViewBag.ManagerHomeContent as HomeManagerContentViewModel ?? new HomeManagerContentViewModel(); }
+<style>
+    @@media(max-width:576px) {
+        .ghgh {
+            width: 100% !important;
+        }
+
+        .shadow {
+            height: 200px !important;
+        }
+
+        .abheading {
+            font-size: 20px !important;
+        }
+
+        .dirsec {
+            margin-left: 3px !important;
+        }
+
+        .corheading {
+            font-size: 28px !important;
+        }
+    }
+</style>
+<div class="container-fluid mt-0" style="margin-top: -20px !important;">
+    <div class="row">
+        <!-- Carousel Section -->
+        <div class="col-12 col-md-8 p-0">
+            <div id="carouselExampleFade" class="carousel slide carousel-fade shadow-lg rounded overflow-hidden" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    @if (managerHome.Sliders.Any())
+                    {
+                        var first = true;
+                        foreach (var item in managerHome.Sliders)
+                        {
+                            <div class="carousel-item @(first ? "active" : "")">
+                                <div class="position-relative">
+                                    <img src="@Url.Content(item.ImagePath)"
+                                         class="d-block w-100 img-fluid"
+                                         alt="@item.Title"
+                                         style="object-fit: cover; height: 500px; filter: brightness(75%);" />
+
+                                    @*<div class="carousel-caption d-flex flex-column align-items-center justify-content-center text-center"><div class="bg-dark bg-opacity-50 p-3 p-md-4 shadow-lg" style="max-width:750px;"><h1 class="fw-bold text-white mb-2" style="font-size:32px;text-shadow:2px 3px 8px rgba(0,0,0,.8);">@item.Title</h1>@if (!string.IsNullOrWhiteSpace(item.Description)) { <p class="text-light mb-0" style="font-size:16px;line-height:1.7;text-shadow:1px 1px 5px rgba(0,0,0,.6);">@item.Description</p> }</div></div>*@
+                                </div>
+                            </div>
+                            first = false;
+                        }
+                    }
+                    else
+                    {
+                        <div class="carousel-item active">
+                            <img src="~/Content/recp/img/recparatapharh.jpg" class="d-block w-100 img-fluid" alt="Default Image" style="height: 500px; object-fit: cover;">
+                            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center text-center">
+                                @*<div class="bg-dark bg-opacity-50 p-4 rounded-4">
+                                        <h1 class="fw-bold text-white"> Recp </h1>
+                                        <p class="text-light">Recp</p>
+                                    </div>*@
+                            </div>
+                        </div>
+                    }
+                </div>
+
+                <!-- Controls -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+
+        <style>
+            .carousel-caption {
+                bottom: 100px;
+            }
+
+            @@media (max-width: 768px) {
+                .carousel-caption {
+                    bottom: 50px;
+                }
+
+                    .carousel-caption h1 {
+                        font-size: 22px !important;
+                    }
+
+                    .carousel-caption p {
+                        font-size: 14px !important;
+                    }
+            }
+        </style>
+
+
+        <!-- Notice Board Section -->
+        <div class="col-12 col-md-4 mt-3 mt-md-0">
+            <style>
+                .notice-board {
+                    padding: 1px;
+                    background-color: white;
+                    border-radius: 0px;
+                    height: auto;
+                    max-height: 500px;
+                    overflow-y: hidden;
+                }
+
+                .notice-heading {
+                    font-size: 18px;
+                    font-weight: 800;
+                    background-color: #0747ae;
+                    padding: 10px;
+                    border: 2px dotted white;
+                    color: #fff;
+                    text-align: center;
+                }
+
+                .nav-tabs {
+                    background-color: #0747ae;
+                    padding: 10px;
+                    border-radius: 0px;
+                }
+
+                    .nav-tabs .nav-link {
+                        font-weight: 500;
+                        color: white;
+                        border-radius: 20px;
+                    }
+
+                .nav-link:hover {
+                    color: black !important;
+                }
+
+                .nav-tabs .nav-link.active {
+                    background-color: white;
+                    color: black;
+                    border-color: #0747ae;
+                    border-radius: 20px;
+                }
+
+                #noticeContent ul {
+                    list-style: none;
+                    padding: 10px;
+                    margin: 0;
+                }
+
+                #noticeContent li {
+                    padding: 12px 15px;
+                    background-color: #fafafa;
+                    border: 1px solid #e1e1e1;
+                    border-left: 4px solid #0747ae;
+                    margin-bottom: 10px;
+                    border-radius: 4px;
+                    font-size: 15px;
+                }
+
+                    #noticeContent li i {
+                        color: #0747ae;
+                        margin-right: 8px;
+                    }
+
+                @@media (max-width: 576px) {
+                    .notice-heading {
+                        font-size: 16px;
+                    }
+
+                    .nav-tabs {
+                        flex-direction: column;
+                    }
+
+                        .nav-tabs .nav-link {
+                            margin-bottom: 5px;
+                        }
+
+                    .ssw {
+                        height: 350px !important;
+                    }
+                }
+            </style>
+
+            <style>
+                .notice-board {
+                    border: 1px solid #ccc;
+                    border-radius: 0px;
+                    padding: 10px;
+                    height: 98%;
+                    background: #f9f9f9;
+                }
+
+                .notice-heading {
+                    font-weight: 600;
+                    font-size: 18px;
+                    background-color: #0747ae;
+                    color: white;
+                    padding: 8px 8px;
+                    margin-bottom: 10px;
+                }
+
+                .notice-scroll-wrapper {
+                    height: 495px !important;
+                    overflow-y: hidden;
+                    position: relative;
+                }
+
+                .notice-scroll-list {
+                    list-style: none;
+                    padding: 0;
+                    overflow-y: hidden;
+                    margin: 0;
+                    animation: scrollUp 10s linear infinite;
+                }
+
+                .notice-scroll-wrapper:hover .notice-scroll-list {
+                    animation-play-state: paused;
+                }
+
+                .notice-scroll-list li {
+                    height: 50px;
+                    line-height: 20px;
+                    padding-left: 20px;
+                    font-size: 16px;
+                    background: #f9f9f9;
+                    border-bottom: 1px solid #ccc;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: left;
+                    justify-content: center;
+                }
+
+
+                    .notice-scroll-list li a {
+                        text-decoration: none;
+                        color: inherit;
+                    }
+
+                .nav-tabs .nav-link.active {
+                    background-color: #0747ae;
+                    color: white;
+                }
+
+
+                .notice-heading {
+                    font-weight: 600;
+                    font-size: 18px;
+                    background-color: #0747ae;
+                    color: white;
+                    padding: 8px;
+                    text-align: center;
+                    margin-bottom: 10px;
+                }
+
+
+
+
+                .tab-btn.active {
+                    background: #0747ae;
+                    color: white;
+                }
+
+                .tab-content {
+                    display: none;
+                    animation: fadeSlide 0.6s ease;
+                }
+
+                    .tab-content.active {
+                        display: block;
+                    }
+
+                .notice-list {
+                    list-style: none;
+                    margin: 0;
+                    padding: 0;
+                    height: 350px;
+                }
+
+                    .notice-list li {
+                        padding: 10px;
+                        border-bottom: 1px solid #ddd;
+                        font-size: 14px;
+                    }
+
+                        .notice-list li a {
+                            text-decoration: none;
+                            color: #000;
+                        }
+
+                @@keyframes fadeSlide {
+                    from {
+                        opacity: 0;
+                        transform: translateX(30px);
+                    }
+
+                    to {
+                        opacity: 1;
+                        transform: translateX(0);
+                    }
+                }
+            </style>
+            <style>
+                .scroll-container {
+                    height: 350px;
+                    overflow: hidden;
+                    position: relative;
+                }
+
+                .scroll-content {
+                    display: inline-block;
+                    will-change: transform;
+                }
+
+                .tab-content {
+                    display: none;
+                }
+
+                    .tab-content.active {
+                        display: block;
+                    }
+
+                .tab-btn {
+                    color: white;
+                    border-radius: 20px;
+                }
+
+                    .tab-btn.active {
+                        background-color: white !important;
+                        color: black !important;
+                    }
+
+                .notice-event-item {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    padding: 10px 5px;
+                    border-bottom: 1px solid #aaa;
+                }
+
+                .notice-event-img-box {
+                    width: 55px;
+                    height: 55px;
+                    flex-shrink: 0;
+                    overflow: hidden;
+                    border: 1px solid #ddd;
+                    background: #fff;
+                }
+
+                .notice-event-img {
+                    width: 100%;
+                    height: 100%;
+                }
+
+                .notice-event-content {
+                    flex: 1;
+                    font-size: 14px;
+                    line-height: 22px;
+                    color: #000;
+                }
+
+                    .notice-event-content a {
+                        text-decoration: none;
+                        color: #000;
+                    }
+
+                        .notice-event-content a:hover {
+                            color: #0747ae;
+                        }
+
+                @@media(max-width:576px) {
+                    .notice-event-img-box {
+                        width: 48px;
+                        height: 48px;
+                    }
+
+                    .notice-event-content {
+                        font-size: 13px;
+                        line-height: 20px;
+                    }
+                }
+            </style>
+
+            <div class="container-fluid p-0">
+                <div class="notice-board">
+                    <div class="notice-heading">Notices and Events</div>
+
+                    <ul class="nav nav-tabs mb-3 mt-0" id="noticeTabs" style="margin-top:-8px !important;">
+                        <li class="nav-item">
+                            <a class="nav-link tab-btn active" style="font-weight:500;font-size:14px; background-color:white; color:black;" data-tab="general" href="#">General Notices</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link tab-btn" style="font-weight:500;font-size:14px;" data-tab="events" href="#">Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link tab-btn" style="font-weight:500;font-size:14px;" data-tab="video" href="#">Video</a>
+                        </li>
+
+                    </ul>
+
+                    <div class="tab-content active" id="general">
+                        <div class="scroll-container" style="height:350px;">
+                            <div class="scroll-content">
+
+                                @foreach (var notice in managerHome.VerticalNotices)
+                                {
+                                    <div class="notice-item mb-2"><a href="@Url.Content(notice.FilePath)" target="_blank" rel="noopener" class="text-dark"><p><i class="bi bi-megaphone-fill text-danger me-1"></i><span style="color:black;">@notice.Title</span></p></a><hr style="border:1px solid black;margin-top:5px !important;" /></div>
+                                }
+                                @if (!managerHome.VerticalNotices.Any()) { <p class="text-center text-muted py-4">No notices available.</p> }
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="events">
+                        <div class="scroll-container" style="height:350px;">
+                            <div class="scroll-content">
+
+                                @foreach (var item in managerHome.Events)
+                                {
+                                    string imgPath = !string.IsNullOrEmpty(item.BannerImagePath)
+                                        ? Url.Content(item.BannerImagePath)
+                                        : Url.Content("~/Content/images/no-image.png");
+
+                                    <div class="notice-event-item">
+                                        <div class="notice-event-img-box">
+                                            <a href="@imgPath" target="_blank">
+                                                <img src="@imgPath" class="notice-event-img" alt="@item.EventName" />
+                                            </a>
+                                        </div>
+
+                                        <div class="notice-event-content">
+                                            <a href="@imgPath" target="_blank">
+                                                @item.EventName<br /><small>@item.Venue &bull; @item.EventDate.ToString("dd MMM yyyy") @DateTime.Today.Add(item.EventTime).ToString("hh:mm tt")</small>
+                                            </a>
+                                        </div>
+                                    </div>
+                                }
+                                @if (!managerHome.Events.Any()) { <p class="text-center text-muted py-4">No events available.</p> }
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="video">
+                        <ul class="notice-list">
+                            @foreach (var video in managerHome.Videos) { <li><a href="@video.SourceUrl" target="_blank" rel="noopener"><i class="bi bi-play-circle-fill text-danger me-1"></i> @video.Title</a></li> }
+                            @if (!managerHome.Videos.Any()) { <li class="text-muted">No videos available.</li> }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    const buttons = document.querySelectorAll(".tab-btn");
+                    const contents = document.querySelectorAll(".tab-content");
+
+                    buttons.forEach(btn => {
+                        btn.addEventListener("click", function (e) {
+                            e.preventDefault();
+
+                            buttons.forEach(b => {
+                                b.classList.remove("active");
+                                b.style.backgroundColor = "";
+                                b.style.color = "";
+                            });
+
+                            contents.forEach(c => c.classList.remove("active"));
+
+                            this.classList.add("active");
+                            this.style.backgroundColor = "white";
+                            this.style.color = "black";
+
+                            const tabId = this.getAttribute("data-tab");
+                            document.getElementById(tabId).classList.add("active");
+                        });
+                    });
+                });
+            </script>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+
+                    function startScroll(container) {
+
+                        const content = container.querySelector(".scroll-content");
+
+                        let speed = 0.9;
+                        let pos = container.offsetHeight;
+
+                        function animate() {
+
+                            // 🔥 IMPORTANT: tab hidden ho to skip
+                            if (container.offsetHeight === 0) {
+                                requestAnimationFrame(animate);
+                                return;
+                            }
+
+                            pos -= speed;
+
+                            // 🔥 pure marquee reset (no duplicate)
+                            if (pos <= -content.scrollHeight) {
+                                pos = container.offsetHeight;
+                            }
+
+                            content.style.transform = `translateY(${pos}px)`;
+
+                            requestAnimationFrame(animate);
+                        }
+
+                        animate();
+
+                        // hover pause
+                        container.addEventListener("mouseenter", () => speed = 0);
+                        container.addEventListener("mouseleave", () => speed = 0.9);
+                    }
+
+                    // 🔥 sirf visible tab pe start karo
+                    document.querySelectorAll(".tab-content.active .scroll-container")
+                        .forEach(startScroll);
+
+                    // 🔥 tab switch handle
+                    document.querySelectorAll(".tab-btn").forEach(btn => {
+                        btn.addEventListener("click", () => {
+
+                            setTimeout(() => {
+                                document.querySelectorAll(".tab-content.active .scroll-container")
+                                    .forEach(container => {
+                                        startScroll(container);
+                                    });
+                            }, 200); // wait for tab render
+                        });
+                    });
+
+                });
+            </script>
+
+
+
+            @* <script>
+                    const noticeData = {
+                        general: [
+                            "Office will remain closed tomorrow due to maintenance.",
+                            "Library timing has been revised from next week."
+                        ],
+                        exam: [
+                            "Mid-term examinations will commence from 15th May.",
+                            "Practical exam schedule has been uploaded."
+                        ],
+                        events: [
+                            "Annual Day Celebration on 5th May in the main auditorium.",
+                            "Seminar on Artificial Intelligence – Register by 3rd May."
+                        ]
+                    };
+
+                    function loadNotices(category) {
+                        const notices = noticeData[category] || [];
+                        let html = '<ul>';
+                        notices.forEach(notice => {
+                            html += `<li><i class="bi bi-megaphone-fill"></i>${notice}</li>`;
+                        });
+                        html += '</ul>';
+                        document.getElementById('noticeContent').innerHTML = html;
+                    }
+
+                    // Default load
+                    loadNotices('general');
+
+                    document.querySelectorAll('#noticeTabs .nav-link').forEach(tab => {
+                        tab.addEventListener('click', function (e) {
+                            e.preventDefault();
+                            document.querySelectorAll('#noticeTabs .nav-link').forEach(link => {
+                                link.classList.remove('active');
+                            });
+                            this.classList.add('active');
+
+                            const category = this.getAttribute('data-category');
+                            loadNotices(category);
+                        });
+                    });
+                </script>*@
+        </div>
+    </div>
+
+
+
+    <!-- next section -->
+    <!--Anoucement-->
+    <style>
+        .announcement-bar {
+            background-color: #0747ae;
+            color: white;
+            font-weight: 800;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px;
+            height: 100%;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .announcement-wrapper {
+            border: 1px solid rgb(180, 180, 180);
+            overflow: hidden;
+        }
+
+        marquee h5 {
+            margin: 10px 0;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+
+        /* Small devices (phones) */
+        @@media (max-width: 767.98px) {
+            .announcement-bar {
+                font-size: 14px;
+                padding: 6px;
+            }
+
+            marquee h5 {
+                font-size: 13px;
+            }
+        }
+
+        /* Mid-range devices (770px - 999px) */
+        @@media (min-width: 768px) and (max-width: 999.98px) {
+            .announcement-bar {
+                font-size: 16px;
+                padding: 6px;
+            }
+
+            marquee h5 {
+                font-size: 13px;
+            }
+        }
+    </style>
+    <style>
+        .horizontal-scroll {
+            overflow: hidden;
+            position: relative;
+            white-space: nowrap;
+        }
+
+        .horizontal-track {
+            display: inline-flex;
+            gap: 15px;
+            align-items: center;
+            will-change: transform;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .horizontal-new-badge {
+            display: inline-block;
+            margin-right: 7px;
+            padding: 2px 7px;
+            color: #fff;
+            background: #dc3545;
+            font-size: 10px;
+            font-weight: 800;
+            line-height: 1.4;
+            letter-spacing: .6px;
+            vertical-align: 2px;
+            animation: horizontalNewBlink .85s ease-in-out infinite alternate;
+        }
+
+        @@keyframes horizontalNewBlink { from { opacity: 1; transform: scale(1); } to { opacity: .3; transform: scale(.92); } }
+
+        @@media(max-width:767.98px) { .horizontal-track { font-size: 14px; } }
+    </style>
+    <div class="row">
+        <div class="col-sm-12 p-0">
+            <div class="row gx-0">
+                <div class="col-sm-2 col-12 announcement-bar">
+                    <span>Notices <i class="fa-solid fa-caret-right"></i></span>
+                </div>
+
+                <div class="col-sm-10 col-12 announcement-wrapper p-1 bg-light">
+
+                    @if (managerHome.HorizontalNotices.Any())
+                    {
+                        <div class="horizontal-scroll" id="marqueeBox">
+                            <div class="horizontal-track" id="marqueeContent">
+
+                                @foreach (var notice in managerHome.HorizontalNotices)
+                                {
+                                    var isNew = notice.CreatedAt >= DateTime.Now.AddDays(-21) && notice.CreatedAt <= DateTime.Now;
+                                    <div style="white-space:nowrap;"><a href="@Url.Content(notice.FilePath)" target="_blank" rel="noopener" style="text-decoration:none;color:black;">@if (isNew) { <span class="horizontal-new-badge">NEW</span> } else { <i class="bi bi-megaphone-fill text-danger me-1"></i> }@notice.Title</a><span class="mx-2">||</span></div>
+                                }
+
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const box = document.getElementById("marqueeBox");
+            const content = document.getElementById("marqueeContent");
+
+            if (!box || !content) return;
+
+            let speed = 0.9;
+            let pos = box.offsetWidth; // 🔥 start from right side
+
+            // duplicate content
+            content.innerHTML += content.innerHTML;
+
+            function animate() {
+                pos -= speed;
+
+                // reset when full content scroll ho jaye
+                if (Math.abs(pos) >= content.scrollWidth / 2 + box.offsetWidth) {
+                    pos = box.offsetWidth; // 🔥 again right se start
+                }
+
+                content.style.transform = `translateX(${pos}px)`;
+                requestAnimationFrame(animate);
+            }
+
+            animate();
+
+            // pause on hover
+            box.addEventListener("mouseenter", () => speed = 0);
+            box.addEventListener("mouseleave", () => speed = 0.9);
+        });
+    </script>
+
+    <!--Anoucement-->
+    <!-- next section -->
+    <!-- Start Our Features Latest Post
+    ============================================= -->
+    <div class="our-featues-area inc-trending-courses about-area mt-0" data-aos="fade-up" style="background-image: url('@Url.Content("~/Content/recp/assets/img/bg1.jpg")'); padding-top: 40px !important;margin-bottom:50px;">
+
+        <style>
+            .about-section {
+                padding: 30px 0;
+            }
+
+            .about-image {
+                width: 100%;
+                height: 38rem;
+                border-radius: 10px;
+                box-shadow: 3px 5px 10px rgba(130, 130, 130, 0.5);
+            }
+
+            .about-heading {
+                font-size: 24px;
+                font-weight: 700;
+                color: #0747ae;
+                border-bottom: 2px solid #D3d3d3;
+                padding-bottom: 10px;
+                margin-bottom: 20px;
+            }
+
+            .about-text {
+                font-size: 19px;
+                line-height: 1.8;
+                color: #000;
+                text-align: justify;
+                font-family: Arial, sans-serif;
+            }
+
+            @@media (max-width: 991.98px) {
+                .about-content {
+                    padding-top: 20px;
+                }
+
+                .about-heading {
+                    font-size: 20px;
+                }
+
+                .about-text {
+                    font-size: 15px;
+                }
+            }
+
+            @@media (max-width: 575.98px) {
+                .about-heading {
+                    font-size: 18px;
+                }
+
+                .about-text {
+                    font-size: 14px;
+                }
+            }
+        </style>
+
+        <div class="container about-section">
+            <div class="row align-items-center">
+                <!-- Left Image Column -->
+                <!-- Right Text Column -->
+                <div class="col-md-12 about-content">
+                    <h2 class="about-heading">ABOUT BHARAT RATNA BABASAHEB BHIMRAO AMBEDKAR RAJKIYA ENGINEERING COLLEGE, PRATAPGARH</h2>
+                    <p class="about-text">
+                        In order to expand the reach of quality technical education in the state of Uttar Pradesh, the government approved the establishment of rajkiya engineering colleges in the districts of Basti, Gonda, Mirzapur, and Pratapgarh. In furtherance of this policy decision the Department of Technical Education, Government of Uttar Pradesh, through Office Memorandum No. 2053/16-1-2023-14(54)/2014, Lucknow, dated August 2, 2023, accorded approval for the establishment and commencement of a Rajkiya Engineering College Pratapgarh in district Pratapgarh from the academic session 2023–24.
+                    </p>
+                    <p class="about-text">
+                        Pursuant to the above office memorandum, the institution was initially established under the name Rajkiya Engineering College, Pratapgarh. Subsequently, as per the decision of the State Government, the institution was renamed as Bharat Ratna Babasaheb Bhimrao Ambedkar Rajkiya Engineering College, Pratapgarh.
+                    </p>
+                    <p class="about-text">
+                        The college commenced its academic activities from the academic session 2023–24 as a state-funded government engineering institution associated with Dr APJ Abdul Kalam Technical University Uttar Pradesh Lucknow. During the construction phase of its permanent campus, the academic activities for the academic sessions 2023–24 and 2024–25 were conducted at Kamla Nehru Institute of Technology (KNIT), Sultanpur, as per the directions of the State Government.
+                    </p>
+                    <p class="about-text">
+                        Subsequently, based on the decision of the State Government and the University through Office Order No. अ0क0प्रा0वि0/कुप0का0/2025/14111(i)
+                        dated: July 26, 2025, approved the commencement of academic activities at the newly developed permanent campus in Pratapgarh. Accordingly, Bharat Ratna Babasaheb Bhimrao Ambedkar Rajkiya Engineering College Pratapgarh has been functioning from its permanent campus from the academic session 2025–26, with effect from August 1, 2025.
+                    </p>
+                    <p class="about-text">
+                        The institution is supported by adequate infrastructure and well-equipped, state-of-the-art laboratories developed in accordance with AICTE norms and standards. These facilities effectively facilitate outcome-based education, innovative teaching–learning practices, research activities, and hands-on technical training.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Bottom Paragraph -->
+            <div class="row mt-4">
+                <div class="col-12">
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<style>
+
+    .advisor-carousel {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 2rem;
+    }
+
+    .advisor-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+        .advisor-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .advisor-item .info-box {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .advisor-item img {
+            width: 100%;
+            height: 280px !important;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: opacity 0.3s ease;
+        }
+
+        .advisor-item .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 8px;
+        }
+
+        .advisor-item:hover .overlay {
+            opacity: 1;
+        }
+
+    .overlay-content {
+        color: #fff;
+        text-align: center;
+    }
+
+        .overlay-content h5 {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .overlay-content p {
+            font-size: 13px;
+            line-height: 18px;
+            margin-top: 10px;
+            color: #d1d1d1;
+        }
+
+        .overlay-content hr {
+            margin: 10px 0;
+            border: 0.5px solid #ddd;
+            width: 50%;
+            margin-bottom: 10px;
+        }
+
+    @@media screen and (max-width: 767px) {
+        .advisor-carousel {
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .advisor-item img {
+            height: 200px;
+        }
+
+        .overlay-content h5 {
+            font-size: 1em;
+        }
+    }
+</style>
+<section id="our-mentors" style="background: linear-gradient(135deg, #0a3d62, #0a2472); padding: 4em 0;">
+    <div class="container">
+        <div class="text-center mb-5 text-white">
+            <h2 style="font-size: 2.3em; font-weight: bold;color:white;" class="corheading">Our Mentors</h2>
+            <div style="width: 60px; height: 3px; background: #fff; margin: 10px auto; border-radius: 3px;"></div>
+        </div>
+
+        <div class="row justify-content-center g-4">
+
+            <!-- CARD START -->
+            <div class="col-md-6 col-lg-3">
+                <div class="mentor-card">
+                    <img src="~/Content/recp/img/smt.jpg" alt="Mentor">
+                    <div class="mentor-content">
+                        <h5 style="color:white;">Smt. Anandiben Patel</h5>
+                        <hr style="border-bottom:1px solid white; padding-top:-8px; width:60%; margin:0px auto;" />
+                        <p>Hon'ble Chancellor<br>Governor, Uttar Pradesh</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CARD -->
+            <div class="col-md-6 col-lg-3">
+                <div class="mentor-card">
+                    <img src="~/Content/img/yogiji.jpg" alt="Mentor">
+                    <div class="mentor-content">
+                        <h5 style="color:white;">Shri Yogi Adityanath</h5>
+                        <hr style="border-bottom:1px solid white; padding-top:-8px; width:60%; margin:0px auto;" />
+                        <p>Hon'ble Chief Minister<br>Uttar Pradesh</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CARD -->
+            <div class="col-md-6 col-lg-3">
+                <div class="mentor-card">
+                    <img src="~/Content/img/minister.jpg" alt="Mentor">
+                    <div class="mentor-content">
+                        <h5 style="color:white;">Shri Ashish Patel</h5>
+                        <hr style="border-bottom:1px solid white; padding-top:-8px; width:60%; margin:0px auto;" />
+                        <p>Hon'ble Minister<br>Technical Education, U.P.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CARD -->
+            <div class="col-md-6 col-lg-3">
+                <div class="mentor-card">
+                    <img src="~/Content/img/Prof%20JP%20Pandey.jpg" alt="Mentor">
+                    <div class="mentor-content">
+                        <h5 style="color:white;">Prof. J. P. Pandey</h5>
+                        <hr style="border-bottom:1px solid white; padding-top:-8px; width:60%; margin:0px auto;" />
+                        <p>Hon'ble Vice Chancellor<br>Dr. APJAKTU</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<style>
+    .mentor-card {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        text-align: center;
+        padding: 2em 1em;
+        transition: 0.3s ease;
+        backdrop-filter: blur(10px);
+        border: 2px dotted white;
+        color: white;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+
+        .mentor-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+        }
+
+        .mentor-card img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid #fff;
+            margin-bottom: 1em;
+        }
+
+        .mentor-card h5 {
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .mentor-card p {
+            font-size: 0.9em;
+            margin-bottom: 0;
+            color: #dcdcdc;
+        }
+</style>
+
+<!--End Advisor Area -->
+
+<style>
+    .bg-danger {
+        background-color: rgba(220, 53, 69, 0.8) !important; /* Semi-transparent background */
+    }
+</style>
+<div class="container-fluid py-5" style="font-family: 'Poppins', sans-serif;">
+    <div class="container">
+        <!-- Heading -->
+        <div class="row">
+            <div class="col-12 text-center text-md-start">
+                <h1 class="fw-bold corheading mb-3" style="color: #0747ae;">Director's Message</h1>
+                <hr class="border-dark mb-4">
+            </div>
+        </div>
+        <style>
+            @@media (max-width: 1000px) {
+                .custom-stack {
+                    flex-direction: column !important;
+                }
+
+                    .custom-stack > div {
+                        width: 100% !important;
+                        max-width: 100% !important;
+                    }
+            }
+        </style>
+        <!-- Image and Text Row -->
+        <style>
+            @@media (max-width: 1100px) {
+                .custom-stack {
+                    flex-direction: column !important;
+                }
+
+                    .custom-stack > div {
+                        width: 100% !important;
+                        max-width: 100% !important;
+                    }
+            }
+        </style>
+
+        <div class="row align-items-start gx-4 gy-4 d-flex custom-stack">
+            <!-- Image -->
+            <div class="col-md-3 text-center">
+                <img src="~/Content/recp/img/YNS.jpeg"
+                     class=" rounded-3 shadow"
+                     style="max-height: 450px; height:600px; object-fit: cover;"
+                     alt="Director's Image">
+            </div>
+
+            <!-- Message Text -->
+            <div class="col-sm-9">
+                <p class="text-dark speak-text" style="font-size: 19px; line-height: 34px; text-align: justify; font-family: Arial; margin-left: 20px;">
+                    It gives me immense pleasure to welcome you to Bharat Ratna Babasaheb Bhimrao Ambedkar Rajkiya Engineering College Pratapgarh. It is a state-funded government engineering institution established by the Government of Uttar Pradesh in the academic session 2023–24. The Institute has been functioning from its newly developed permanent campus since the academic session 2025–26.
+
+                </p>
+                <p class="text-dark speak-text" style="font-size: 19px; line-height: 34px; text-align: justify; font-family: Arial; margin-left: 20px; ">
+                    The institute offers four undergraduate programs: Computer Science and Engineering, Electrical Engineering, Civil Engineering, and Mechanical Engineering. Each program has an approved intake of 60 students. The curricula are designed to meet current academic standards and industry requirements. Emphasis is placed on strong fundamentals, practical skills, and professional competence.
+
+
+
+                </p>
+                <p class="text-dark speak-text" style="font-size: 19px; line-height: 34px; text-align: justify; font-family: Arial; margin-left: 20px;">
+                    The institute aims to serve students from Pratapgarh and surrounding districts, with special focus on those from economically weaker and socially disadvantaged sections of society. We believe that education serves as a vital pathway for social and economic mobility and sustainable development. It seeks to provide affordable, accessible, and high-quality technical education to deserving students who aspire to become engineers despite social or economic limitations.
+
+
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <p class="text-dark speak-text" style="font-size: 19px; line-height: 34px; text-align: justify; font-family: Arial; margin-left: 20px;">
+                    With extensive experience in Artificial Intelligence, Machine Learning, Computer Vision, and Data Science, I firmly believe that the future of engineering education must be interdisciplinary, research oriented, and closely connected with real-world applications. At REC Pratapgarh, our academic vision is guided by this belief. We emphasize strong theoretical foundations, hands-on learning, collaborative research, and active industry engagement.
+                </p>
+            </div>
+        </div>
+
+        <!-- Vision List -->
+        <div class="row mt-1">
+            <div class="col-12">
+                <h4 class="" style="color: black; font-family: Arial; font-size: 19px;">We are committed to establishing:</h4>
+
+                <ul class="ps-3 text-dark" style="list-style-type: disc; font-size: 19px; line-height: 35px; text-align: justify; font-family: Arial;">
+                    <li><b>State-of-the-art laboratories</b> equipped with advanced tools for design, development, analysis, and diagnostics across all engineering disciplines.</li>
+                    <li><b>A rigorous Outcome-Based Education (OBE) framework</b> aligned with AICTE and NBA/NAAC guidelines to ensure the attainment of clearly defined learning outcomes and measurable competencies</li>
+                    <li><b>A strong culture of faculty development and research</b>, promoting innovation, quality publications, funded projects, and advanced technical mentorship.</li>
+                    <li><b>Active industry academia collaboration</b> through expert lectures, internships, industrial training, and live projects in emerging areas such as smart infrastructure, renewable energy, healthcare technologies, embedded systems, IoT, and AI-based applications</li>
+                    <li><b>A supportive ecosystem for entrepreneurship, innovation, and career excellence</b>, preparing students for higher studies, competitive examinations, and leadership roles in the technological domain.</li>
+
+                </ul>
+            </div>
+        </div>
+
+        <!-- Final Paragraph and Contact -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <p class="text-dark" style="font-size: 19px; line-height: 34px; text-align: justify; font-family: Arial;">
+                    Above all, BRBBAREC Pratapgarh is guided by the principles of social justice, equality, and inclusiveness. The institution is committed to ensuring that opportunity and merit are not limited by socio-economic background. It strives to create a fair and supportive academic environment for all students. Through quality teaching, practical training, continuous mentoring, and value-based education, the institute develops engineers who are technically competent, ethically responsible, and socially aware. These graduates are prepared to contribute meaningfully to national development. I warmly invite students, educators, researchers, and industry partners to join us in this collective effort to build a vibrant, inclusive, and future-ready technical institution.
+                </p>
+
+                <div class="mt-4" style="font-family:Arial;">
+                    <h5 class="fw-bold speak-text " style="color: #0747ae; font-size: 19px;">Prof. Yogendra Narain Singh</h5>
+                    <p class="mb-1 speak-text text-dark" style="font-size: 17px; font-weight: 700;">
+                        Director<br />
+                        Bharat Ratna Babasaheb Bhimrao Ambedkar<br />
+                        Rajkiya Engineering College Pratapgarh
+                    </p>
+                    <p class="mb-1 speak-text text-dark" style="font-size: 17px; font-weight: 700;">
+                        Email: <a href="mail:recpratapgarh@gmail.com" target="_blank" style="text-decoration:underline;color:blue;">recpratapgarh@gmail.com </a>
+                        and <a href="mail:director@recp.ac.in" target="_blank" style="text-decoration:underline;color:blue;"> director@recp.ac.in</a>
+                    </p>
+                    <a href="https://www.ietlucknow.ac.in/people/singhyn" target="_blank"
+                       style="font-size: 17px; font-weight: 700; color:blue; text-decoration:underline;">Director Profile</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Fonts & Owl Carousel CSS -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+
+<style>
+    body {
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .courses-section {
+        background: #f9f9fb;
+        padding: 60px 0;
+    }
+
+    .section-title {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+        .section-title h2 {
+            font-size: 34px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .section-title p {
+            font-size: 15px;
+            color: white;
+            margin-top: 10px;
+        }
+
+    .course-card {
+        background: #fff;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        height: 480px;
+        margin: 15px;
+    }
+
+        .course-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+        }
+
+        .course-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+    .course-content {
+        padding: 20px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+        .course-content h4 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #0a3d62;
+        }
+
+        .course-content p {
+            font-size: 14px;
+            color: #666;
+            flex-grow: 1;
+        }
+
+    .course-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 15px;
+    }
+
+    .btn-course {
+        background: #0a3d62;
+        color: #fff;
+        border: none;
+        border-radius: 30px;
+        padding: 8px 18px;
+        font-size: 13px;
+        font-weight: 600;
+        transition: background 0.3s ease;
+    }
+
+        .btn-course:hover {
+            background: #2e86de;
+        }
+
+    .course-seats {
+        font-size: 13px;
+        color: #0a3d62;
+    }
+
+    @@media (max-width: 768px) {
+        .course-card {
+            height: auto;
+        }
+
+        .course-content h4 {
+            font-size: 18px;
+        }
+
+        .course-content p {
+            font-size: 13px;
+        }
+    }
+</style>
+
+<section class="courses-section" style="background-image: linear-gradient(135deg, #0a3d62c8, #0a2472d2),url('https://imgs.6sqft.com/wp-content/uploads/2016/10/14160508/nypl-book-stacks1-1024x619.jpg'); background-repeat: no-repeat; background-size: cover; color: white; ">
+    <div class="container">
+        <div class="section-title" style="color:white !important;">
+            <h2 class="corheading" style="font-size:30px;">Explore Our Courses</h2>
+            <hr style="border:1px solid white; width:20%; margin:0px auto;" class="text-center" />
+            @* <p>Curated to boost your career & skills</p>*@
+        </div>
+
+        <div class="owl-carousel course-carousel">
+
+            <!-- Card 2 -->
+            <div class="course-card">
+                <img src="~/Content/img/Course/computer.png" alt="CS Course">
+                <div class="course-content">
+                    <h4 class="fw-bold">Computer Science and Engineering</h4>
+                    <p style="font-size:16px; text-align:justify;">The B.Tech. program in Computer Science & Engineering at RECP is a future-focused program that equips students with strong technical skills and problem-solving abilities in the digital era.</p>
+                    <div class="course-footer">
+                        <a href="~/home/CS">
+                            <button class="btn-course">View Details</button>
+                        </a>
+                        <span class="course-seats"><i class="fa fa-users"></i> 60+ Seats</span>
+                    </div>
+                </div>
+            </div>
+            <div class="course-card">
+                <img src="~/Content/img/Course/Elec.png" alt="Mechanical Course">
+                <div class="course-content">
+                    <h4 class="fw-bold">Electrical Engineering</h4>
+                    <p style="font-size:16px;">B.Tech. in Electrical Engineering program offers a strong foundation in the principles of electricity, and electronics while integrating modern technologies that are shaping the future.</p>
+                    <div class="course-footer" style="margin-top:-10px;">
+                        <a href="~/home/ELE">
+                            <button class="btn-course">View Details</button>
+                        </a>
+                        <span class="course-seats"><i class="fa fa-users"></i> 60+ Seats</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 1 -->
+            <div class="course-card">
+                <img src="~/Content/img/Course/Cavil1.jpg" alt="IT Course">
+                <div class="course-content">
+                    <h4 class="fw-bold">Civil Engineering</h4>
+                    <p style="font-size:16px;">B.Tech. program in Civil Engineering offers a comprehensive education in the planning, design, construction, and maintenance of infrastructure essential to modern society.</p>
+                    <div class="course-footer">
+                        <a href="~/home/CVLE">
+                            <button class="btn-course">View Details</button>
+                        </a>
+                        <span class="course-seats"><i class="fa fa-users"></i> 60+ Seats</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+
+
+            <div class="course-card">
+                <img src="~/Content/img/Course/Mac.jpg" alt="Mechanical Course">
+                <div class="course-content">
+                    <h4 class="fw-bold">Mechanical Engineering</h4>
+                    <p style="font-size:16px;">B.Tech. in Mechanical Engineering program provides a comprehensive foundation in core mechanical engineering principles, covering areas such as thermodynamics </p>
+                    <div class="course-footer" style="">
+                        <a href="~/home/MCHE"> <button class="btn-course">View Details</button></a>
+                        <span class="course-seats"><i class="fa fa-users"></i> 60+ Seats</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add More Cards Similarly -->
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<script>
+    $(document).ready(function () {
+        $(".course-carousel").owlCarousel({
+            loop: true,
+            margin: 20,
+            nav: false,
+            dots: true,
+            autoplay: true,
+            autoplayTimeout: 3500,
+            responsive: {
+                0: { items: 1 },
+                768: { items: 2 },
+                1000: { items: 4 }
+            }
+        });
+    });
+</script>
+
+<!-- Initialize Owl Carousel -->
+<!-- Courses End -->
+<!--Our Fiilites-->
+<!-- Owl Carousel Section -->
+<section style="padding: 60px 0;">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold  mb-0" style="color: #0747ae; font-size: 30px;">
+                Infrastructure and other facilities
+            </h2>
+            <p class="text-muted text-capitalize mt-2" style="text-transform: lowercase;font-size:17px; font-weight:600;">
+                (to be operational within a few months)
+            </p>
+            <div style="width: 60px; height: 3px; background-color: #0747ae; margin: 10px auto;"></div>
+        </div>
+
+        <div id="infra-carousel" class="owl-carousel owl-theme">
+            <!-- Cards -->
+            <div class="item"><div class="facility-card"><i class="fas fa-laptop-code icon"></i><p class="text-capitalize">State-of-the-art computing laboratories</p></div></div>
+            <div class="item"><div class="facility-card"><i class="fas fa-desktop icon"></i><p class="text-capitalize">state of the art computer centre</p></div></div>
+            <div class="item"><div class="facility-card"><i class="fas fa-language icon"></i><p class="text-capitalize">state of the art language lab and other applied science laboratories</p></div></div>
+            <div class="item"><div class="facility-card"><i class="fas fa-bolt icon"></i><p class="text-capitalize">state of the art electrical engineering laboratories</p></div></div>
+            <div class="item"><div class="facility-card"><i class="fas fa-cogs icon"></i><p class="text-capitalize">state of the art mechanical engineering laboratories</p></div></div>
+            <div class="item"><div class="facility-card"><i class="fas fa-drafting-compass icon"></i><p class="text-capitalize">state of the art civil engineering laboratories</p></div></div>
+            <div class="item"><div class="facility-card"><i class="fas fa-book icon"></i><p class="text-capitalize">library with wide range of text and reference books, and online resources</p></div></div>
+            <div class="item"><div class="facility-card"><i class="fas fa-wifi icon"></i><p class="text-capitalize">uninterrupted internet access for 24x7</p></div></div>
+            <div class="item"><div class="facility-card"><i class="fas fa-bed icon"></i><p class="text-capitalize">girls and boys hostels</p></div></div>
+            <div class="item"><div class="facility-card"><i class="fas fa-house-user icon"></i><p class="text-capitalize">guest house</p></div></div>
+            <div class="item"><div class="facility-card"><i class="fas fa-building icon"></i><p class="text-capitalize">auditorium of 1500 capacity with state of the art facilities is under construction</p></div></div>
+            <div class="item"><div class="facility-card"><i class="fas fa-hotel icon"></i><p class="text-capitalize">visitor hostel of multiple stories with state of the art facilities is under construction</pclass="text-capitalize"></div></div>
+            <div class="item"><div class="facility-card"><i class="fas fa-school icon"></i><p class="text-capitalize">girls and boys hostels of full strength of about 1350 is under construction</p></div></div>
+            <div class="item"><div class="facility-card"><i class="fas fa-tools icon"></i><p class="text-capitalize">other student-supported and facilitated facilities are underway preparation</p></div></div>
+        </div>
+    </div>
+</section>
+
+<!-- CSS -->
+<style>
+    .facility-card {
+        padding: 30px;
+        border-radius: 12px;
+        text-align: center;
+        height: 20vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        transition: 0.3s ease;
+        border: 1px solid #ddd;
+        background-color: #fff;
+    }
+
+
+
+        .facility-card .icon {
+            font-size: 38px;
+            color: #0747ae;
+            margin-bottom: 18px;
+        }
+
+        .facility-card p {
+            font-size: 15px;
+            color: #444;
+            font-weight: 500;
+            line-height: 1.5;
+            text-transform: lowercase;
+            margin: 0;
+        }
+
+    @@media (max-width: 768px) {
+        .facility-card {
+            padding: 30px 15px;
+        }
+
+            .facility-card .icon {
+                font-size: 32px;
+            }
+
+            .facility-card p {
+                font-size: 14px;
+            }
+    }
+
+    @@media (max-width: 576px) {
+        .facility-card {
+            padding: 25px 12px;
+        }
+
+            .facility-card p {
+                font-size: 13px;
+            }
+    }
+</style>
+
+<!-- JS -->
+<script>
+    $(document).ready(function () {
+        $("#infra-carousel").owlCarousel({
+            loop: true,
+            margin: 20,
+            nav: false,
+            dots: true,
+            autoplay: true,
+            autoplayTimeout: 2800,
+            smartSpeed: 600,
+            responsive: {
+                0: { items: 1 },
+                480: { items: 1 },
+                576: { items: 2 },
+                768: { items: 2 },
+                992: { items: 3 },
+                1200: { items: 4 }
+            }
+        });
+    });
+</script>
+
+
+<!--Our Fiilites-->
+<!-- events part-->
+<!-- Event Calendar Section -->
+<!-- ✅ Owl Carousel CSS (if not already included globally) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+
+<!-- ✅ Events Section -->
+<!-- Events Section -->
+<!-- <div class="row event-carousel-sec"
+     style="background-image:linear-gradient(135deg,#0a3d62c8,#0a2472d2),url('https://media.istockphoto.com/id/1519543084/photo/convocation-ceremony-excited-asian-graduation-university-student-arm-raised-standing-beside.jpg?s=612x612&w=0&k=20&c=yMpR9AJYR9hXdSfNrW-VTDNDfwbd01VCb0R3PdqjqJc=');background-repeat:no-repeat;background-size:cover;background-position:center;"> -->
+<div class="row event-carousel-sec" style="margin-top: -75px"
+     >
+
+    <div class="col-md-12">
+        <section class="ev-section">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold corheading" style="color:#0747ae;font-size:30px;">Events Calendar</h2>
+                    <div style="width:60px;height:3px;background-color:#0747ae;margin:10px auto;"></div>
+                </div>
+
+                <div class="owl-carousel event-carousel owl-theme">
+
+                    @if (managerHome.Events.Any())
+                    {
+                        var eventsList = managerHome.Events;
+
+                        for (int i = 0; i < eventsList.Count; i++)
+                        {
+                            var item = eventsList[i];
+
+                            string imgPath = !string.IsNullOrEmpty(item.BannerImagePath)
+                                ? Url.Content(item.BannerImagePath)
+                                : Url.Content("~/Content/images/no-image.png");
+
+                            <div class="ev-card">
+                                <img src="@imgPath"
+                                     class="ev-img"
+                                     data-index="@i"
+                                     alt="@item.EventName" />
+
+                                <div class="ev-body">
+                                    <h4 class="ev-title">@item.EventName</h4>
+
+                                    <p class="ev-date">
+                                        <i class="fa-regular fa-calendar-days"></i>
+                                        @item.EventDate.ToString("dd MMM, yyyy") &bull; @DateTime.Today.Add(item.EventTime).ToString("hh:mm tt")
+                                    </p>
+                                    <p class="mb-0"><i class="bi bi-geo-alt"></i> @item.Venue</p>
+                                </div>
+                            </div>
+                        }
+                    }
+
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<!-- Events Custom Modal -->
+<div id="evmModal" class="evm-modal">
+    <div class="evm-overlay"></div>
+
+    <div class="evm-box">
+        <button type="button" class="evm-close" id="evmClose">&times;</button>
+
+        <h4 id="evmTitle" class="evm-title"></h4>
+
+        <div class="evm-img-wrap">
+            <button type="button" id="evmPrev" class="evm-nav evm-prev">&#10094;</button>
+
+            <img id="evmImg" src="" alt="" class="evm-img" />
+
+            <button type="button" id="evmNext" class="evm-nav evm-next">&#10095;</button>
+        </div>
+    </div>
+</div>
+
+<style>
+</style>
+
+<script>
+    $(document).ready(function () {
+
+        if ($(".event-carousel").length) {
+            $(".event-carousel").owlCarousel({
+                loop: true,
+                margin: 20,
+                nav: false,
+                dots: false,
+                autoplay: true,
+                autoplayTimeout: 4000,
+                smartSpeed: 600,
+                responsive: {
+                    0: { items: 1 },
+                    576: { items: 1 },
+                    768: { items: 2 },
+                    992: { items: 3 }
+                }
+            });
+        }
+
+        let evImages = [];
+        let evCurrentIndex = 0;
+
+        $(".ev-img").each(function () {
+            evImages.push({
+                src: $(this).attr("src"),
+                title: $(this).attr("alt")
+            });
+        });
+
+        function evShowImage(index) {
+            if (evImages.length === 0) return;
+
+            if (index < 0) index = evImages.length - 1;
+            if (index >= evImages.length) index = 0;
+
+            evCurrentIndex = index;
+
+            $("#evmImg").attr("src", evImages[evCurrentIndex].src);
+            $("#evmImg").attr("alt", evImages[evCurrentIndex].title);
+            $("#evmTitle").text(evImages[evCurrentIndex].title);
+        }
+
+        function evOpenModal(index) {
+            evShowImage(index);
+            $("#evmModal").addClass("evm-show");
+            $("body").addClass("evm-body-lock");
+        }
+
+        function evCloseModal() {
+            $("#evmModal").removeClass("evm-show");
+            $("body").removeClass("evm-body-lock");
+        }
+
+        $(document).on("click", ".ev-img", function () {
+            let index = parseInt($(this).attr("data-index"));
+            evOpenModal(index);
+        });
+
+        $("#evmClose, .evm-overlay").on("click", function () {
+            evCloseModal();
+        });
+
+        $("#evmPrev").on("click", function () {
+            evShowImage(evCurrentIndex - 1);
+        });
+
+        $("#evmNext").on("click", function () {
+            evShowImage(evCurrentIndex + 1);
+        });
+
+        $(document).on("keydown", function (e) {
+            if ($("#evmModal").hasClass("evm-show")) {
+                if (e.key === "Escape") evCloseModal();
+                if (e.key === "ArrowLeft") evShowImage(evCurrentIndex - 1);
+                if (e.key === "ArrowRight") evShowImage(evCurrentIndex + 1);
+            }
+        });
+
+    });
+</script>
+
+<!-- ✅ Isolated Init Script -->
+<script>
+    (function ($) {
+        $(function () {
+            if ($('.event-carousel').length > 0) {
+                $('.event-carousel').owlCarousel({
+                    loop: true,
+                    margin: 20,
+                    nav: false,
+                    dots: false,
+                    autoplay: true,
+                    autoplayTimeout: 4000,
+                    smartSpeed: 600,
+                    responsive: {
+                        0: { items: 1 },
+                        576: { items: 1 },
+                        768: { items: 3 },
+                        992: { items: 3 }
+                    }
+                });
+            }
+        });
+    })(jQuery); // Ensures isolation and jQuery conflict protection
+</script>
+<style>
+    .event-carousel-sec .owl-nav {
+        display: none !important;
+    }
+</style>
+
+
+
+
+
+
+<section class="sct-wrap my-3">
+
+
+    <!-- Decorative BG -->
+    <div class="sct-geo sct-g1"></div>
+    <div class="sct-geo sct-g2"></div>
+    <div class="sct-geo sct-g3"></div>
+    <div class="sct-geo sct-g4"></div>
+    <div class="sct-dots"></div>
+
+    <div class="sct-inner">
+
+        <!-- ── Header ── -->
+        <div class="sct-header">
+            <!-- <div class="sct-badge">
+                <div class="sct-badge-dot"></div>
+                BRBBARECP
+            </div> -->
+            <h2 class="sct-title">Social Club</h2>
+            <div class="sct-rule">
+                <div class="sct-rule-line"></div>
+                <!-- <div class="sct-rule-dot"></div> -->
+                <div class="sct-rule-line"></div>
+            </div>
+        </div>
+
+        <!-- ── Tab Navigation ── -->
+        <div class="sct-tabs-nav" role="tablist">
+            <button class="sct-tab-btn active" onclick="sctTab(this,'about')" role="tab" aria-selected="true">
+                <span class="sct-tab-icon"></span> About
+            </button>
+            <button class="sct-tab-btn" onclick="sctTab(this,'vision')" role="tab" aria-selected="false">
+                <span class="sct-tab-icon"></span> Vision
+            </button>
+            <button class="sct-tab-btn" onclick="sctTab(this,'mission')" role="tab" aria-selected="false">
+                <span class="sct-tab-icon"></span> Mission
+            </button>
+            <button class="sct-tab-btn" onclick="sctTab(this,'objectives')" role="tab" aria-selected="false">
+                <span class="sct-tab-icon"></span> Objectives
+            </button>
+            <button class="sct-tab-btn" onclick="sctTab(this,'activities')" role="tab" aria-selected="false">
+                <span class="sct-tab-icon"></span> Activities
+            </button>
+        </div>
+
+        <!-- ══ PANEL: About ══ -->
+        <div id="sct-about" class="sct-tab-panel active" role="tabpanel">
+            <div class="sct-glass-card">
+                <div class="sct-card-icon-wrap">&#127760;</div>
+                <h3>About the Social Club</h3>
+                <p>
+                    The Social Club of Bharat Ratna Babasaheb Bhimrao Ambedkar Rajkiya Engineering College,
+                    Pratapgarh, serves as a vibrant platform for fostering social responsibility, community
+                    engagement, and holistic personality development among students.
+                </p>
+                <p>
+                    The club actively promotes awareness, empathy, and leadership through various social
+                    initiatives and outreach programs. It aims to sensitize students towards pressing
+                    societal issues and encourage active participation in community service, thereby
+                    nurturing responsible citizens committed to positive social change and the greater
+                    good of society.
+                </p>
+            </div>
+        </div>
+
+        <!-- ══ PANEL: Vision ══ -->
+        <div id="sct-vision" class="sct-tab-panel" role="tabpanel">
+            <div class="sct-glass-card">
+                <div class="sct-card-icon-wrap">&#128301;</div>
+                <h3>Our Vision</h3>
+                <p>
+                    To cultivate socially responsible individuals who contribute meaningfully to society by
+                    promoting empathy, inclusivity, sustainable development, and a deep sense of compassion
+                    for all.
+                </p>
+
+            </div>
+        </div>
+
+        <!-- ══ PANEL: Mission ══ -->
+        <div id="sct-mission" class="sct-tab-panel" role="tabpanel">
+            <div class="sct-glass-card">
+                <div class="sct-card-icon-wrap">&#127919;</div>
+                <h3>Our Mission</h3>
+                <p>
+                    To encourage students to actively participate in social welfare activities, promote
+                    awareness about critical societal issues, and develop essential life skills through
+                    community engagement.
+                </p>
+                <p>
+                    The club strives to build strong collaborations with NGOs, local authorities, and
+                    social organizations to create impactful initiatives that bridge the gap between
+                    academic learning and real-world social responsibility.
+                </p>
+            </div>
+        </div>
+
+        <!-- ══ PANEL: Objectives ══ -->
+        <div id="sct-objectives" class="sct-tab-panel" role="tabpanel">
+            <div class="sct-obj-grid">
+                <div class="sct-obj-item">
+                    <div class="sct-obj-num">01</div>
+                    <div class="sct-obj-text">
+                        To organize social awareness campaigns and community service programs that address pressing societal needs.
+                    </div>
+                </div>
+                <div class="sct-obj-item">
+                    <div class="sct-obj-num">02</div>
+                    <div class="sct-obj-text">
+                        To conduct activities focused on environmental sustainability, health and hygiene awareness, and education for underprivileged children.
+                    </div>
+                </div>
+                <div class="sct-obj-item">
+                    <div class="sct-obj-num">03</div>
+                    <div class="sct-obj-text">
+                        To promote core values such as compassion, responsibility, empathy, and teamwork among students.
+                    </div>
+                </div>
+                <div class="sct-obj-item">
+                    <div class="sct-obj-num">04</div>
+                    <div class="sct-obj-text">
+                        To engage students in meaningful volunteering and social outreach activities.
+                    </div>
+                </div>
+                <div class="sct-obj-item">
+                    <div class="sct-obj-num">05</div>
+                    <div class="sct-obj-text">
+                        To develop leadership, teamwork, and communication skills through hands-on community engagement.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ══ PANEL: Activities ══ -->
+        <div id="sct-activities" class="sct-tab-panel" role="tabpanel">
+            <div class="sct-act-grid">
+
+                <!-- Activity 1: Image Right -->
+                <div class="sct-act-card">
+                    <div class="sct-act-top">
+                        <div class="sct-act-date">5 April 2026</div>
+                        <h4 class="sct-act-title">Village Outreach for Educational Support</h4>
+                    </div>
+
+                    <div class="sct-act-row">
+                        <div class="sct-act-content">
+                            <p>
+                                The Social Club has successfully initiated its activities with a meaningful community outreach visit
+                                to Gavan Pati village, Pratapgarh. With a deep sense of respect and understanding for the local
+                                community, students engaged warmly with children, highlighting the value of education while
+                                appreciating their aspirations, challenges, and everyday realities.
+                            </p>
+                            <p>
+                                The interaction focused not only on encouraging academic growth but also on building confidence and
+                                nurturing dreams for a better future. The children were also warmly invited to visit the institute
+                                and make use of its facilities, such as laboratories and sports grounds.
+                            </p>
+                            <p>
+                                This initiative aims to create an inclusive and supportive environment, strengthening the connection
+                                between the institute and the village, and fostering a shared culture of learning, opportunity, and
+                                mutual growth.
+                            </p>
+                        </div>
+
+                        <div class="sct-act-media">
+                            <div class="sct-img-grid four-img">
+                                <div class="sct-img-wrap" onclick="sctOpenModal('/Content/img/Social/Picture1.jpg')">
+                                    <img src="/Content/img/Social/Picture1.jpg" alt="Village Outreach">
+                                    <div class="sct-img-ov"></div>
+                                    <div class="sct-img-zoom">&#128269;</div>
+                                </div>
+
+                                <div class="sct-img-wrap" onclick="sctOpenModal('/Content/img/Social/Picture2.jpg')">
+                                    <img src="/Content/img/Social/Picture2.jpg" alt="Village Outreach">
+                                    <div class="sct-img-ov"></div>
+                                    <div class="sct-img-zoom">&#128269;</div>
+                                </div>
+
+                                <div class="sct-img-wrap" onclick="sctOpenModal('/Content/img/Social/Picture3.jpg')">
+                                    <img src="/Content/img/Social/Picture3.jpg" alt="Village Outreach">
+                                    <div class="sct-img-ov"></div>
+                                    <div class="sct-img-zoom">&#128269;</div>
+                                </div>
+
+                                <div class="sct-img-wrap" onclick="sctOpenModal('/Content/img/Social/Picture4.jpg')">
+                                    <img src="/Content/img/Social/Picture4.jpg" alt="Village Outreach">
+                                    <div class="sct-img-ov"></div>
+                                    <div class="sct-img-zoom">&#128269;</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Activity 2: Image Left -->
+                <div class="sct-act-card">
+                    <div class="sct-act-top">
+                        <div class="sct-act-date">27 March 2026</div>
+                        <h4 class="sct-act-title">Ramnavami Celebrations — Kanya Poojan &amp; Hawan</h4>
+                    </div>
+
+                    <div class="sct-act-row activity-reverse">
+                        <div class="sct-act-media">
+                            <div class="sct-img-grid five-img">
+                                <div class="sct-img-wrap" onclick="sctOpenModal('/Content/img/Social/Picture5.jpg')">
+                                    <img src="/Content/img/Social/Picture5.jpg" alt="Ramnavami">
+                                    <div class="sct-img-ov"></div>
+                                    <div class="sct-img-zoom">&#128269;</div>
+                                </div>
+
+                                <div class="sct-img-wrap" onclick="sctOpenModal('/Content/img/Social/Picture6.jpg')">
+                                    <img src="/Content/img/Social/Picture6.jpg" alt="Ramnavami">
+                                    <div class="sct-img-ov"></div>
+                                    <div class="sct-img-zoom">&#128269;</div>
+                                </div>
+
+                                <div class="sct-img-wrap" onclick="sctOpenModal('/Content/img/Social/Picture7.jpg')">
+                                    <img src="/Content/img/Social/Picture7.jpg" alt="Ramnavami">
+                                    <div class="sct-img-ov"></div>
+                                    <div class="sct-img-zoom">&#128269;</div>
+                                </div>
+
+                                <div class="sct-img-wrap" onclick="sctOpenModal('/Content/img/Social/Picture9.jpg')">
+                                    <img src="/Content/img/Social/Picture9.jpg" alt="Ramnavami">
+                                    <div class="sct-img-ov"></div>
+                                    <div class="sct-img-zoom">&#128269;</div>
+                                </div>
+
+                                <div class="sct-img-wrap full-img" onclick="sctOpenModal('/Content/img/Social/Picture8.jpg')">
+                                    <img src="/Content/img/Social/Picture8.jpg" alt="Ramnavami">
+                                    <div class="sct-img-ov"></div>
+                                    <div class="sct-img-zoom">&#128269;</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="sct-act-content">
+                            <p>
+                                The Social Club also organized Ramnavami celebrations, including Kanya Poojan and Hawan, in
+                                accordance with Indian traditions in the campus of BRBBARECP. On this auspicious occasion, young
+                                girls were respectfully welcomed and worshipped as forms of the goddess.
+                            </p>
+                            <p>
+                                Students, staff, faculty members, and their families participated in the event with devotion and
+                                enthusiasm. The Kanya Poojan was performed with great respect and care, followed by the Hawan,
+                                creating a peaceful and spiritual atmosphere.
+                            </p>
+                            <p>
+                                This celebration helped everyone understand the importance of respecting traditions, showing
+                                gratitude, and valuing cultural practices. It also strengthened a sense of unity, togetherness, and
+                                social values within the institute community.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Custom Image Modal -->
+        <div id="sctCustomModal" class="sct-custom-modal">
+            <div class="sct-modal-box">
+                <button type="button" class="sct-modal-close" onclick="sctCloseModal()">&#215;</button>
+                <img id="sctCustomModalImg" src="" alt="Social Club Image">
+            </div>
+        </div>
+
+        <script>
+            function sctOpenModal(imgPath) {
+                document.getElementById('sctCustomModalImg').src = imgPath;
+                document.getElementById('sctCustomModal').classList.add('show');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function sctCloseModal() {
+                document.getElementById('sctCustomModal').classList.remove('show');
+                document.getElementById('sctCustomModalImg').src = '';
+                document.body.style.overflow = '';
+            }
+
+            document.getElementById('sctCustomModal').addEventListener('click', function (e) {
+                if (e.target.id === 'sctCustomModal') {
+                    sctCloseModal();
+                }
+            });
+        </script>
+
+    </div><!-- /sct-inner -->
+</section>
+
+<script>
+    function sctTab(btn, id) {
+        document.querySelectorAll('.sct-tab-btn').forEach(function (b) {
+            b.classList.remove('active');
+            b.setAttribute('aria-selected', 'false');
+        });
+        document.querySelectorAll('.sct-tab-panel').forEach(function (p) {
+            p.classList.remove('active');
+        });
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+        var panel = document.getElementById('sct-' + id);
+        if (panel) panel.classList.add('active');
+    }
+</script>
+<!-- Social Club Section End -->
+
+
+
+<div class="container" style="margin-top: 3em;">
+    <div class="row">
+
+
+
+        <!-- Section Heading -->
+        <div class="text-center my-5">
+            <h2 class="fw-bold corheading" style="color:#0747ae; font-size:30px;">Our Gallery</h2>
+            <div style="width: 60px; height: 3px; background-color:#0747ae; margin: 10px auto;"></div>
+        </div>
+
+        <!-- Lightbox CSS -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet" />
+
+        <style>
+            .gallery-card {
+                position: relative;
+                overflow: hidden;
+                border-radius: 12px;
+                transition: transform 0.3s;
+            }
+
+                .gallery-card img {
+                    width: 100%;
+                    height: 250px;
+                    object-fit: fill;
+                    border-radius: 12px;
+                }
+
+                .gallery-card:hover {
+                    transform: scale(1.02);
+                }
+
+            .overlay-icon {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.5);
+                opacity: 0;
+                transition: opacity 0.3s ease;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 12px;
+            }
+
+            .gallery-card:hover .overlay-icon {
+                opacity: 1;
+            }
+
+            .overlay-icon i {
+                font-size: 2rem;
+                color: #fff;
+            }
+
+            @@media (max-width: 768px) {
+                .gallery-card img {
+                    height: 180px;
+                }
+            }
+        </style>
+
+        <div class="container">
+          @{
+    var gallerySlides = managerHome.Gallery
+        .GroupBy(g => g.CategoryName)
+        .SelectMany(group => group
+            .OrderByDescending(g => g.GalleryId)
+            .Take(2)
+            .Select(g => new
+            {
+                CategoryName = group.Key,
+                Image = g
+            }))
+        .OrderByDescending(x => x.Image.GalleryId)
+        .ToList();
+
+    var blankImage = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
+}
+
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+<style>
+    .home-gallery-swiper-wrap {
+        position: relative;
+    }
+
+    .homeGallerySwiper {
+        padding: 0 5px;
+    }
+
+    .home-gallery-prev,
+    .home-gallery-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        border: none;
+        background: rgba(0, 0, 0, 0.65);
+        color: #fff;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    .home-gallery-prev {
+        left: -10px;
+    }
+
+    .home-gallery-next {
+        right: -10px;
+    }
+
+    .home-gallery-prev i,
+    .home-gallery-next i {
+        font-size: 16px;
+    }
+
+    @@media (max-width: 575px) {
+        .home-gallery-prev {
+            left: 5px;
+        }
+
+        .home-gallery-next {
+            right: 5px;
+        }
+    }
+</style>
+
+<div class="row">
+    <div class="col-12">
+
+        <div class="home-gallery-swiper-wrap">
+
+            <button type="button" class="home-gallery-prev">
+                <i class="fa fa-angle-left"></i>
+            </button>
+
+            <div class="swiper homeGallerySwiper">
+                <div class="swiper-wrapper">
+
+                    @for (int i = 0; i < gallerySlides.Count; i++)
+                    {
+                        var img = gallerySlides[i];
+
+                        // First 4 images direct load hongi, baaki lazy load hongi
+                        var galleryImageUrl = Url.Content(img.Image.ImagePath);
+                        var imageSrc = i < 4 ? galleryImageUrl : blankImage;
+                        var lazySrc = i < 4 ? "" : galleryImageUrl;
+
+                        <div class="swiper-slide">
+                            <div class="gallery-card">
+                                <a href="@galleryImageUrl" data-lightbox="home-gallery" data-title="@(string.IsNullOrWhiteSpace(img.Image.Title) ? img.CategoryName : img.Image.Title)">
+                                    <img src="@imageSrc"
+                                         data-src="@lazySrc"
+                                         alt="@img.CategoryName Image"
+                                         loading="lazy"
+                                         decoding="async" />
+
+                                    <div class="overlay-icon">
+                                        <i class="fa fa-plus"></i>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            </div>
+
+            <button type="button" class="home-gallery-next">
+                <i class="fa fa-angle-right"></i>
+            </button>
+
+        </div>
+
+    </div>
+</div>
+
+<!-- Swiper JS -->
+<script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+        function getPerView() {
+            if (window.innerWidth >= 992) return 4;
+            if (window.innerWidth >= 768) return 3;
+            if (window.innerWidth >= 576) return 2;
+            return 1;
+        }
+
+        function loadImage(img) {
+            if (!img) return;
+
+            var realSrc = img.getAttribute("data-src");
+
+            if (realSrc) {
+                img.setAttribute("src", realSrc);
+                img.removeAttribute("data-src");
+            }
+        }
+
+        function loadNearbyImages(swiper) {
+            var perView = getPerView();
+            var start = swiper.activeIndex - 1;
+            var end = swiper.activeIndex + perView + 2;
+
+            if (start < 0) start = 0;
+            if (end > swiper.slides.length) end = swiper.slides.length;
+
+            for (var i = start; i < end; i++) {
+                var img = swiper.slides[i].querySelector("img[data-src]");
+                loadImage(img);
+            }
+        }
+
+        var totalSlides = document.querySelectorAll(".homeGallerySwiper .swiper-slide").length;
+
+        if (totalSlides > 0) {
+            var homeGallerySwiper = new Swiper(".homeGallerySwiper", {
+                slidesPerView: 4,
+                spaceBetween: 24,
+                speed: 700,
+
+                // loop false rakha hai kyunki loop duplicate slide banata hai
+                loop: false,
+
+                // rewind se last ke baad first aur first ke pehle last jaisa behavior milega
+                rewind: totalSlides > 4,
+
+                autoplay: totalSlides > 4 ? {
+                    delay: 2500,
+                    disableOnInteraction: false
+                } : false,
+
+                navigation: {
+                    nextEl: ".home-gallery-next",
+                    prevEl: ".home-gallery-prev"
+                },
+
+                breakpoints: {
+                    0: {
+                        slidesPerView: 1,
+                        spaceBetween: 15
+                    },
+                    576: {
+                        slidesPerView: 2,
+                        spaceBetween: 18
+                    },
+                    768: {
+                        slidesPerView: 3,
+                        spaceBetween: 20
+                    },
+                    992: {
+                        slidesPerView: 4,
+                        spaceBetween: 24
+                    }
+                },
+
+                on: {
+                    init: function () {
+                        loadNearbyImages(this);
+                    },
+                    slideChange: function () {
+                        loadNearbyImages(this);
+                    },
+                    resize: function () {
+                        loadNearbyImages(this);
+                    }
+                }
+            });
+        }
+    });
+</script>
+        </div>
+
+        <!-- Lightbox JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+
+    </div>
+
+    <br />
+    <br />
+
+    <!-- ✅ Include Owl Carousel CSS + FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+    <!-- ✅ Carousel Section with Unique ID -->
+    <div class="container my-5">
+        <div id="custom-brand-carousel" class="owl-carousel owl-theme">
+            <div class="brand-item my-auto"><a href="#"><img src="https://fullforms.com/images/image/AICTE_2772.jpg" alt="AICTE"></a></div>
+            <div class="brand-item my-auto"><a href="#"><img src="https://th.bing.com/th/id/OIP.uQs_zG_kTtXPOqXlA1adqAHaE8?cb=iwp1" alt="Image 2"></a></div>
+            <div class="brand-item my-auto"><a href="#"><img src="https://th.bing.com/th/id/OIP.DcRIJnKNJ4cOuAkvLTe1_gAAAA?cb=iwp1" alt="Image 3"></a></div>
+            <div class="brand-item my-auto"><a href="#"><img src="https://th.bing.com/th/id/OIP.7f55jT-YvCobKuZCgGbUPgAAAA?cb=iwp1" alt="Image 4"></a></div>
+            <div class="brand-item"><a href="#"><img src="https://thehackernews.com/images/-yyEn5EcxstY/Xt4Nx8PrrjI/AAAAAAAAAac/b0k89Q7FTE4NMWDXL-fBFJEw9Elr3TCFgCLcBGAsYHQ/s728-rw-e365/digilocker.jpg" alt="Image 5"></a></div>
+            <div class="brand-item"><a href="#"><img src="https://th.bing.com/th/id/R.7215cfdc5bc701e4960e02b8cde45d62?rik=fQLakSCu%2bVHW2w&riu=http%3a%2f%2frecb.ac.in%2fimg%2frc7.png&ehk=0HyK6CwprC5H3g4XR%2f575bWv8X5F0x5NB%2fNSkEZmPXA%3d&risl=&pid=ImgRaw&r=0" alt="Image 5"></a></div>
+            <div class="brand-item"><a href="#"><img src="https://okcredit-blog-images-prod.storage.googleapis.com/2020/09/Make-in-India.jpg" alt="Image 6"></a></div>
+
+        </div>
+    </div>
+
+    <!-- ✅ Carousel Init Script with Specific Target -->
+    <script>
+        (function ($) {
+            $(document).ready(function () {
+                $('#custom-brand-carousel').owlCarousel({
+                    loop: true,
+                    margin: 20,
+                    nav: true,
+                    dots: false,
+                    autoplay: true,
+                    autoplayTimeout: 2500,
+                    smartSpeed: 600,
+
+                    responsive: {
+                        0: { items: 2 },
+                        576: { items: 2 },
+                        768: { items: 5 },
+                        992: { items: 5 },
+                        1200: { items: 5 }
+                    }
+                });
+            });
+        })(jQuery); // IIFE to avoid conflicts
+    </script>
+
+    <!-- ✅ Styling -->
+    <style>
+        .brand-item {
+            background: #fff;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            height: 160px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+            .brand-item:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+            }
+
+            .brand-item img {
+                max-width: 100%;
+                height: 130px;
+                max-height: 100%;
+                object-fit: contain;
+            }
+    </style>
+
+
+
+    <!-- Custom Style -->
+</div>
+
+<style>
+    /* ===== Custom Popup Overlay ===== */
+    .custom-modal-overlay {
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(10, 18, 32, 0.68);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        z-index: 999999;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.35s ease, visibility 0.35s ease;
+    }
+
+        .custom-modal-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+    /* ===== Modal Box ===== */
+    .custom-modal-box {
+        position: relative;
+        width: 100%;
+        max-width: 1000px;
+        background: rgba(255, 255, 255, 0.14);
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+        border-radius: 0px;
+        box-shadow: 0 25px 70px rgba(0, 0, 0, 0.35);
+        overflow: hidden;
+        transform: scale(0.88) translateY(40px);
+        opacity: 0;
+        transition: transform 0.45s ease, opacity 0.45s ease;
+    }
+
+    .custom-modal-overlay.show .custom-modal-box {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+
+    /* ===== Close Button ===== */
+    .custom-modal-close {
+        position: absolute;
+        top: 12px;
+        right: 14px;
+        width: 40px;
+        height: 40px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        border-radius: 50%;
+        background: rgb(131 140 255);
+        color: #ffffff;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 40px;
+        text-align: center;
+        z-index: 2;
+        transition: all 0.25s ease;
+    }
+
+        .custom-modal-close:hover {
+            background: rgb(65 77 235);
+            transform: rotate(90deg);
+        }
+
+    /* ===== Image ===== */
+    .custom-modal-image-wrap {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .custom-modal-image {
+        width: 100%;
+        display: block;
+        max-height: 80vh;
+        object-fit: fill;
+    }
+
+    /* ===== Optional Content ===== */
+    .custom-modal-content {
+        padding: 18px 20px 22px;
+        text-align: center;
+        color: #fff;
+    }
+
+    .custom-modal-title {
+        margin: 0 0 8px;
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 1.3;
+        color: #fff;
+    }
+
+    .custom-modal-text {
+        margin: 0;
+        font-size: 15px;
+        line-height: 1.7;
+        color: rgba(255, 255, 255, 0.92);
+    }
+
+    /* ===== Mobile ===== */
+    @@media (max-width: 991px) {
+        .custom-modal-box {
+            max-width: 680px;
+            border-radius: 20px;
+        }
+
+        .custom-modal-title {
+            font-size: 24px;
+        }
+
+        .custom-modal-image {
+            max-height: 70vh;
+        }
+    }
+
+    @@media (max-width: 767px) {
+        .custom-modal-overlay {
+            padding: 14px;
+        }
+
+        .custom-modal-box {
+            max-width: 100%;
+            border-radius: 18px;
+        }
+
+        .custom-modal-close {
+            top: 10px;
+            right: 10px;
+            width: 36px;
+            height: 36px;
+            font-size: 22px;
+            line-height: 36px;
+        }
+
+        .custom-modal-title {
+            font-size: 20px;
+        }
+
+        .custom-modal-text {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .custom-modal-content {
+            padding: 14px 14px 18px;
+        }
+
+        .custom-modal-image {
+            max-height: 60vh;
+        }
+    }
+
+    @@media (max-width: 480px) {
+        .custom-modal-overlay {
+            padding: 10px;
+        }
+
+        .custom-modal-box {
+            border-radius: 16px;
+        }
+
+        .custom-modal-title {
+            font-size: 18px;
+        }
+
+        .custom-modal-text {
+            font-size: 13px;
+        }
+
+        .custom-modal-image {
+            max-height: 52vh;
+        }
+    }
+
+    .custom-modal-btn-wrap {
+        text-align: center;
+        padding: 20px;
+        background: rgba(0,0,0,0.35);
+    }
+
+    .custom-modal-btn {
+        display: inline-block;
+        padding: 14px 28px;
+        font-size: 16px;
+        font-weight: 600;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 50px;
+        background: linear-gradient(135deg, #ff512f, #dd2476);
+        box-shadow: 0 8px 25px rgba(221, 36, 118, 0.4);
+        transition: all 0.3s ease;
+    }
+
+        .custom-modal-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 12px 30px rgba(221, 36, 118, 0.6);
+            color: #fff;
+        }
+</style>
+<!-- Custom Glass Modal -->
+<div class="custom-modal-overlay" id="customModal">
+    <div class="custom-modal-box" id="customModalBox">
+
+        <button class="custom-modal-close" id="customModalClose" aria-label="Close modal">
+            &times;
+        </button>
+
+        <div class="custom-modal-image-wrap">
+            @* <img src="~/Content/img/bbra.jpeg" alt="Popup Image" class="custom-modal-image" style="margin-bottom:0px !important;" /> *@
+           @*<img src="~/Content/img/Admission 1216.jpeg" alt="Popup Image" class="custom-modal-image" style="margin-bottom:0px !important;" />*@
+<img src="~/Content/img/newbanner.jpeg" alt="Popup Image" class="custom-modal-image" style="margin-bottom:0px !important;" />
+        </div>
+         <div class="custom-modal-btn-wrap">
+              @* <a href="https://rhythm-2026.vercel.app/" target="_blank" class="custom-modal-btn">
+                🎉 RHYTHM 2026 – Click Here
+              </a> *@
+               <a href="~/Content/RECfiles/09.pdf" target="_blank" class="custom-modal-btn">
+                Click Here
+              </a>
+        </div>
+        <!-- Optional text section -->
+        <!--
+        <div class="custom-modal-content">
+          <h2 class="custom-modal-title">Welcome</h2>
+          <p class="custom-modal-text">Add your custom announcement, admission notice, latest update, or highlight here.</p>
+        </div>
+        -->
+
+    </div>
+</div>
+<script>
+    window.addEventListener('load', function () {
+        var modal = document.getElementById('customModal');
+        var modalBox = document.getElementById('customModalBox');
+        var closeBtn = document.getElementById('customModalClose');
+
+        // Open modal on page load
+        setTimeout(function () {
+            modal.classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }, 300);
+
+        // Close on button click
+        closeBtn.addEventListener('click', function () {
+            modal.classList.remove('show');
+            document.body.style.overflow = '';
+        });
+
+        // Close on overlay click
+        modal.addEventListener('click', function (e) {
+            if (e.target === modal) {
+                modal.classList.remove('show');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Prevent closing when clicking inside box
+        modalBox.addEventListener('click', function (e) {
+            e.stopPropagation();
+        });
+
+        // Close on ESC
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && modal.classList.contains('show')) {
+                modal.classList.remove('show');
+                document.body.style.overflow = '';
+            }
+        });
+    });
+</script>

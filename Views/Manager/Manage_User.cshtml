@@ -1,0 +1,6 @@
+@{ ViewBag.Title="Manage_User"; Layout="~/Views/Shared/ManagerMaster.cshtml"; }
+<section class="section-panel active" id="panel-users" data-list-url="@Url.Action("List","ManagerUserApi")" data-save-url="@Url.Action("Save","ManagerUserApi")" data-toggle-url="@Url.Action("ToggleBlock","ManagerUserApi")" data-unlock-url="@Url.Action("Unlock","ManagerUserApi")" data-delete-url="@Url.Action("Delete","ManagerUserApi")">
+ @Html.AntiForgeryToken()
+ <div class="breadcrumb-row"><div><h4>Manage Users</h4><div class="bc-path">Home <i class="bi bi-chevron-right"></i> Manage Users</div></div><button class="btn-saffron" id="addManagerUserBtn" type="button"><i class="bi bi-person-plus"></i> Add User</button></div>
+ <div class="card-panel"><div class="cph"><h6>Manager <span>Users</span></h6></div><div class="table-responsive"><table class="table table-modern" data-datatable="manual"><thead><tr><th>Sr.No</th><th>Username</th><th>Display Name</th><th>Account Status</th><th>Failed Attempts</th><th>Temporary Lock</th><th>Last Login (UTC)</th><th>Created By</th><th>Updated By</th><th>Action</th></tr></thead><tbody id="managerUserTableBody"><tr><td colspan="10" class="text-center py-4">Loading...</td></tr></tbody></table></div></div>
+</section>

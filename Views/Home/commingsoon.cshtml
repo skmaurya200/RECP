@@ -1,0 +1,81 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Under Maintenance</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppin:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #343a40;
+            text-align: center;
+            color: white;
+            font-family: 'Poppin', sans-serif;
+        }
+
+        .container {
+            max-width: 600px;
+            padding: 30px;
+            background: #212529;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+        }
+
+        h1 {
+            color: #ffc107;
+            font-size: 3rem;
+            font-weight: bold;
+            font-family: 'Poppin', sans-serif;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #f8f9fa;
+        }
+
+        .spinner-border {
+            width: 3rem;
+            height: 3rem;
+            margin-top: 20px;
+        }
+
+        .home-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #ffc107;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+            .home-btn:hover {
+                background-color: #e0a800;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>We're Under Maintenance</h1>
+        <p>Our website is currently undergoing scheduled maintenance.</p>
+        <p>We appreciate your patience and apologize for any inconvenience.</p>
+        <div class="spinner-border text-warning" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        <br>
+        <a href="/" class="home-btn">Go to Home</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+﻿@model REC_MIRZAPUR.Models.notification
+
+@using (Html.BeginForm("Create", "Notification", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <label>Notification Text</label>
+    @Html.TextBoxFor(m => m.NotiText, new { @class = "form-control" })
+
+    <label>Notification Type</label>
+    @Html.DropDownListFor(m => m.NotiType, new SelectList(new[] { "File", "External" }), "Select Type", new { @class = "form-control", id = "notificationType" })
+
+    <div id="fileUpload" style="display:none;">
+        <label>Upload File</label>
+        <input type="file" name="file" class="form-control" />
+    </div>
+
+    <div id="externalLink" style="display:none;">
+        <label>External Link</label>
+        @Html.TextBoxFor(m => m.link, new { @class = "form-control" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+}
+
+<script>$(document).ready(function() {
+        $('#notificationType').change(function() {
+            var selected = $(this).val();
+            if (selected == 'File') {
+                $('#fileUpload').show();
+                $('#externalLink').hide();
+            } else {
+                $('#fileUpload').hide();
+                $('#externalLink').show();
+            }
+        });
+    });</script>
+

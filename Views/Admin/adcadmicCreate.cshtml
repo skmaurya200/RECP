@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "Academic Calendar";
+    Layout = "~/Views/Shared/admin.cshtml";
+}
+@model Rec_Partapgarh.Models.AcademicCalendar
+
+<div class="container py-4 rounded-0">
+    <h3 class="fw-bold " style="color:#450145">Add New Academic Calendar</h3>
+    <hr />
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+    }
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+    }
+
+    <div class="card shadow-sm border rounded-0">
+        <div class="card-body">
+            @using (Html.BeginForm("adcadmicCreate", "admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Title:</label>
+                    @Html.TextBoxFor(m => m.Title, new { @class = "form-control", placeholder = "Enter Title", required = "required" })
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Select Semester:</label>
+                    @Html.DropDownListFor(m => m.SemesterType, new List<SelectListItem>
+                    {
+                        new SelectListItem { Text = "Even Semester", Value = "Even" },
+                        new SelectListItem { Text = "Odd Semester", Value = "Odd" }
+                    }, "-- Select Semester --", new { @class = "form-control", required = "required" })
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Upload File:</label>
+                    <input type="file" name="File" class="form-control" required />
+                </div>
+
+                <button type="submit" class="btn btn-success w-100 fw-bold rounded-0" style="background-color: #450145;">Add Academic Calendar</button>
+            }
+        </div>
+    </div>
+</div>

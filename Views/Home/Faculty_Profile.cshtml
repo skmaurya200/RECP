@@ -1,0 +1,83 @@
+@model Rec_Partapgarh.Models.PublicFacultyViewModel
+@{ ViewBag.Title = Model.FullName; }
+
+<div class="row my-5">
+    <div class="col-md-12 p-0" style="margin-top:-50px;background:url('https://img.freepik.com/premium-photo/extensive-collection-books-library_868797-8212.jpg') no-repeat center center;background-size:cover;background-attachment:fixed;">
+        <div class="container-fluid" style="background-color:rgba(0,0,0,.5);">
+            <div class="container">
+                <div class="d-flex flex-column justify-content-center" style="min-height:300px">
+                    <h3 class="display-5 text-white text-uppercase fw-bold">@Model.FullName</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div style="display:flex;flex-wrap:wrap;gap:30px;font-family:Arial;line-height:1.6;color:#333;">
+        <div style="flex:1;min-width:280px;max-width:320px;text-align:center;">
+            <img src="@Url.Content(Model.PhotoPath)" alt="@Model.FullName" style="height: 350px; width: 100%; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,.1);">
+            <h4 style="margin-top:15px;color:#002147;font-size:19px;font-weight:600;text-align:left;">@Model.FullName</h4>
+            <p style="margin:0;color:#555;font-size:17px;margin-top:-10px;text-align:left;">@Model.Designation, @Model.DepartmentName</p>
+            <hr style="border:1px solid black;margin-top:5px;" />
+            <div style="margin-top:10px;font-size:16px;color:#444;text-align:left;">
+                <p class="mt-0 mb-0"><strong>Email:</strong> <a href="mailto:@Model.Email" style="text-decoration:underline;color:blue;">@Model.Email</a></p>
+                @if (!string.IsNullOrWhiteSpace(Model.AlternateEmail))
+                {
+                    <p class="mt-0 mb-0"><strong>Alt Email:</strong> <a href="mailto:@Model.AlternateEmail" style="text-decoration:underline;color:blue;">@Model.AlternateEmail</a></p>
+                }
+                @if (!string.IsNullOrWhiteSpace(Model.MobileNumber))
+                {
+                    <p class="mt-0 mb-0"><strong>Mobile:</strong> @Model.MobileNumber</p>
+                }
+                @if (!string.IsNullOrWhiteSpace(Model.LandlineNumber))
+                {
+                    <p class="mt-0 mb-0"><strong>Landline:</strong> @Model.LandlineNumber</p>
+                }
+                <p class="mt-0 mb-0"><strong>Qualification:</strong> @Model.Qualification</p>
+            </div>
+        </div>
+
+        <div style="flex:2;min-width:300px;">
+            <h4 style="color:#002147;border-bottom:2px solid #004080;padding-bottom:5px;font-size:20px;font-weight:600;">About @Model.FullName</h4>
+            @{
+                var description = string.IsNullOrWhiteSpace(Model.LongDescription)
+                    ? "<p>Profile details are not available.</p>"
+                    : Model.LongDescription;
+                description = System.Text.RegularExpressions.Regex.Replace(
+                    description,
+                    @"<script\b[^>]*>.*?</script\s*>",
+                    string.Empty,
+                    System.Text.RegularExpressions.RegexOptions.IgnoreCase | System.Text.RegularExpressions.RegexOptions.Singleline);
+                var profileDocument = "<!doctype html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><base target='_blank'><style>html,body{margin:0;padding:0;background:transparent;}body{font-family:Arial,sans-serif;overflow-wrap:anywhere}hr{height:2px !important;background:#004080 !important;border:0 !important;}img{max-width:100%;height:auto}table{border-collapse:collapse;max-width:100%}th,td{border:1px solid #ccc;padding:6px}pre{white-space:pre-wrap}blockquote{margin-left:20px;border-left:4px solid #ccc;padding-left:12px} p,ul{margin-top:0px !important;text-align:justify} h4{margin-bottom:3px !important;}p{font-size:15.5px}</style></head><body>" + description + "</body></html>";
+            }
+            <iframe id="facultyDescriptionFrame" srcdoc="@Html.Raw(HttpUtility.HtmlAttributeEncode(profileDocument))" sandbox="allow-same-origin allow-popups allow-popups-to-escape-sandbox" title="@Model.FullName profile details" style="display:block;width:100%;min-height:70vh;border:0;background:transparent;"></iframe>
+        </div>
+    </div>
+</div>
+
+<div style="page-break-after:always;"></div>
+
+<script>
+    (function () {
+        var frame = document.getElementById('facultyDescriptionFrame');
+        function resize() {
+            try {
+                var doc = frame.contentDocument;
+                if (doc && doc.documentElement) {
+                    doc.querySelectorAll('a[href]').forEach(function (link) {
+                        link.setAttribute('target', '_blank');
+                        link.setAttribute('rel', 'noopener noreferrer');
+                    });
+                    frame.style.height = Math.max(500, doc.documentElement.scrollHeight + 10) + 'px';
+                }
+            } catch (e) { }
+        }
+        frame.addEventListener('load', function () {
+            resize();
+            setTimeout(resize, 250);
+            setTimeout(resize, 1000);
+        });
+        window.addEventListener('resize', resize);
+    }());
+</script>

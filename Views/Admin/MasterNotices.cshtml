@@ -1,0 +1,100 @@
+﻿@{
+    ViewBag.Title = "Upload Document";
+    Layout = "~/Views/Shared/admin.cshtml";
+}
+
+<div class="container mt-4">
+    <div class="card shadow-sm border-0">
+        <div class="card-header border">
+            <h4 class="m-0 fw-bold" style="color: #450145;">Upload Announcement's</h4>
+        </div>
+        <div class="card-body">
+            @if (!string.IsNullOrEmpty(Request.QueryString["msg"]))
+            {
+                <div class="alert alert-info" id="msgBox">
+                    @Request.QueryString["msg"]
+                </div>
+            }
+
+            <form action="@Url.Action("SubmitData1", "admin")" method="post" enctype="multipart/form-data" id="uploadForm">
+                <div class="row">
+                    <!-- Select Table -->
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">Select Table:</label>
+                        <select name="SelectedTable" id="SelectedTable" class="form-select" required>
+                            @if (ViewBag.TableNames != null)
+                            {
+                                <option>--Select Table--</option>
+                                foreach (var table in (List<KeyValuePair<string, string>>)ViewBag.TableNames)
+                                {
+                                    <option value="@table.Key" @(table.Key == ViewBag.SelectedTable ? "selected" : "")>
+                                        @table.Value
+                                    </option>
+                                }
+                            }
+                        </select>
+                    </div>
+
+                    <!-- Enter Notification -->
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">Enter Notification:</label>
+                        <input type="text" name="notification" class="form-control" placeholder="Enter notification title" required value="@Request.QueryString["notification"]" />
+                    </div>
+
+                    <!-- Date Picker (Hidden by Default) -->
+                    <div class="col-md-6 mb-3" id="datePickerContainer" style="display: none;">
+                        <label class="form-label fw-bold">Select Event Date:</label>
+                        <input type="date" name="eventDate" class="form-control" id="eventDate" value="@Request.QueryString["eventDate"]" />
+                    </div>
+
+                    <!-- Enter URL Link -->
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">Enter URL Link:</label>
+                        <input type="url" name="urllink" class="form-control" placeholder="https://example.com" value="@Request.QueryString["urllink"]" />
+                    </div>
+
+                    <!-- Upload File -->
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">Upload File:</label>
+                        <input type="file" name="file" class="form-control" />
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="col-12 text-end">
+                        <button type="submit" class="btn px-4" style="background-color: #450145; color: white">Upload</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- ✅ JavaScript Fixes -->
+<script>
+    // ✅ Show Date Field on Page Load (if "Events" was selected)
+    window.onload = function () {
+        toggleDateField();
+        setTimeout(function () {
+            var msgBox = document.getElementById("msgBox");
+            if (msgBox) {
+                msgBox.style.display = "none"; // Message hides after 5 seconds
+            }
+        }, 5000);
+    };
+
+    function toggleDateField() {
+        var selectedTable = document.getElementById("SelectedTable").value;
+        var dateField = document.getElementById("datePickerContainer");
+
+        if (selectedTable === "Events") {
+            dateField.style.display = "block";
+            document.getElementById("eventDate").setAttribute("required", "required");
+        } else {
+            dateField.style.display = "none";
+            document.getElementById("eventDate").removeAttribute("required");
+        }
+    }
+
+    document.getElementById("SelectedTable").addEventListener("change", toggleDateField);
+</script>
+    

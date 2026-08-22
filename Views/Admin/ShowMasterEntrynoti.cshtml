@@ -1,0 +1,93 @@
+﻿@{
+    ViewBag.Title = "Master Notices";
+    Layout = "~/Views/Shared/admin.cshtml";
+}
+
+<div class="container mt-4">
+    <div class="card rounded-0 border">
+        <div class="card-header" style="color: #450145;">
+            <h4 class="m-0 fw-bold">View Table Data</h4>
+        </div>
+        <div class="card-body">
+            @if (Request.QueryString["msg"] != null)
+            {
+                <div class="alert alert-info">
+                    @Request.QueryString["msg"]
+                </div>
+            }
+
+            <!-- ✅ Dropdown for Selecting Table (Fixed Error) -->
+            @using (Html.BeginForm("ShowMasterEntrynoti", "Admin", FormMethod.Get))
+            {
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Select Table:</label>
+                    <select name="SelectedTable" class="form-select" required>
+                        <option value="">-- Select Table --</option>
+                        @if (ViewBag.TableNames != null)
+                        {
+                            foreach (var table in (List<KeyValuePair<string, string>>)ViewBag.TableNames)
+                            {
+                                <option value="@table.Key" @(table.Key == ViewBag.SelectedTable ? "selected" : "")>
+                                    @table.Value
+                                </option>
+                            }
+                        }
+                    </select>
+                </div>
+
+                <div class="text-end">
+                    <button type="submit" class="btn text-white" style="background-color: #450145;">Show Data</button>
+                </div>
+            }
+
+            <!-- ✅ Table to Show Data -->
+            @if (ViewBag.TableData != null)
+            {
+                <h5 class="mt-4 fw-bold" style="color: #0747ae;">Data from @ViewBag.SelectedTable</h5>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover text-center">
+                        <thead>
+                            <tr>
+                                <th style="background-color:#450145; color:white;">ID</th>
+                                <th style="background-color:#450145; color:white;">Notification</th>
+                                <th style="background-color:#450145; color:white;">URL</th>
+                                <th style="background-color:#450145; color:white;">File</th>
+                                <th style="background-color:#450145; color:white;">Date</th>
+                                <th style="background-color:#450145; color:white;">Action</th> <!-- ✅ Delete Button -->
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (System.Data.DataRow row in ViewBag.TableData.Rows)
+                            {
+                                <tr>
+                                    <td>@row["Id"]</td>
+                                    <td>@row["notification"]</td>
+                                    <td>
+                                        @if (!string.IsNullOrEmpty(row["urllink"].ToString()))
+                                        {
+                                            <a href="@row["urllink"]" target="_blank">Open Link</a>
+                                        }
+                                    </td>
+                                    <td>
+                                        @if (!string.IsNullOrEmpty(row["file"].ToString()))
+                                        {
+                                            <a href="~/Content/recp/upload/Document/@row["file"]" target="_blank">Download File</a>
+                                        }
+                                    </td>
+                                    <td>@row["doa"]</td>
+                                    <td>
+                                        <!-- ✅ Delete Button -->
+                                        <a href="@Url.Action("DeleteRecordnotice", "Admin", new { tableName = ViewBag.SelectedTable, id = row["Id"] })"
+                                           class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this record?');">
+                                            Delete
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+        </div>
+    </div>
+</div>

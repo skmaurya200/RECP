@@ -1,0 +1,4 @@
+2026-07-12T12:22:44.5547799Z | Id=0 | ProgrammeLength=22 | BranchLength=22 | Year=Second Year | SQL 2628: String or binary data would be truncated in table 'recp_db.dbo.tbl_Syllabus', column 'StudyYear'. Truncated value: 'Second Yea'.
+The statement has been terminated.
+2026-07-12T12:22:48.5421380Z | Id=0 | ProgrammeLength=22 | BranchLength=22 | Year=Second Year | SQL 2628: String or binary data would be truncated in table 'recp_db.dbo.tbl_Syllabus', column 'StudyYear'. Truncated value: 'Second Yea'.
+The statement has been terminated.

@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "Department List";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+<div class="p-3">
+    <h3 style="color: #450145;" class="fw-bold">Department List</h3>
+    <hr />
+    @if (ViewBag.Msg != null)
+    {
+        <div class="alert alert-success">@ViewBag.Msg</div>
+    }
+
+<div class="table-responsive">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th style="background-color:#450145;color:white;">ID</th>
+                <th style="background-color:#450145;color:white;">Department Name</th>
+                <th style="background-color:#450145;color:white;">Content</th>
+                <th style="background-color:#450145;color:white;">Image</th>
+                <th style="background-color:#450145;color:white;">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in ViewBag.Departments)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.DepartmentName</td>
+                    <td>@item.Content</td>
+                    <td>
+                        <img src="~/Content/recp/upload/Department/@item.ImagePath" width="100" />
+                    </td>
+                    <td>
+                        <a href="@Url.Action("DeleteDepartment", "admin", new { id = item.Id })" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+</div>
+
+

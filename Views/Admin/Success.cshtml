@@ -1,0 +1,9 @@
+﻿@{
+    ViewBag.Title = "Success";
+    Layout = "~/Views/Shared/admin.cshtml";
+}
+
+<h2>✅ @ViewBag.Message</h2>
+<p>Your file has been uploaded successfully.</p>
+
+<a href="@Url.Action("Index", "Home")" class="btn btn-primary">Upload Another File</a>

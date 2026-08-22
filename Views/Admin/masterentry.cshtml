@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Upload Data";
+    Layout = "~/Views/Shared/admin.cshtml";
+}
+
+<div class="container mt-4">
+    <div class="card border rounded-0">
+        <div class="card-header " style="color: #450145;">
+            <h4 class="m-0 fw-bold">Upload File's</h4>
+        </div>
+        <div class="card-body">
+            @if (!string.IsNullOrEmpty(Request.QueryString["msg"]))
+            {
+                <div class="alert alert-success">@Request.QueryString["msg"]</div>
+            }
+
+            @using (Html.BeginForm("SubmitData", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Select Table:</label>
+                    <select name="SelectedTable" class="form-select" required>
+                        <option value="">-- Select Table --</option>
+                        @foreach (var table in ViewBag.TableNames)
+                        {
+                            <option value="@table">@table</option>
+                        }
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Name:</label>
+                    <input type="text" name="Name" class="form-control" placeholder="Enter Name" required />
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Upload File:</label>
+                    <input type="file" name="file" class="form-control" required />
+                </div>
+
+                <div class="">
+                    <button type="submit" class="btn text-white rounded-0" style="background-color: #450145;">Submit</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>

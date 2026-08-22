@@ -1,0 +1,144 @@
+﻿@{
+  
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    .bg-welfare-left {
+        background-color: #0747AE;
+        padding: 15px;
+    }
+
+        .bg-welfare-left h3 {
+            font-size: 21px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .bg-welfare-left ul li {
+            margin-top: 18px;
+            font-size: 17px;
+            color: #fff;
+        }
+
+            .bg-welfare-left ul li a {
+                color: #fff;
+                text-decoration: none;
+            }
+
+                .bg-welfare-left ul li a:hover {
+                    text-decoration: underline;
+                }
+
+    .content-box {
+        border: 1px dashed #000;
+        background: #fff;
+        padding: 20px;
+    }
+
+    .welfare-font {
+        font-size: 17px;
+        color: #000;
+        text-align: justify;
+        line-height: 1.8;
+    }
+
+    hr {
+        border: 1px solid #000;
+    }
+</style>
+
+<!-- ================= BANNER ================= -->
+<div class="row">
+    <div class="col-md-12 p-0" style="margin-top:-20px;
+        background:url('https://img.freepik.com/premium-photo/extensive-collection-books-library_868797-8212.jpg') center/cover fixed;">
+        <div style="background:rgba(0,0,0,0.5)">
+            <div class="container">
+                <div class="d-flex flex-column justify-content-center" style="min-height:300px;">
+                    <h3 class="display-6 text-white fw-bold">
+                        Department of Mechanical Engineering
+                    </h3>
+                    <div class="d-inline-flex text-white">
+                        <a href="/" class="text-white text-decoration-none">Home</a>
+                        <i class="fa fa-angle-double-right px-2 pt-1"></i>
+                        <span>Department of Mechanical Engineering</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ================= MAIN CONTENT ================= -->
+<div class="container py-5">
+    <div class="row">
+        <style>
+            .bg-welfare-left ul li {
+                margin-top: 20px;
+                font-size: 17px;
+                line-height: 1.5;
+                color: #fff;
+                font-family: Arial, sans-serif;
+            }
+
+            .bg-welfare-left hr {
+                border-bottom: 2px solid white !important;
+            }
+        </style>
+                @Html.Partial("~/Views/Shared/DeptSidebar/_MCHE_Sidebar.cshtml")
+
+        <style>
+                    @@media (max-width: 480px) {
+                        .welfare-font {
+                            font-size: 15px;
+                            line-height: 1.6;
+                        }
+                    }
+        </style>
+
+        <!-- RIGHT CONTENT -->
+        <div class="col-lg-9">
+            <div class="content-box">
+
+                <h2 class="fw-bold" style="color:#0747AE;">About</h2>
+                <hr />
+                <p class="welfare-font" style="margin-top:10px;">
+                    The Department of Mechanical Engineering offers a four-year undergraduate program. The curriculum is carefully designed as a blend of traditional mechanical engineering fundamentals and modern AI-driven technologies. Students gain a strong foundation in core subjects, including Thermodynamics, Fluid Mechanics, Machine Design, Materials Science, and Manufacturing Processes, while also being exposed to concepts relevant to mechanical systems, such as Artificial Intelligence, Machine Learning, Data Analytics, Automation, and Industry 4.0. This integrated approach prepares students to work confidently with both conventional engineering tools and emerging digital technologies.
+                </p>
+
+                <p class="welfare-font">
+                    The program emphasises a balance of theory and practice through well-equipped laboratories, design projects, software-based simulations, and industry internships. As a result, students develop:
+                </p>
+
+                <ul class="welfare-font" style="list-style-type:disc;">
+                    <li>Strong analytical and problem-solving skills</li>
+                    <li>Proficiency in modern engineering and AI-enabled tools</li>
+                    <li>The ability to work in multidisciplinary teams and smart manufacturing environments</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

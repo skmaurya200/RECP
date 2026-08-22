@@ -1,0 +1,6 @@
+@{ ViewBag.Title="Manage_Time_Table"; Layout="~/Views/Shared/ManagerMaster.cshtml"; }
+<section class="section-panel active" id="panel-timetable" data-list-url="@Url.Action("List","TimeTableApi")" data-save-url="@Url.Action("Save","TimeTableApi")" data-toggle-url="@Url.Action("ToggleStatus","TimeTableApi")" data-delete-url="@Url.Action("Delete","TimeTableApi")">
+ @Html.AntiForgeryToken()
+ <div class="breadcrumb-row"><div><h4>Manage Time Table</h4><div class="bc-path">Home <i class="bi bi-chevron-right"></i> Manage Time Table</div></div><button class="btn-saffron" id="addTimeTableBtn" type="button"><i class="bi bi-plus-lg"></i> Add Time Table</button></div>
+ <div class="card-panel"><div class="cph"><h6>All <span>Time Tables</span></h6></div><div class="table-responsive"><table class="table table-modern" data-datatable="manual"><thead><tr><th>Sr.No</th><th>Academic Session</th><th>Semester</th><th>Branch</th><th>File</th><th>Status</th><th>Created By</th><th>Updated By</th><th>Action</th></tr></thead><tbody id="timeTableBody"><tr><td colspan="9" class="text-center py-4">Loading...</td></tr></tbody></table></div></div>
+</section>

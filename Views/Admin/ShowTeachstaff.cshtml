@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewBag.Title = "ShowTeachstaff";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+<style>
+    table.dataTable thead th {
+        white-space: nowrap; /* Prevent line breaks */
+    }
+</style>
+<div class="container-fluid mt-3">
+<h3 style="width: 100%; margin: 0px auto; color: #450145;" class="fw-bold">Faculty's Record</h3>
+    <div class="row mt-3">
+        <div class="col-sm-12 table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr class="text-dark">
+                        <th style="background-color: #450145; color: white;">S.R.No</th>
+
+                        <th style="background-color:#450145;color:white;">Faculty Name</th>
+                        <th style="background-color:#450145;color:white;">Date Of Bath</th>
+                        <th style="background-color:#450145;color:white;">Gender</th>
+                        <th style="background-color:#450145;color:white;">Father Name</th>
+                        <th style="background-color:#450145;color:white;">Mobile No</th>
+                        <th style="background-color:#450145;color:white;">Email</th>
+                        <th style="background-color:#450145;color:white;">Department</th>
+                        <th style="background-color:#450145;color:white;">Dasignation</th>
+                        <th style="background-color:#450145;color:white;">Highest Qualifition</th>
+                        <th style="background-color:#450145;color:white;">Address</th>
+                        <th style="background-color:#450145;color:white;">Profile Pic</th>
+                        <th style="background-color:#450145;color:white;">Date Of Join</th>
+                        <th style="background-color:#450145;color:white;">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        var a = 1;
+                    }
+                    @foreach (var item in ViewBag.TechStaff)
+                    {
+                        <tr>
+                            <td>@a</td>
+                            <td>@item.Teachername</td>
+                            <td>@item.Dob</td>
+                            <td>@item.gender</td>
+                            <td>@item.fathername</td>
+                            <td>@item.mobileno</td>
+                            <td>@item.email</td>
+                            <td>@item.department</td>
+                            <td>@item.designation</td>
+                            <td>@item.highestQualification</td>
+                            <td>@item.address</td>
+                            <td><img src="~/Content/recp/upload/faculty/@item.profilepic" height="50" width="50" /></td>
+                            <td>@item.Doa</td>
+                            <td><a href="~/Admin/Deletechsatff?id=@item.Id"><input type="button" value="Delete" class="btn btn-danger" style="border-radius:0px" /></a></td>
+                            @{
+                                a++;
+                            }
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

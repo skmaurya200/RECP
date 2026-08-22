@@ -1,0 +1,470 @@
+﻿<!DOCTYPE html>
+@{
+    var managerAction = (ViewContext.RouteData.Values["action"] ?? "Index").ToString();
+}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRBBA REC Pratapgarh | Admin Dashboard</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.datatables.net/v/bs5/dt-2.3.8/b-3.2.6/b-colvis-3.2.6/b-html5-3.2.6/b-print-3.2.6/datatables.min.css" rel="stylesheet">
+    <link href="~/Content/manager/style.css" rel="stylesheet" />
+</head>
+<body>
+
+    <script>
+        // A page restored by the browser's back/forward cache must revalidate
+        // the authenticated session before protected content is shown.
+        window.addEventListener('pageshow', function (event) {
+            if (!event.persisted) return;
+            document.documentElement.style.visibility = 'hidden';
+            fetch('@Url.Action("Current", "ManagerProfileApi")', { cache: 'no-store', credentials: 'same-origin' })
+                .then(function (response) {
+                    if (response.status === 401 || !response.ok) window.location.replace('@Url.Action("Login", "ManagerAccount")');
+                    else document.documentElement.style.visibility = '';
+                })
+                .catch(function () { window.location.replace('@Url.Action("Login", "ManagerAccount")'); });
+        });
+    </script>
+
+    <div class="backdrop-overlay" id="backdropOverlay"></div>
+
+    <!-- ============ SIDEBAR ============ -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-brand">
+            <img src="https://api.dicebear.com/7.x/shapes/svg?seed=BRBBAREC" alt="logo">
+            <div class="brand-text">
+                <strong>BRBBA REC Pratapgarh</strong>
+                <small>ADMIN CONTROL PANEL</small>
+            </div>
+        </div>
+
+        <nav class="sidebar-menu" id="sidebarMenu">
+            <a href="@Url.Action("Index", "Manager")" class="nav-link @(managerAction.Equals("Index", StringComparison.OrdinalIgnoreCase) ? "active" : "")" data-target="panel-dashboard">
+                <i class="bi bi-grid-1x2-fill"></i> Dashboard
+            </a>
+
+            <a href="@Url.Action("Manage_User", "Manager")" class="nav-link @(managerAction.Equals("Manage_User", StringComparison.OrdinalIgnoreCase) ? "active" : "")" data-target="panel-users">
+                <i class="bi bi-people-fill"></i> Manage Users
+            </a>
+
+            <a href="@Url.Action("Manage_Department", "Manager")" class="nav-link @(managerAction.Equals("Manage_Department", StringComparison.OrdinalIgnoreCase) ? "active" : "")" data-target="panel-department">
+                <i class="bi bi-building"></i> Manage Department
+            </a>
+
+            <a href="@Url.Action("Manag_Slider", "Manager")" class="nav-link @(managerAction.Equals("Manag_Slider", StringComparison.OrdinalIgnoreCase) ? "active" : "")" data-target="panel-slider">
+                <i class="bi bi-images"></i> Manage Slider
+            </a>
+
+            <a href="@Url.Action("NoticeEventsVideos", "Manager")" class="nav-link submenu-toggle @(managerAction.Equals("NoticeEventsVideos", StringComparison.OrdinalIgnoreCase) ? "active" : "")" data-target="panel-general-notice" data-submenu="submenuNotice">
+                <i class="bi bi-megaphone-fill"></i> Notice &amp; Event @*<i class="bi bi-chevron-right chev"></i>*@
+            </a>
+            @*<ul class="submenu" id="submenuNotice">
+                <li><a data-target="panel-general-notice" class="active">General Notices</a></li>
+                <li><a data-target="panel-event">Events</a></li>
+                <li><a data-target="panel-video">Video</a></li>
+            </ul>*@
+
+            <a href="@Url.Action("Manage_Gallery", "Manager")" class="nav-link @(managerAction.Equals("Manage_Gallery", StringComparison.OrdinalIgnoreCase) ? "active" : "")" data-target="panel-gallery">
+                <i class="bi bi-image-fill"></i> Manage Gallery
+            </a>
+
+            <a href="@Url.Action("Manage_Time_Table", "Manager")" class="nav-link @(managerAction.Equals("Manage_Time_Table", StringComparison.OrdinalIgnoreCase) ? "active" : "")" data-target="panel-timetable">
+                <i class="bi bi-calendar3-week"></i> Manage Time Table
+            </a>
+
+            <a href="@Url.Action("Manage_Syllabus", "Manager")" class="nav-link @(managerAction.Equals("Manage_Syllabus", StringComparison.OrdinalIgnoreCase) ? "active" : "")" data-target="panel-syllabus">
+                <i class="bi bi-journal-bookmark-fill"></i> Manage Syllabus
+            </a>
+
+            <a href="@Url.Action("Teaching_Staff", "Manager")" class="nav-link @(managerAction.Equals("Teaching_Staff", StringComparison.OrdinalIgnoreCase) ? "active" : "")" data-target="panel-staff">
+                <i class="bi bi-person-video3"></i> Teaching Staff
+            </a>
+
+            <a href="@Url.Action("Manage_Press_Release", "Manager")" class="nav-link @(managerAction.Equals("Manage_Press_Release", StringComparison.OrdinalIgnoreCase) ? "active" : "")" data-target="panel-press">
+                <i class="bi bi-newspaper"></i> Manage Press Release
+            </a>
+
+            <a href="@Url.Action("Academic_Calendar", "Manager")" class="nav-link @(managerAction.Equals("Academic_Calendar", StringComparison.OrdinalIgnoreCase) ? "active" : "")" data-target="panel-academic">
+                <i class="bi bi-calendar-check-fill"></i> Academic Calendar
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            @using (Html.BeginForm("Logout", "ManagerAccount", FormMethod.Post, new { id = "managerLogoutForm" }))
+            {
+                @Html.AntiForgeryToken()
+                <button class="logout-btn" type="submit"><i class="bi bi-box-arrow-right"></i> Logout</button>
+            }
+        </div>
+    </aside>
+
+    <!-- ============ MAIN WRAPPER ============ -->
+    <div class="main-wrapper">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+            <button class="menu-toggle" id="menuToggle"><i class="bi bi-list"></i></button>
+            <div>
+                <div class="page-title" id="topTitle">Dashboard</div>
+                <small class="d-none d-sm-block" style="color:var(--text-muted);font-size:11.5px;">Welcome back, Admin</small>
+            </div>
+            <div class="search-box">
+                <i class="bi bi-search"></i>
+                <input type="text" placeholder="Search anything...">
+            </div>
+            <div class="topbar-right">
+                <button class="icon-btn"><i class="bi bi-moon-stars"></i></button>
+                <button class="icon-btn"><i class="bi bi-bell-fill"></i><span class="dot"></span></button>
+                <div class="manager-profile dropdown" id="managerProfile" data-current-url="@Url.Action("Current", "ManagerProfileApi")" data-upload-url="@Url.Action("UploadPhoto", "ManagerProfileApi")" data-password-url="@Url.Action("ChangePassword", "ManagerProfileApi")">
+                    <button class="admin-chip admin-chip-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span class="profile-photo-wrap"><img id="managerProfileImage" src="@Url.Content("~/Content/img/logoREC2.png")" alt="Profile photo"></span>
+                        <span class="info"><strong id="managerProfileName">@User.Identity.Name</strong><span id="managerProfileRole">Manager</span></span>
+                        <i class="bi bi-chevron-down profile-chevron"></i>
+                    </button>
+                    <button class="profile-camera" id="managerProfileCamera" type="button" title="Change profile photo" aria-label="Change profile photo"><i class="bi bi-camera-fill"></i></button>
+                    <input id="managerProfilePhoto" type="file" accept="image/jpeg,image/png,image/webp" hidden>
+                    <ul class="dropdown-menu dropdown-menu-end manager-profile-menu">
+                        <li class="profile-menu-heading"><strong id="managerMenuDisplayName">@User.Identity.Name</strong><small id="managerMenuUsername">@@@User.Identity.Name</small></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><button class="dropdown-item" type="button" data-bs-toggle="modal" data-bs-target="#modalChangePassword"><i class="bi bi-shield-lock"></i> Change Password</button></li>
+                        <li><button class="dropdown-item text-danger" type="submit" form="managerLogoutForm"><i class="bi bi-box-arrow-right"></i> Logout</button></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <div class="content">
+            @RenderBody()
+        </div>
+
+        <footer class="dash-footer">
+            &copy; 2026 Bharat Ratna Babasaheb Bhimrao Ambedkar Rajkiya Engineering College, Pratapgarh. All Rights Reserved.
+        </footer>
+    </div>
+
+    <!-- ============ MODALS ============ -->
+    <div class="modal fade" id="modalChangePassword" tabindex="-1" aria-labelledby="changePasswordTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header"><h5 class="modal-title" id="changePasswordTitle">Change Password</h5><button class="btn-close" type="button" data-bs-dismiss="modal"></button></div>
+                <div class="modal-body">
+                    <div class="mb-3"><label class="form-label" for="currentManagerPassword">Current Password</label><input class="form-control" id="currentManagerPassword" type="password" maxlength="200" autocomplete="current-password"><div class="invalid-feedback" data-val-for="CurrentPassword"></div></div>
+                    <div class="mb-3"><label class="form-label" for="newManagerPassword">New Password</label><input class="form-control" id="newManagerPassword" type="password" maxlength="200" autocomplete="new-password"><div class="invalid-feedback" data-val-for="NewPassword"></div></div>
+                    <div class="mb-2"><label class="form-label" for="confirmManagerPassword">Confirm New Password</label><input class="form-control" id="confirmManagerPassword" type="password" maxlength="200" autocomplete="new-password"><div class="invalid-feedback" data-val-for="ConfirmPassword"></div></div>
+                    <div class="password-rules"><i class="bi bi-shield-check"></i> Minimum 12 characters with uppercase, lowercase, number and special character.</div>
+                </div>
+                <div class="modal-footer"><button class="btn-outline-soft" type="button" data-bs-dismiss="modal">Cancel</button><button class="btn-saffron" id="saveManagerPassword" type="button">Change Password</button></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalManagerUser" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header"><h5 class="modal-title" id="managerUserModalTitle">Add Manager User</h5><button class="btn-close" data-bs-dismiss="modal"></button></div>
+                <div class="modal-body">
+                    <input type="hidden" id="managerUserId" value="0">
+                    <div class="row"><div class="col-md-6 mb-3"><label class="form-label">Username</label><input class="form-control" id="managerUserUsername" maxlength="100" autocomplete="off"><div class="invalid-feedback" data-val-for="UserUsername"></div></div><div class="col-md-6 mb-3"><label class="form-label">Display Name</label><input class="form-control" id="managerUserDisplayName" maxlength="150"><div class="invalid-feedback" data-val-for="UserDisplayName"></div></div></div>
+                    <div class="row"><div class="col-md-6 mb-3"><label class="form-label">Password <small class="text-muted" id="managerPasswordHint"></small></label><input class="form-control" id="managerUserPassword" type="password" maxlength="200" autocomplete="new-password"><div class="invalid-feedback" data-val-for="UserPassword"></div></div><div class="col-md-6 mb-3"><label class="form-label">Confirm Password</label><input class="form-control" id="managerUserConfirmPassword" type="password" maxlength="200" autocomplete="new-password"><div class="invalid-feedback" data-val-for="UserConfirmPassword"></div></div></div>
+                    <div class="password-rules"><i class="bi bi-shield-check"></i> Minimum 12 characters with uppercase, lowercase, number and special character.</div>
+                    <div class="mt-3"><label class="form-label">Status</label><select class="form-select" id="managerUserStatus"><option value="true">Active</option><option value="false">Blocked</option></select></div>
+                </div>
+                <div class="modal-footer"><button class="btn-outline-soft" data-bs-dismiss="modal">Cancel</button><button class="btn-saffron" id="saveManagerUserBtn" type="button">Save User</button></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Department Modal -->
+    <div class="modal fade" id="modalDept" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header"><h5 class="modal-title" id="departmentModalTitle">Add New Department</h5><button class="btn-close" data-bs-dismiss="modal"></button></div>
+                <div class="modal-body">
+                    <input type="hidden" id="departmentId" value="0" />
+                    <div class="mb-3"><label class="form-label" for="departmentName">Department Name</label><input class="form-control" id="departmentName" maxlength="150" placeholder="e.g. Computer Science & Engineering" required><div class="invalid-feedback" data-val-for="DepartmentName"></div></div>
+                    <div class="mb-1">
+                        <label class="form-label" for="departmentStatus">Status</label>
+                        <select class="form-select" id="departmentStatus"><option value="true">Active</option><option value="false">Inactive</option></select>
+                    </div>
+                </div>
+                <div class="modal-footer"><button class="btn-outline-soft" data-bs-dismiss="modal">Cancel</button><button class="btn-saffron" type="button" id="saveDepartmentBtn">Save Department</button></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slider Modal -->
+    <div class="modal fade" id="modalSlider" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header"><h5 class="modal-title" id="sliderModalTitle">Add New Slide</h5><button class="btn-close" data-bs-dismiss="modal"></button></div>
+                <div class="modal-body">
+                    <input type="hidden" id="sliderId" value="0" />
+                    <div class="mb-3">
+                        <div class="upload-box slider-drop-zone manager-drop-zone" id="sliderDropZone" tabindex="0">
+                            <input type="file" id="sliderImage" accept=".jpg,.jpeg,.png,.webp,image/jpeg,image/png,image/webp" hidden />
+                            <img id="sliderImagePreview" class="slider-image-preview d-none" alt="Slider preview" />
+                            <div id="sliderUploadPrompt"><i class="bi bi-cloud-arrow-up"></i><p>Click or drag image to upload<br><small>JPG, PNG or WEBP; maximum 3 MB</small></p></div>
+                        </div>
+                        <div class="invalid-feedback d-block" data-val-for="ImageFile"></div>
+                    </div>
+                    <div class="mb-3"><label class="form-label" for="sliderTitle">Title</label><input class="form-control" id="sliderTitle" maxlength="150" placeholder="Enter slider title"><div class="invalid-feedback" data-val-for="Title"></div></div>
+                    <div class="mb-3"><label class="form-label" for="sliderDescription">Sort Description</label><textarea class="form-control" id="sliderDescription" maxlength="500" rows="3" placeholder="Enter short description"></textarea><div class="invalid-feedback" data-val-for="SortDescription"></div></div>
+                    <div class="mb-1"><label class="form-label" for="sliderStatus">Status</label><select class="form-select" id="sliderStatus"><option value="true">Active</option><option value="false">Inactive</option></select></div>
+                </div>
+                <div class="modal-footer"><button class="btn-outline-soft" data-bs-dismiss="modal">Cancel</button><button class="btn-saffron" type="button" id="saveSliderBtn">Save Slider</button></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notice Modal -->
+    <div class="modal fade" id="modalNotice" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header"><h5 class="modal-title" id="noticeModalTitle">Add General Notice</h5><button class="btn-close" data-bs-dismiss="modal"></button></div>
+                <div class="modal-body">
+                    <input type="hidden" id="noticeId" value="0"><div class="mb-3"><label class="form-label">Notice Mode</label><select class="form-select" id="noticeType"><option value="">Select type</option><option>Horizontal</option><option>Vertical</option></select><div class="invalid-feedback" data-val-for="NoticeType"></div></div>
+                    <div class="mb-3"><label class="form-label">Title</label><input class="form-control" id="noticeTitle" maxlength="200"><div class="invalid-feedback" data-val-for="NoticeTitle"></div></div>
+                    <div class="mb-3"><label class="form-label">File</label><div class="upload-box manager-drop-zone" id="noticeDropZone" tabindex="0"><input type="file" id="noticeFile" accept=".pdf,.docx" hidden><i class="bi bi-file-earmark-arrow-up"></i><p id="noticeFilePrompt">Click or drag PDF/DOCX file<br><small>Maximum 3 MB; optional while editing</small></p></div><div class="invalid-feedback d-block" data-val-for="NoticeFile"></div></div>
+                    <div class="mb-1"><label class="form-label">Status</label><select class="form-select" id="noticeStatus"><option value="true">Active</option><option value="false">Inactive</option></select></div>
+                </div>
+                <div class="modal-footer"><button class="btn-outline-soft" data-bs-dismiss="modal">Cancel</button><button class="btn-saffron" id="saveNoticeBtn">Save Notice</button></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Event Modal -->
+    <div class="modal fade" id="modalEvent" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header"><h5 class="modal-title" id="eventModalTitle">Add New Event</h5><button class="btn-close" data-bs-dismiss="modal"></button></div>
+                <div class="modal-body">
+                    <input type="hidden" id="eventId" value="0"><div class="mb-3"><label class="form-label">Event Name</label><input class="form-control" id="eventName" maxlength="200"><div class="invalid-feedback" data-val-for="EventName"></div></div>
+                    <div class="mb-3"><label class="form-label">Venue</label><input class="form-control" id="eventVenue" maxlength="200"><div class="invalid-feedback" data-val-for="Venue"></div></div>
+                    <div class="row"><div class="col-md-6 mb-3"><label class="form-label">Date</label><input class="form-control" id="eventDate" type="date"><div class="invalid-feedback" data-val-for="EventDate"></div></div><div class="col-md-6 mb-3"><label class="form-label">Time</label><input class="form-control" id="eventTime" type="time"><div class="invalid-feedback" data-val-for="EventTime"></div></div></div>
+                    <div class="mb-3"><label class="form-label">Banner Image</label><div class="upload-box manager-drop-zone" id="eventBannerDropZone" tabindex="0"><input type="file" id="eventBannerImage" accept=".jpg,.jpeg,.png,.webp,image/jpeg,image/png,image/webp" hidden><img id="eventBannerPreview" class="slider-image-preview d-none" alt="Event banner preview"><div id="eventBannerPrompt"><i class="bi bi-cloud-arrow-up"></i><p>Click or drag banner image<br><small>JPG, PNG or WEBP; maximum 3 MB</small></p></div></div><div class="invalid-feedback d-block" data-val-for="BannerImage"></div></div>
+                    <div class="mb-1"><label class="form-label">Status</label><select class="form-select" id="eventStatus"><option value="true">Active</option><option value="false">Inactive</option></select></div>
+                </div>
+                <div class="modal-footer"><button class="btn-outline-soft" data-bs-dismiss="modal">Cancel</button><button class="btn-saffron" id="saveEventBtn">Save Event</button></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video Modal -->
+    <div class="modal fade" id="modalVideo" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header"><h5 class="modal-title" id="videoModalTitle">Add New Video</h5><button class="btn-close" data-bs-dismiss="modal"></button></div>
+                <div class="modal-body">
+                    <input type="hidden" id="videoId" value="0"><div class="mb-3"><label class="form-label">Title</label><input class="form-control" id="videoTitle" maxlength="200"><div class="invalid-feedback" data-val-for="VideoTitle"></div></div>
+                    <div class="mb-3"><label class="form-label">Source URL</label><input class="form-control" id="videoSource" maxlength="500" placeholder="YouTube embed URL or Google Drive URL"><div class="invalid-feedback" data-val-for="SourceUrl"></div></div>
+                    <div class="mb-1"><label class="form-label">Status</label><select class="form-select" id="videoStatus"><option value="true">Active</option><option value="false">Inactive</option></select></div>
+                </div>
+                <div class="modal-footer"><button class="btn-outline-soft" data-bs-dismiss="modal">Cancel</button><button class="btn-saffron" id="saveVideoBtn">Save Video</button></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gallery Modal -->
+    <div class="modal fade" id="modalGallery" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header"><h5 class="modal-title" id="galleryModalTitle">Add Gallery Image</h5><button class="btn-close" data-bs-dismiss="modal"></button></div>
+                <div class="modal-body">
+                    <input type="hidden" id="galleryId" value="0"><div class="mb-3 gallery-category-field"><label class="form-label">Category</label><select class="form-select" id="galleryCategory"><option value="">Loading categories...</option></select><div class="gallery-category-selected" id="galleryCategorySelected" aria-live="polite"></div><div class="invalid-feedback" data-val-for="GalleryCategory"></div></div>
+                    <div class="mb-3"><label class="form-label">Title <small class="text-muted">(Optional)</small></label><input class="form-control" id="galleryTitle" maxlength="200"><div class="invalid-feedback" data-val-for="GalleryTitle"></div></div>
+                    <div class="mb-3"><label class="form-label">Image</label><div class="upload-box manager-drop-zone" id="galleryDropZone" tabindex="0"><input type="file" id="galleryImage" accept=".jpg,.jpeg,.png,.webp,image/jpeg,image/png,image/webp" hidden><img id="galleryImagePreview" class="slider-image-preview d-none" alt="Gallery preview"><div id="galleryUploadPrompt"><i class="bi bi-cloud-arrow-up"></i><p>Click or drag gallery image<br><small>JPG, PNG or WEBP; maximum 3 MB</small></p></div></div><div class="invalid-feedback d-block" data-val-for="GalleryImage"></div></div>
+                    <div class="mb-1"><label class="form-label">Status</label><select class="form-select" id="galleryStatus"><option value="true">Active</option><option value="false">Inactive</option></select></div>
+                </div>
+                <div class="modal-footer"><button class="btn-outline-soft" data-bs-dismiss="modal">Cancel</button><button class="btn-saffron" id="saveGalleryBtn">Save Gallery</button></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalGalleryCategory" tabindex="-1" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered modal-sm"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Add Gallery Category</h5><button class="btn-close" id="closeGalleryCategoryBtn" type="button"></button></div><div class="modal-body"><label class="form-label">Category Name</label><input class="form-control" id="galleryCategoryName" maxlength="150"><div class="invalid-feedback" data-val-for="CategoryName"></div></div><div class="modal-footer"><button class="btn-outline-soft" id="cancelGalleryCategoryBtn" type="button">Cancel</button><button class="btn-saffron" id="saveGalleryCategoryBtn" type="button">Save Category</button></div></div></div>
+    </div>
+
+    <!-- Timetable Modal -->
+    <div class="modal fade" id="modalTimetable" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header"><h5 class="modal-title" id="timeTableModalTitle">Add Time Table</h5><button class="btn-close" data-bs-dismiss="modal"></button></div>
+                <div class="modal-body">
+                    <input type="hidden" id="timeTableId" value="0"><div class="mb-3"><label class="form-label">Academic Session</label><input class="form-control" id="timeTableSession" maxlength="20" placeholder="e.g. 2026-27"><div class="invalid-feedback" data-val-for="TimeTableSession"></div></div>
+                    <div class="mb-3"><label class="form-label">Branch</label><input class="form-control" id="timeTableBranch" maxlength="500" placeholder="e.g. CSE, EE, CE, ME"><small class="text-muted">Multiple branches comma separated enter karein.</small><div class="invalid-feedback" data-val-for="TimeTableBranch"></div></div>
+                    <div class="mb-3"><label class="form-label">Semester</label><div class="dropdown" id="timeTableSemesterDropdown"><button class="form-select text-start" type="button" id="timeTableSemester" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Select semester</button><div class="dropdown-menu w-100 p-2" style="max-height:300px;overflow-y:auto;"><label class="dropdown-item d-flex align-items-center gap-2 mb-0"><input class="form-check-input mt-0" type="checkbox" value="Ist Semester" data-roman="I"><span>Ist Semester</span></label><label class="dropdown-item d-flex align-items-center gap-2 mb-0"><input class="form-check-input mt-0" type="checkbox" value="IInd Semester" data-roman="II"><span>IInd Semester</span></label><label class="dropdown-item d-flex align-items-center gap-2 mb-0"><input class="form-check-input mt-0" type="checkbox" value="IIIrd Semester" data-roman="III"><span>IIIrd Semester</span></label><label class="dropdown-item d-flex align-items-center gap-2 mb-0"><input class="form-check-input mt-0" type="checkbox" value="IVth Semester" data-roman="IV"><span>IVth Semester</span></label><label class="dropdown-item d-flex align-items-center gap-2 mb-0"><input class="form-check-input mt-0" type="checkbox" value="Vth Semester" data-roman="V"><span>Vth Semester</span></label><label class="dropdown-item d-flex align-items-center gap-2 mb-0"><input class="form-check-input mt-0" type="checkbox" value="VIth Semester" data-roman="VI"><span>VIth Semester</span></label><label class="dropdown-item d-flex align-items-center gap-2 mb-0"><input class="form-check-input mt-0" type="checkbox" value="VIIth Semester" data-roman="VII"><span>VIIth Semester</span></label><label class="dropdown-item d-flex align-items-center gap-2 mb-0"><input class="form-check-input mt-0" type="checkbox" value="VIIIth Semester" data-roman="VIII"><span>VIIIth Semester</span></label></div></div><small class="text-muted">Ek ya ek se zyada semester tick karein.</small><div class="invalid-feedback d-block" data-val-for="TimeTableSemester"></div></div>
+                    <div class="mb-3"><label class="form-label">File</label><div class="upload-box manager-drop-zone" id="timeTableDropZone" tabindex="0"><input type="file" id="timeTableFile" accept=".pdf,.doc,.docx" hidden><i class="bi bi-file-earmark-arrow-up"></i><p id="timeTableFilePrompt">Click or drag PDF/Word file<br><small>Maximum 3 MB; optional while editing</small></p></div><div class="invalid-feedback d-block" data-val-for="TimeTableFile"></div></div>
+                </div>
+                <div class="modal-footer"><button class="btn-outline-soft" data-bs-dismiss="modal">Cancel</button><button class="btn-saffron" id="saveTimeTableBtn">Save Time Table</button></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Syllabus Modal -->
+    <div class="modal fade" id="modalSyllabus" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header"><h5 class="modal-title" id="syllabusModalTitle">Add Syllabus</h5><button class="btn-close" data-bs-dismiss="modal"></button></div>
+                <div class="modal-body">
+                    <input type="hidden" id="syllabusId" value="0"><div class="mb-3"><label class="form-label">Programme</label><input class="form-control" id="syllabusCourse" maxlength="150" placeholder="e.g. Bachelor of Technology"><div class="invalid-feedback" data-val-for="SyllabusCourse"></div></div>
+                    <div class="mb-3"><label class="form-label">Branch</label><input class="form-control" id="syllabusBranch" maxlength="500" placeholder="e.g. CSE, EE, CE, ME"><small class="text-muted">Multiple branches comma separated enter karein.</small><div class="invalid-feedback" data-val-for="SyllabusBranch"></div></div>
+                    <div class="mb-3"><label class="form-label">Year</label><select class="form-select" id="syllabusYear"><option value="">Select year</option><option>First Year</option><option>Second Year</option><option>Third Year</option><option>Fourth Year</option></select><div class="invalid-feedback" data-val-for="SyllabusYear"></div></div>
+                    <div class="mb-3"><label class="form-label">File</label><div class="upload-box manager-drop-zone" id="syllabusDropZone" tabindex="0"><input type="file" id="syllabusFile" accept=".pdf,.doc,.docx" hidden><i class="bi bi-file-earmark-arrow-up"></i><p id="syllabusFilePrompt">Click or drag PDF/Word file<br><small>Maximum 3 MB; optional while editing</small></p></div><div class="invalid-feedback d-block" data-val-for="SyllabusFile"></div></div>
+                </div>
+                <div class="modal-footer"><button class="btn-outline-soft" data-bs-dismiss="modal">Cancel</button><button class="btn-saffron" id="saveSyllabusBtn">Save Syllabus</button></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Staff Modal -->
+    <div class="modal fade" id="modalStaff" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content">
+                <div class="modal-header"><h5 class="modal-title" id="staffModalTitle">Add Teaching Staff</h5><button class="btn-close" data-bs-dismiss="modal"></button></div>
+                <div class="modal-body">
+                    <input type="hidden" id="staffId" value="0"><div class="mb-3"><label class="form-label">Photo</label><div class="upload-box manager-drop-zone" id="staffPhotoDropZone" tabindex="0"><input type="file" id="staffPhoto" accept=".jpg,.jpeg,.png,.webp,image/jpeg,image/png,image/webp" hidden><img id="staffPhotoPreview" class="staff-photo-preview d-none" alt="Staff photo"><div id="staffPhotoPrompt"><i class="bi bi-person-bounding-box"></i><p>Click or drag photo<br><small>JPG, PNG or WEBP; maximum 3 MB</small></p></div></div><div class="invalid-feedback d-block" data-val-for="StaffPhoto"></div></div>
+                    <div class="row"><div class="col-md-6 mb-3"><label class="form-label">Name</label><input class="form-control" id="staffName" maxlength="150"><div class="invalid-feedback" data-val-for="StaffName"></div></div><div class="col-md-6 mb-3"><label class="form-label">Email</label><input class="form-control" id="staffEmail" type="email" maxlength="254"><div class="invalid-feedback" data-val-for="StaffEmail"></div></div></div>
+                    <div class="row"><div class="col-md-4 mb-3"><label class="form-label">ALT Email <small class="text-muted">(Optional)</small></label><input class="form-control" id="staffAlternateEmail" type="email" maxlength="254" placeholder="alternate@example.com"><div class="invalid-feedback" data-val-for="StaffAlternateEmail"></div></div><div class="col-md-4 mb-3"><label class="form-label">Mobile No. <small class="text-muted">(Optional)</small></label><input class="form-control" id="staffMobileNumber" type="tel" maxlength="20" placeholder="e.g. +91 9876543210"><div class="invalid-feedback" data-val-for="StaffMobileNumber"></div></div><div class="col-md-4 mb-3"><label class="form-label">Landline No. <small class="text-muted">(Optional)</small></label><input class="form-control" id="staffLandlineNumber" type="tel" maxlength="25" placeholder="e.g. 05342-123456"><div class="invalid-feedback" data-val-for="StaffLandlineNumber"></div></div></div>
+                    <div class="row"><div class="col-md-6 mb-3"><label class="form-label">Designation</label><input class="form-control" id="staffDesignation" maxlength="150"><div class="invalid-feedback" data-val-for="StaffDesignation"></div></div><div class="col-md-6 mb-3"><label class="form-label">Department</label><select class="form-select" id="staffDepartment"><option value="">Loading departments...</option></select><div class="invalid-feedback" data-val-for="StaffDepartment"></div></div></div>
+                    <div class="row"><div class="col-md-8 mb-3"><label class="form-label">Qualification</label><input class="form-control" id="staffQualification" maxlength="250"><div class="invalid-feedback" data-val-for="StaffQualification"></div></div><div class="col-md-4 mb-3"><label class="form-label">Display Order <small class="text-muted">(Optional)</small></label><input class="form-control" id="staffDisplayOrder" type="number" min="1" max="9999" step="1" placeholder="e.g. 1"><div class="invalid-feedback" data-val-for="StaffDisplayOrder"></div><small class="text-muted">Ordered staff appear first.</small></div></div>
+                    <div class="mb-3"><label class="form-label">Long Description <small class="text-muted">(Optional)</small></label><textarea id="staffDescription"></textarea>    <small class="text-muted d-block mt-2">
+        Note: For consistency with the website theme, use 18px font size for paragraphs and 20px font size for headings. 
+        Set the heading color to #002147, apply a bottom border below headings, and use 1.90 line-height for paragraph content.
+    </small><div class="invalid-feedback d-block" data-val-for="StaffDescription"></div></div>
+                    <div class="mb-1"><label class="form-label">Status</label><select class="form-select" id="staffStatus"><option value="true">Active</option><option value="false">Inactive</option></select></div>
+                </div>
+                <div class="modal-footer"><button class="btn-outline-soft" data-bs-dismiss="modal">Cancel</button><button class="btn-saffron" id="saveStaffBtn">Save Staff</button></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade staff-description-modal" id="modalStaffDescription" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header"><h5 class="modal-title" id="staffDescriptionModalTitle">Staff Long Description</h5><button class="btn-close" data-bs-dismiss="modal"></button></div>
+                <div class="modal-body staff-description-modal-body p-0"><iframe id="staffDescriptionFrame" class="staff-description-frame" sandbox title="Staff long description"></iframe></div>
+                <div class="modal-footer"><button class="btn-outline-soft" data-bs-dismiss="modal">Close</button></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Press Modal -->
+    <div class="modal fade" id="modalPress" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header"><h5 class="modal-title" id="pressModalTitle">Add Press Release</h5><button class="btn-close" data-bs-dismiss="modal"></button></div>
+                <div class="modal-body">
+                    <input type="hidden" id="pressId" value="0"><div class="mb-3"><label class="form-label">Title</label><input class="form-control" id="pressTitle" maxlength="200"><div class="invalid-feedback" data-val-for="PressTitle"></div></div>
+                    <div class="mb-3"><label class="form-label">Image</label><div class="upload-box manager-drop-zone" id="pressDropZone" tabindex="0"><input type="file" id="pressImage" accept=".jpg,.jpeg,.png,.webp,image/jpeg,image/png,image/webp" hidden><img id="pressImagePreview" class="slider-image-preview d-none" alt="Press release preview"><div id="pressUploadPrompt"><i class="bi bi-cloud-arrow-up"></i><p>Click or drag image<br><small>JPG, PNG or WEBP; maximum 3 MB</small></p></div></div><div class="invalid-feedback d-block" data-val-for="PressImage"></div></div>
+                    <div class="mb-1"><label class="form-label">Status</label><select class="form-select" id="pressStatus"><option value="true">Active</option><option value="false">Inactive</option></select></div>
+                </div>
+                <div class="modal-footer"><button class="btn-outline-soft" data-bs-dismiss="modal">Cancel</button><button class="btn-saffron" id="savePressBtn">Save Press Release</button></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Academic Calendar Modal -->
+    <div class="modal fade" id="modalCalendar" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header"><h5 class="modal-title" id="calendarModalTitle">Add Academic Calendar</h5><button class="btn-close" data-bs-dismiss="modal"></button></div>
+                <div class="modal-body">
+                    <input type="hidden" id="calendarId" value="0"><div class="mb-3"><label class="form-label">Title</label><input class="form-control" id="calendarTitle" maxlength="200"><div class="invalid-feedback" data-val-for="CalendarTitle"></div></div>
+                    <div class="mb-3"><label class="form-label">Semester</label><select class="form-select" id="calendarSemester"><option value="">Select semester</option><option>Odd Semester</option><option>Even Semester</option></select><div class="invalid-feedback" data-val-for="CalendarSemester"></div></div>
+                    <div class="mb-3"><label class="form-label">File</label><div class="upload-box manager-drop-zone" id="calendarDropZone" tabindex="0"><input type="file" id="calendarFile" accept=".pdf,.docx" hidden><i class="bi bi-file-earmark-arrow-up"></i><p id="calendarFilePrompt">Click or drag PDF/DOCX file<br><small>Maximum 3 MB; optional while editing</small></p></div><div class="invalid-feedback d-block" data-val-for="CalendarFile"></div></div>
+                    <div class="mb-1"><label class="form-label">Status</label><select class="form-select" id="calendarStatus"><option value="true">Active</option><option value="false">Inactive</option></select></div>
+                </div>
+                <div class="modal-footer"><button class="btn-outline-soft" data-bs-dismiss="modal">Cancel</button><button class="btn-saffron" id="saveCalendarBtn">Save Calendar</button></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.ckeditor.com/4.22.1/full-all/ckeditor.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/v/bs5/dt-2.3.8/b-3.2.6/b-colvis-3.2.6/b-html5-3.2.6/b-print-3.2.6/datatables.min.js"></script>
+    <script>
+        window.showManagerAlert = function (icon, message) {
+            return Swal.fire({
+                toast: true,
+                position: 'top-end',
+                icon: icon || 'success',
+                title: message,
+                showConfirmButton: false,
+                timer: 2500,
+                timerProgressBar: true
+            });
+        };
+
+        window.clearManagerValidation = function (container) {
+            if (!container) return;
+            container.querySelectorAll('.is-invalid').forEach(function (field) { field.classList.remove('is-invalid'); });
+            container.querySelectorAll('[data-val-for]').forEach(function (error) { error.textContent = ''; });
+        };
+
+        window.showManagerValidation = function (container, errors) {
+            window.clearManagerValidation(container);
+            Object.keys(errors || {}).forEach(function (key) {
+                var error = container.querySelector('[data-val-for="' + key + '"]');
+                if (error) error.textContent = errors[key];
+                var fieldMap = { DepartmentName: 'departmentName', Title: 'sliderTitle', SortDescription: 'sliderDescription', ImageFile: 'sliderImage', NoticeType: 'noticeType', NoticeTitle: 'noticeTitle', NoticeFile: 'noticeFile', EventName: 'eventName', Venue: 'eventVenue', EventDate: 'eventDate', EventTime: 'eventTime', BannerImage: 'eventBannerImage', VideoTitle: 'videoTitle', SourceUrl: 'videoSource', GalleryCategory: 'galleryCategory', GalleryTitle: 'galleryTitle', GalleryImage: 'galleryImage', CategoryName: 'galleryCategoryName', TimeTableSession: 'timeTableSession', TimeTableCourse: 'timeTableCourse', TimeTableSemester: 'timeTableSemester', TimeTableYear: 'timeTableYear', TimeTableBranch: 'timeTableBranch', TimeTableFile: 'timeTableFile', SyllabusSession: 'syllabusSession', SyllabusCourse: 'syllabusCourse', SyllabusYear: 'syllabusYear', SyllabusSemester: 'syllabusSemester', SyllabusBranch: 'syllabusBranch', SyllabusFile: 'syllabusFile', StaffPhoto: 'staffPhoto', StaffName: 'staffName', StaffEmail: 'staffEmail', StaffDesignation: 'staffDesignation', StaffDepartment: 'staffDepartment', StaffQualification: 'staffQualification', PressTitle: 'pressTitle', PressImage: 'pressImage', CalendarTitle: 'calendarTitle', CalendarSemester: 'calendarSemester', CalendarFile: 'calendarFile', UserUsername: 'managerUserUsername', UserDisplayName: 'managerUserDisplayName', UserPassword: 'managerUserPassword', UserConfirmPassword: 'managerUserConfirmPassword', CurrentPassword: 'currentManagerPassword', NewPassword: 'newManagerPassword', ConfirmPassword: 'confirmManagerPassword' };
+                var staffFieldMap = { StaffDisplayOrder: 'staffDisplayOrder', StaffAlternateEmail: 'staffAlternateEmail', StaffMobileNumber: 'staffMobileNumber', StaffLandlineNumber: 'staffLandlineNumber' };
+                var field = document.getElementById(staffFieldMap[key] || fieldMap[key]);
+                if (field && field.type !== 'file') field.classList.add('is-invalid');
+            });
+        };
+
+        window.initManagerDataTable = function (table) {
+            if (!table || !window.jQuery || !$.fn.DataTable || $.fn.DataTable.isDataTable(table)) return;
+
+            var exportColumns = function (columnIndex, data, node) {
+                var heading = table.querySelectorAll('thead th')[columnIndex];
+                return heading && heading.textContent.trim().toLowerCase() !== 'action';
+            };
+            var smallButtonClass = 'btn btn-sm manager-dt-btn rounded-0';
+
+            $(table).DataTable({
+                layout: {
+                    topStart: {
+                        buttons: [
+                            { extend: 'copyHtml5', className: smallButtonClass, text: '<i class="bi bi-clipboard"></i> Copy', exportOptions: { columns: exportColumns } },
+                            { extend: 'csvHtml5', className: smallButtonClass, text: '<i class="bi bi-filetype-csv"></i> CSV', exportOptions: { columns: exportColumns } },
+                            { extend: 'excelHtml5', className: smallButtonClass, text: '<i class="bi bi-file-earmark-excel"></i> Excel', exportOptions: { columns: exportColumns } },
+                            { extend: 'pdfHtml5', className: smallButtonClass, text: '<i class="bi bi-file-earmark-pdf"></i> PDF', orientation: 'landscape', pageSize: 'A4', exportOptions: { columns: exportColumns } },
+                            { extend: 'print', className: smallButtonClass, text: '<i class="bi bi-printer"></i> Print', exportOptions: { columns: exportColumns } },
+                            { extend: 'colvis', className: smallButtonClass, text: '<i class="bi bi-layout-three-columns"></i> Columns' },
+                            { extend: 'pageLength', className: smallButtonClass, text: '<i class="bi bi-list-ol"></i> Rows' }
+                        ]
+                    },
+                    topEnd: 'search',
+                    bottomStart: 'info',
+                    bottomEnd: 'paging'
+                },
+                pageLength: 10,
+                lengthMenu: [[10, 25, 50, 100, -1], [10, 25, 50, 100, 'All']],
+                order: [],
+                autoWidth: false,
+                scrollX: true,
+                language: {
+                    search: '',
+                    searchPlaceholder: 'Search records...',
+                    emptyTable: 'No records found'
+                }
+            });
+        };
+    </script>
+    <script src="~/Content/manager/script.js"></script>
+    <script>
+        document.querySelectorAll('table.table-modern:not([data-datatable="manual"])').forEach(window.initManagerDataTable);
+    </script>
+</body>
+</html>

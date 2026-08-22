@@ -1,0 +1,177 @@
+﻿@{
+  
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    .bg-welfare-left {
+        background-color: #0747AE;
+        padding: 15px;
+    }
+
+        .bg-welfare-left h3 {
+            font-size: 21px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .bg-welfare-left ul li {
+            margin-top: 18px;
+            font-size: 17px;
+            color: #fff;
+        }
+
+            .bg-welfare-left ul li a {
+                color: #fff;
+                text-decoration: none;
+            }
+
+                .bg-welfare-left ul li a:hover {
+                    text-decoration: underline;
+                }
+
+    .content-box {
+        border: 1px dashed #000;
+        background: #fff;
+        padding: 20px;
+    }
+
+    .welfare-font {
+        font-size: 17px;
+        color: #000;
+        text-align: justify;
+        line-height: 1.8;
+    }
+
+    hr {
+        border: 1px solid #000;
+    }
+</style>
+
+<!-- ================= BANNER ================= -->
+<div class="row">
+    <div class="col-md-12 p-0" style="margin-top:-20px;
+        background:url('https://img.freepik.com/premium-photo/extensive-collection-books-library_868797-8212.jpg') center/cover fixed;">
+        <div style="background:rgba(0,0,0,0.5)">
+            <div class="container">
+                <div class="d-flex flex-column justify-content-center" style="min-height:300px;">
+                    <h3 class="display-6 text-white fw-bold">
+                        Manufacturing Processes Laboratory
+                    </h3>
+                    <div class="d-inline-flex text-white">
+                        <a href="/" class="text-white text-decoration-none">Home</a>
+                        <i class="fa fa-angle-double-right px-2 pt-1"></i>
+                        <span>Manufacturing Processes Laboratory</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ================= MAIN CONTENT ================= -->
+<div class="container py-5">
+    <div class="row">
+        <style>
+            .bg-welfare-left ul li {
+                margin-top: 20px;
+                font-size: 17px;
+                line-height: 1.5;
+                color: #fff;
+                font-family: Arial, sans-serif;
+            }
+
+            .bg-welfare-left hr {
+                border-bottom: 2px solid white !important;
+            }
+        </style>
+                @Html.Partial("~/Views/Shared/DeptSidebar/_MCHE_Sidebar.cshtml")
+
+        <style>
+                    table {
+                        width: 100%;
+                        border-collapse: collapse;
+                        font-size: 16px;
+                        margin-top: 20px;
+                    }
+
+                        table th {
+                            background-color: #0747AE;
+                            color: #fff;
+                            font-weight: bold;
+                            padding: 10px;
+                            border: 1px solid #0747AE;
+                        }
+
+                        table td {
+                            border: 1px solid #ddd;
+                            padding: 10px;
+                            text-align: center;
+                            background-color: #fafafa;
+                        }
+
+                        table tr:hover td {
+                            background-color: #f1f5ff;
+                        }
+        </style>
+
+        <!-- RIGHT CONTENT -->
+        <div class="col-lg-9">
+            <div class="content-box">
+
+                <h2 class="fw-bold" style="color:#0747AE;">Manufacturing Processes Laboratory</h2>
+                <hr />
+                <p class="welfare-font"> The manufacturing processes laboratory provides students with practical exposure to fundamental manufacturing techniques used in industry. Through hands-on practice, students learn how raw materials are converted into functional components using various shaping, machining, joining, and finishing processes.</p>
+                <p class="welfare-font"> Key learning components include:</p>
+                <ul class="welfare-font" style="list-style-type:disc !important; margin-left:20px; margin-top:-10px;">
+                    <li>Casting and Finishing Processes: Students can learn to prepare moulds, pour molten metal, and produce simple cast components. They can also perform basic finishing operations, such as fettling, filing, and surface finishing, to achieve the required shape and accuracy.</li>
+                    <li>Metal Cutting and Unconventional Machining: This section of the lab introduces traditional machining processes, including turning, drilling, milling, and grinding, as well as non-traditional machining methods such as EDM, laser cutting, and water jet cutting, where applicable. Students manufacture components by selecting suitable tools, machining parameters, and methods.</li>
+                    <li>Metal Joining Processes: Students learn various joining techniques, including arc welding, gas welding, brazing, and soldering. They perform practical exercises to create welded joints, understand weld quality, and gain familiarity with safety procedures and equipment.</li>
+                </ul>
+
+                <p class="welfare-font"> The lab helps students develop practical skills, process understanding, and technical confidence, forming a strong foundation for advanced manufacturing, production engineering, and industrial applications.</p>
+
+			<div class="div1" style="display:flex !important;">
+			<div class="div2"> <img src="~/Content/DEPIMG/m1.jpg" style="border:1px dashed black; padding:5px; height:270px; width:300px;"/></div>
+			<div class="div2"> <img src="~/Content/DEPIMG/m2.jpg" style="border:1px dashed black; padding:5px; height:270px; width:300px;"/></div>
+			<div class="div2"> <img src="~/Content/DEPIMG/m3.jpg" style="border:1px dashed black; padding:5px; height:270px; width:300px;"/></div>
+			<div class="div2"> <img src="~/Content/DEPIMG/m4.jpg" style="border:1px dashed black; padding:5px; height:270px; width:350px; object-fit:cover;"/></div>
+			<div class="div2"> <img src="~/Content/DEPIMG/m5.jpg" style="border:1px dashed black; padding:5px; height:270px; width:350px; object-fit:cover;"/></div>
+			
+			</div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

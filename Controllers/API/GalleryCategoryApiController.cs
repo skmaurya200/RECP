@@ -1,0 +1,8 @@
+using System; using System.Collections.Generic; using System.Configuration; using System.Data.SqlClient; using System.Web.Mvc;
+namespace Rec_Partapgarh.Controllers.API
+{
+ public class GalleryCategoryApiController:Controller{readonly string cs=ConfigurationManager.ConnectionStrings["recpLocalDb"].ConnectionString;
+ [HttpGet]public JsonResult List(){var d=new List<object>();using(var c=new SqlConnection(cs))using(var q=new SqlCommand("SELECT CategoryId,CategoryName FROM dbo.tbl_gallery_category WHERE IsActive=1 ORDER BY CategoryName",c)){c.Open();using(var r=q.ExecuteReader())while(r.Read())d.Add(new{CategoryId=r.GetInt32(0),CategoryName=r.GetString(1)});}return Json(new{success=true,data=d},JsonRequestBehavior.AllowGet);}
+ [HttpPost,ValidateAntiForgeryToken]public JsonResult Save(string CategoryName){CategoryName=(CategoryName??"").Trim();if(string.IsNullOrWhiteSpace(CategoryName))return Json(new{success=false,message="Please correct the validation errors.",errors=new{CategoryName="Category name is required."}});if(CategoryName.Length>150)return Json(new{success=false,message="Please correct the validation errors.",errors=new{CategoryName="Maximum 150 characters allowed."}});try{int id;using(var c=new SqlConnection(cs))using(var q=new SqlCommand("INSERT dbo.tbl_gallery_category(CategoryName,CreatedBy) OUTPUT INSERTED.CategoryId VALUES(@n,'superAdmin')",c)){q.Parameters.AddWithValue("@n",CategoryName);c.Open();id=(int)q.ExecuteScalar();}return Json(new{success=true,message="Category added successfully.",data=new{CategoryId=id,CategoryName}});}catch(SqlException x)when(x.Number==2601||x.Number==2627){return Json(new{success=false,message="Category already exists.",errors=new{CategoryName="Category already exists."}});}}
+ }
+}

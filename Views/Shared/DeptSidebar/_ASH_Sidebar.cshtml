@@ -1,0 +1,204 @@
+﻿<!-- LEFT SIDEBAR -->
+        <div class="col-lg-3">
+            <div class="bg-welfare-left h-100">
+                <h3 class="text-uppercase">APSH @@ BRBBARECP</h3>
+                <hr>
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="~/department/applied-sciences-and-humanities/about" style="text-transform:uppercase;">
+                            <i class="fa-solid fa-arrow-right"></i> About
+                        </a>
+                    </li>
+                    <hr />
+                    <li>
+                        <a href="~/department/applied-sciences-and-humanities/vision-mission" style="text-transform:uppercase;">
+                            <i class="fa-solid fa-arrow-right"></i> Vision & Mission
+                        </a>
+                    </li>
+                  
+                    <hr>
+
+                    <li>
+                        <a href="~/department/applied-sciences-and-humanities/faculty" style="text-transform:uppercase;">
+                            <i class="fa-solid fa-arrow-right"></i> Faculty
+                        </a>
+                    </li>
+                    <hr>
+
+                    <li>
+                        <button class="side-link w-100 d-flex justify-content-between align-items-center"
+                                type="button"
+                                onclick="toggleFacilities()">
+                            <span><i class="fa-solid fa-arrow-right"></i> Facilities</span>
+                            <i class="fa fa-angle-down" id="facilityIcon"></i>
+                        </button>
+
+                        <ul class="list-unstyled mt-2 ps-3" id="facilitiesMenu" style="display:none;">
+                            <li><a href="~/department/applied-sciences-and-humanities/engineering-physics-laboratory" class="side-sub-link">Engineering Physics Laboratory</a></li>
+                            <li><a href="~/department/applied-sciences-and-humanities/engineering-chemistry-laboratory" class="side-sub-link">Engineering Chemistry Laboratory</a></li>
+                            <li><a href="~/department/applied-sciences-and-humanities/language-and-soft-skills-lab" class="side-sub-link">Language & Communication Skills Lab</a></li>
+                        </ul>
+                    </li>
+                    <script>
+                        function toggleFacilities() {
+                            var menu = document.getElementById("facilitiesMenu");
+                            var icon = document.getElementById("facilityIcon");
+
+                            if (menu.style.display === "none") {
+                                menu.style.display = "block";
+                                icon.classList.remove("fa-angle-down");
+                                icon.classList.add("fa-angle-up");
+                            } else {
+                                menu.style.display = "none";
+                                icon.classList.remove("fa-angle-up");
+                                icon.classList.add("fa-angle-down");
+                            }
+                        }
+                    </script>
+                    <style>
+                        .side-link {
+                            background: none;
+                            border: none;
+                            color: #fff;
+                            text-transform: uppercase;
+                            padding: 0;
+                            font-size: 17px;
+                            cursor: pointer;
+                            text-align: left;
+                        }
+
+                            .side-link:hover {
+                                text-decoration: underline;
+                            }
+
+                        .side-sub-link {
+                            color: #fff;
+                            font-size: 18px;
+                            font-weight: 700;
+                            display: block;
+                            margin-top: 10px;
+                            border-bottom: 1px solid white;
+                            padding-bottom: 10px;
+                        }
+                    </style>
+
+                    <hr>
+                </ul>
+                <style>
+                    .side-link {
+                        background: none;
+                        border: none;
+                        color: #fff;
+                        text-transform: uppercase;
+                        padding: 0;
+                        font-size: 17px;
+                        cursor: pointer;
+                        text-align: left;
+                    }
+
+                        .side-link:hover {
+                            text-decoration: underline;
+                        }
+
+                    .side-sub-link {
+                        color: #fff;
+                        font-size: 15px;
+                        display: block;
+                        margin-top: 10px;
+                    }
+
+                    /* ================= GENERAL FIX ================= */
+                    .bg-welfare-left {
+                        height: auto;
+                    }
+
+                    .content-box {
+                        width: 100%;
+                    }
+
+                    /* ================= TABLET (≤ 992px) ================= */
+                    @@media (max-width: 992px) {
+
+                        .bg-welfare-left h3 {
+                            font-size: 19px;
+                        }
+
+                        .bg-welfare-left ul li {
+                            font-size: 16px;
+                            margin-top: 15px;
+                        }
+
+                        .side-link {
+                            font-size: 16px;
+                        }
+
+                        .side-sub-link {
+                            font-size: 14px;
+                        }
+                    }
+
+                    /* ================= MOBILE (≤ 768px) ================= */
+                    @@media (max-width: 768px) {
+                        /* Stack sidebar & content */
+                        .col-lg-3,
+                        .col-lg-9 {
+                            width: 100%;
+                        }
+
+                        .bg-welfare-left {
+                            margin-bottom: 20px;
+                        }
+                        /* Banner text center */
+                        .display-6 {
+                            font-size: 26px;
+                            text-align: center;
+                        }
+
+                        .d-inline-flex {
+                            justify-content: center;
+                            width: 100%;
+                        }
+                        /* Sidebar buttons */
+                        .side-link {
+                            font-size: 16px;
+                            padding: 10px 0;
+                        }
+
+                        .side-sub-link {
+                            font-size: 14px;
+                            padding-left: 10px;
+                        }
+
+                        hr {
+                            margin: 10px 0;
+                        }
+                    }
+
+                    /* ================= SMALL MOBILE (≤ 480px) ================= */
+                    @@media (max-width: 480px) {
+
+                        .display-6 {
+                            font-size: 22px;
+                        }
+
+                        .bg-welfare-left h3 {
+                            font-size: 18px;
+                            text-align: center;
+                        }
+
+                        .bg-welfare-left ul li {
+                            font-size: 15px;
+                        }
+
+                        .content-box {
+                            padding: 15px;
+                        }
+
+                        .welfare-font {
+                            font-size: 15px;
+                            line-height: 1.6;
+                        }
+                    }
+                </style>
+            </div>
+        </div>

@@ -1,0 +1,179 @@
+﻿@{ 
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html lang="en"
+      class="light-style customizer-hide"
+      dir="ltr"
+      data-theme="theme-default"
+      data-assets-path="../assets/"
+      data-template="vertical-menu-template-free">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+
+    <title>Login Page</title>
+
+    <meta name="description" content="" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.jpg" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+          rel="stylesheet" />
+
+    <!-- Icons. Uncomment required icon fonts -->
+    <link rel="stylesheet" href="~/Content/recp/assets/vendor/fonts/boxicons.css" />
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="~/Content/login/assets/vendor/css/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="~/Content/login/assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="~/Content/login/assets/css/demo.css" />
+
+    <!-- Vendors CSS -->
+    <link rel="stylesheet" href="~/Content/login/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+
+    <!-- Page CSS -->
+    <!-- Page -->
+    <link rel="stylesheet" href="~/Content/login/assets/vendor/css/pages/page-auth.css" />
+    <!-- Helpers -->
+    <script src="~/Content/login/assets/vendor/js/helpers.js"></script>
+
+
+    <script src="~/Content/login/assets/js/config.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lexend:wght@100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: "Poppins", serif;
+        }
+    </style>
+</head>
+
+<body style=" ">
+
+    <!-- Include SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Show Alert if msg Exists -->
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var msg = "@Request.QueryString["msg"]"; // URL se 'msg' fetch karo
+
+        if (msg) {
+            Swal.fire({
+                icon: 'error',  // 🔴 Error alert
+                title: 'Oops...',
+                text: msg,
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'OK'
+            });
+        }
+    });
+    </script>
+
+    <!-- Content -->
+
+    <div class="container-xxl">
+        <div class="authentication-wrapper authentication-basic container-p-y">
+            <div class="authentication-inner">
+                <!-- Register -->
+                <div class="card" style="border:1px solid gray">
+
+                    <div class="card-body">
+                        <!-- Logo -->
+                        <div class="app-brand justify-content-center">
+                            <a href="" class="app-brand-link gap-2">
+
+                                <span class="app-brand-text demo menu-text fw-bolder ms-2"><img src="~/Content/img/logoREC2.png" height="130px" width="130px" /></span>
+                            </a>
+                        </div>
+                        <!-- /Logo -->
+                        <h4 class="mb-2 text-center fw-bold" style="color: #0747ae;">Welcome to BRBBARECP</h4>
+                        <p class="mb-4 text-center">Please sign-in to your account and start the adventure</p>
+
+                        <form id="formAuthentication" class="mb-3" method="POST">
+                            <div class="mb-3">
+                                @*<label for="email" class="form-label">Usertype:</label>
+                                <select class="form-control" >
+                                    <option>--Select Usertype--</option>
+                                    <option>Admin</option>
+                                    <option>Student</option>
+                                    <option>Faculty/Staff</option>
+                                    
+                                </select>*@
+                                <label for="email" class="form-label">Email or Username</label>
+                                <input type="text"
+                                       class="form-control"
+                                       id="email"
+                                       name="Username"
+                                       placeholder="Enter your email or username"
+                                       autofocus />
+                            </div>
+                            <div class="mb-3 form-password-toggle">
+                                <div class="d-flex justify-content-between">
+                                    <label class="form-label" for="password">Password</label>
+                                    <a href="auth-forgot-password-basic.html">
+                                        <small style="color: #0747ae;">Forgot Password?</small>
+                                    </a>
+                                </div>
+                                <div class="input-group input-group-merge">
+                                    <input type="password"
+                                           id="password"
+                                           class="form-control"
+                                           name="PasswordHash"
+                                           placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
+                                           aria-describedby="password" />
+                                    <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="remember-me" />
+                                    <label class="form-check-label" for="remember-me"> Remember Me </label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <button class="btn  d-grid w-100" style="background-color: #0747ae; color:white;" type="submit">Sign in</button>
+                            </div>
+                            <div class="mb-3 text-center">
+                                <a href="~/home/index" style="color:#0747ae;"><i class="fa-solid fa-house" style="color:#0747ae;"></i> Back To Home</a>
+                            </div>
+                        </form>
+
+
+                        </p>
+                    </div>
+                </div>
+                <!-- /Register -->
+            </div>
+        </div>
+    </div>
+
+    <!-- / Content -->
+    <!-- Core JS -->
+    <!-- build:js assets/vendor/js/core.js -->
+    <script src="~/Content/recp/login/assets/vendor/libs/jquery/jquery.js"></script>
+    <script src="~/Content/recp/login/assets/vendor/libs/popper/popper.js"></script>
+    <script src="~/Content/recp/login/assets/vendor/js/bootstrap.js"></script>
+    <script src="~/Content/recp/login/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+
+    <script src="~/Content/recp/login/assets/vendor/js/menu.js"></script>
+    <!-- endbuild -->
+    <!-- Vendors JS -->
+    <!-- Main JS -->
+    <script src="~/Content/recp/login/assets/js/main.js"></script>
+
+    <!-- Page JS -->
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+</body>
+</html>

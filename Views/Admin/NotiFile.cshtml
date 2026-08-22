@@ -1,0 +1,84 @@
+﻿@model Rec_Partapgarh.Models.notificationfile
+
+@{
+    ViewBag.Title = "NotiFile";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+
+@using (Html.BeginForm("AddNotiFile", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal border shadow mt-4" style="width:95%; margin:0px auto; padding:30px;">
+        <h4 style="color: #450145;" class="fw-bold">Add Notification File</h4>
+        <hr />
+        @if (ViewBag.msg != null)
+        {
+
+            <div class="alert alert-primary text-center" style=" border-radius:0px; color:green;" role="alert">
+                @ViewBag.msg
+            </div>
+        }
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group mt-4">
+
+            <div class="col-md-12 p-0">
+                @Html.EditorFor(model => model.notification, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter Your Notice Text", style = "width:100%; height:50px; border-radius:0px;" } })
+                @Html.ValidationMessageFor(model => model.notification, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+
+            <div class="col-md-12 border p-2 mt-4">
+                <input type="file" name="file" />
+            </div>
+        </div>
+
+
+
+        <div class="form-group mt-3">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Add Notification" class="btn" style="background-color: #450145; border-radius: 0px; padding: 10px; color: white;" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 mt-2 p-2 table-responsive">
+                <table class=" table table-bordered" id="example" style="width:100%;">
+                    <thead>
+                        <tr class="text-dark">
+                            <th class="text-center" style="background-color:#450145;color:white;">S.R.No</th>
+                            <th class="text-center" style="background-color:#450145;color:white;">Notification</th>
+                            <th class="text-center" style="background-color:#450145;color:white;">file</th>
+                            <th class="text-center" style="background-color:#450145;color:white;">Date Of Notification</th>
+                            <th class="text-center" style="background-color:#450145;color:white;">Action</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            var a = 1;
+                        }
+                        @foreach (var item in ViewBag.NotiFile)
+                        {
+                            <tr class="text-center">
+                                <td class="text-dark text-center">@a</td>
+
+                                <td class="text-dark text-center">@item.notification</td>
+                                <td class="text-dark text-center"><a href="~/NotifactionFile/@item.file">Click Here</a></td>
+                                <td class="text-dark text-center">@item.doa</td>
+                                <td class="text-dark text-center"><a href="~/Admin/DeleteNotifile?id=@item.Id"><input type="button" value="Delete" class="btn btn-danger" style="border-radius:0px;" /></a></td>
+                                @{
+                                    a++;
+                                }
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+}
+

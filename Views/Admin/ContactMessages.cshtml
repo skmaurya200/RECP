@@ -1,0 +1,68 @@
+﻿@model List<Rec_Partapgarh.Models.Contact>
+@{
+    ViewBag.Title = "Contact Messages";
+    Layout = "~/Views/Shared/admin.cshtml";
+}
+
+<div class="container mt-5">
+    <h4 class="fw-bold " style="color: #450145;">Total Enquiry</h4>
+    <hr />
+
+    <!-- Success Message -->
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Success',
+                text: '@TempData["SuccessMessage"]',
+                confirmButtonColor: '#3085d6'
+            });
+        </script>
+    }
+
+<div class="table-responsive">
+    <table class="table table-bordered mt-3">
+        <thead class="table-dark">
+            <tr class="text-center">
+                <th Style="background-color:#450145;color:white;">#</th>
+                <th Style="background-color:#450145;color:white;">Name</th>
+                <th Style="background-color:#450145;color:white;">Email</th>
+                <th Style="background-color:#450145;color:white;">Message</th>
+                <th Style="background-color:#450145;color:white;">Submitted At</th>
+                <th Style="background-color:#450145;color:white;">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Count > 0)
+            {
+                int count = 1;
+                foreach (var contact in Model)
+                {
+                    <tr class="text-center">
+                        <td>@count</td>
+                        <td>@contact.FirstName @contact.LastName</td>
+                        <td>@contact.Email</td>
+                        <td>@contact.Message</td>
+                        <td>@(contact.SubmittedAt != null ? contact.SubmittedAt.Value.ToString("dd-MMM-yyyy HH:mm") : "N/A")</td>
+                        <td>
+                            <a href="@Url.Action("DeleteContact", "Admin", new { id = contact.Id })"
+                               class="btn btn-danger btn-sm"
+                               onclick="return confirm('Are you sure you want to delete this message?');">
+                                Delete
+                            </a>
+                        </td>
+                    </tr>
+                    count++;
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="6" class="text-center text-muted">No messages found.</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+</div>

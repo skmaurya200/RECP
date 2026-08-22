@@ -1,0 +1,146 @@
+﻿@{
+  
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    .bg-welfare-left {
+        background-color: #0747AE;
+        padding: 15px;
+    }
+
+        .bg-welfare-left h3 {
+            font-size: 21px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .bg-welfare-left ul li {
+            margin-top: 18px;
+            font-size: 17px;
+            color: #fff;
+        }
+
+            .bg-welfare-left ul li a {
+                color: #fff;
+                text-decoration: none;
+            }
+
+                .bg-welfare-left ul li a:hover {
+                    text-decoration: underline;
+                }
+
+    .content-box {
+        border: 1px dashed #000;
+        background: #fff;
+        padding: 20px;
+    }
+
+    .welfare-font {
+        font-size: 17px;
+        color: #000;
+        text-align: justify;
+        line-height: 1.8;
+    }
+
+    hr {
+        border: 1px solid #000;
+    }
+</style>
+
+<!-- ================= BANNER ================= -->
+<div class="row">
+    <div class="col-md-12 p-0" style="margin-top:-20px;
+        background:url('https://img.freepik.com/premium-photo/extensive-collection-books-library_868797-8212.jpg') center/cover fixed;">
+        <div style="background:rgba(0,0,0,0.5)">
+            <div class="container">
+                <div class="d-flex flex-column justify-content-center" style="min-height:300px;">
+                    <h3 class="display-6 text-white fw-bold">
+                        Engineering Physics Laboratory
+                    </h3>
+                    <div class="d-inline-flex text-white">
+                        <a href="/" class="text-white text-decoration-none">Home</a>
+                        <i class="fa fa-angle-double-right px-2 pt-1"></i>
+                        <span>Engineering Physics Laboratory</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ================= MAIN CONTENT ================= -->
+<div class="container py-5">
+    <div class="row">
+        <style>
+            .bg-welfare-left ul li {
+                margin-top: 20px;
+                font-size: 17px;
+                line-height: 1.5;
+                color: #fff;
+                font-family: Arial, sans-serif;
+            }
+
+            .bg-welfare-left hr {
+                border-bottom: 2px solid white !important;
+            }
+        </style>
+                @Html.Partial("~/Views/Shared/DeptSidebar/_ASH_Sidebar.cshtml")
+
+        <!-- RIGHT CONTENT -->
+        <div class="col-lg-9">
+            <div class="content-box">
+
+                <h2 class="fw-bold" style="color:#0747AE;">Engineering Physics Laboratory</h2>
+                <hr>
+                <p class="welfare-font" style="margin-top:5px;">
+                    The engineering physics laboratory at Bharat Ratna Babasaheb Bhimrao Ambedkar Rajkiya Engineering College Pratapgarh, offers outcome-based education across a broad spectrum of fundamental and applied physics. The laboratory is equipped with state-of-the-art facilities to support experiments in emergent interdisciplinary areas such as optics, mechanics, and magnetism. It prepares students for industrial competencies, advanced research, and higher studies, where strong grounding in physical and natural sciences is essential.
+                </p>
+
+                <p class="welfare-font" style="font-size:18px; margin-top:-12px;"><b>List of Experiments</b></p>
+                <ul class="welfare-font" style="margin-top:-17px; list-style-type:disc; margin-left:20px;">
+                    <li>Newton's Rings</li>
+                    <li>Plane diffraction grating</li>
+                    <li>Nodal slide</li>
+                    <li>Fresnel biprism</li>
+                    <li>Energy band gap</li>
+                    <li>Stefan's law</li>
+                    <li>Variation of magnetic field</li>
+                    <li>Carey Foster Bridge</li>
+                    <li>Viscosity</li>
+                    <li>Combination of two lenses</li>
+                    <li>Attenuation in optical fiber</li>
+                    <li>He-Ne laser light using single slit diffraction/polarization of light</li>
+                    <li>Hall Effect</li>
+                    <li>Hysteresis B-H curve</li>
+                </ul>
+                <div class="div" style="display:flex; margin-top:10px;">
+                   <div class="div1"> <img src="~/Content/DEPIMG/ASH1.jpg" style="border:1px dashed black; padding:5px;"/></div>
+                   <div class="div2"> <img src="~/Content/DEPIMG/ASH2.jpg" style="border:1px dashed black; padding:5px; margin-left:10px;"/></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

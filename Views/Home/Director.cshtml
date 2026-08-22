@@ -1,0 +1,142 @@
+﻿@{
+    ViewBag.Title = "Director";
+}
+<style>
+    .director-section {
+        background-image: url('/Content/img/bgimg/bg1.jpg');
+        background-attachment: fixed;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .profile-card {
+        background-color: rgba(255, 255, 255, 0.95);
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+    }
+
+    .profile-image {
+        width: 220px;
+        height: 220px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 4px solid #0747ae;
+        margin-bottom: 15px;
+    }
+
+    .info-line {
+        line-height: 1.8rem;
+    }
+
+    @@media(max-width: 768px) {
+        .profile-image {
+            width: 180px;
+            height: 180px;
+        }
+
+        .profile-card {
+            text-align: center;
+        }
+
+        .info-line {
+            text-align: center;
+        }
+    }
+</style>
+
+<!-- Banner -->
+<style>
+    @@media(max-width:1100px) {
+        .gdgd {
+            height: 200px !important;
+        }
+
+        .fgfg {
+            font-size: 1.1em;
+        }
+    }
+</style>
+<div class="row">
+    <div class="col-md-12 p-0" style="margin-top: -20px; background: url('https://img.freepik.com/premium-photo/extensive-collection-books-library_868797-8212.jpg') no-repeat center center; background-size: cover; background-attachment:fixed; ">
+        <div class="container-fluid" style="background-color: rgba(0, 0, 0, 0.5);">
+            <div class="container">
+                <div class="d-flex flex-column justify-content-center" style="min-height: 300px">
+                    <h3 class="display-6 text-white text-uppercase fw-bold">Director's Profile</h3>
+                    <div class="d-inline-flex text-white">
+                        <p class="m-0 text-uppercase"><a class="text-white" href="/" style="text-decoration:none;">Home</a></p>
+                        <i class="fa fa-angle-double-right pt-1 px-3"></i>
+                        <p class="m-0 text-uppercase text-light">Director's Profile</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Profile Section -->
+<div class="container-fluid py-5" style="background-color:#f8f9fa;">
+    <div class="container bg-white p-4 shadow rounded">
+        <div class="row g-4 align-items-center">
+            <!-- Profile Image -->
+            <div class="col-md-4 text-center">
+                <img src="~/Content/recp/img/YNS.jpeg" alt="Prof. Yogendra Singh" class=" rounded-3 img-fluid shadow-sm" style="width: 390px; height: 430px; object-fit: cover;" />
+                <h4 class="fw-bold mt-4 mb-0" style="color:#0747ae; ">Prof. Yogendra Singh</h4>
+                <hr style="border-bottom:1px solid black; padding-top:7px; margin:0px auto; width:90%;"/>
+                <p class="text-muted fw-bold"><i>Director of Bharat Ratna Babasaheb Bhimrao Ambedkar Rajkiya Engineering College, Pratapgarh</i></p>
+            </div>
+
+            <!-- Details -->
+            <div class="col-md-8">
+                <!-- Biography -->
+                <section style="font-family: 'Poppins', sans-serif;">
+                    <h3 class="fw-bold  mb-2" style="color:#0747ae;">Director's Profile</h3>
+                    <hr style="border-bottom:1px solid black; padding-bottom:2px;"/>
+                    <p class="text-dark mt-2" style="text-align: justify; line-height:1.8; font-size:16px;">
+                        It gives me great pleasure to welcome you to Rajkiya Engineering College Pratapgarh, a state funded government engineering college, started in the academic session 2023-24 by the Government of Uttar Pradesh. The college presently offers four undergraduate programs in Computer Science and Engineering (CSE), Electrical Engineering (EE), Civil Engineering (CE), and Mechanical Engineering (ME) each with an intake of 60 whereas their curriculums are carefully designed to meet current academic and industry standards.
+                        During its formative phase, the college is temporarily operating from the campus of Kamla Nehru Institute of Technology (KNIT), Sultanpur and an associated college of Dr APJ Abdul Kalam Technical University Uttar Pradesh, Lucknow. This collaboration ensures that our academic practices align with established quality benchmarks while the permanent campus at Pratapgarh is being developed.
+                        Pratapgarh is being developed.
+                        With extensive experience in Artificial Intelligence, Machine Learning, Vision and Data Science, I firmly believe that the future of engineering education must be interdisciplinary, research-oriented, and closely integrated with real-world applications. At REC Pratapgarh, our academic vision is rooted in this belief - combining strong theoretical foundations with hands-on learning, collaborative research, and meaningful industry engagement.
+
+                    </p>
+                </section>
+
+               
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <!-- Contact Information -->
+                    <section class="mt-4">
+                        <h3 class="fw-bold" style="color:#0747ae;">Contact Information</h3>
+                        <hr style="border-bottom:1px solid black; padding-bottom:2px;" />
+                        <hr class="mt-1 mb-2" />
+                        <p style="font-size:16px;"><strong style="color:#0747ae;">Mobile:</strong> <span class="text-dark">+91 6392802891</span></p>
+                        <p style="font-size:16px;"><strong style="color:#0747ae;">Email:</strong> <a href="mailto:director.1216@aktu.ac.in" class="text-decoration-none">director.1216@aktu.ac.in</a></p>
+                    </section>
+
+                    <!-- Academic Background -->
+                    <section class="mt-4">
+                        <h3 class="fw-bold " style="color:#0747ae; margin-bottom:4px;">Academic Background</h3>
+                        <hr class="mt-1 mb-1" style="border-bottom:1px solid black; padding-bottom:2px;" />
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item px-0" style="font-size:16px;">
+                                <b style="color:#0747ae;">Ph.D</b> in Computer Science & Engineering
+                                Indian Institute of Technology (BHU), Varanasi
+                            </li>
+                            <li class="list-group-item px-0" style="font-size:16px;">
+                                <b style="color:#0747ae;">M.Tech</b> in Computer Science & Engineering
+                                Indian Institute of Technology, Kanpur.
+                            </li>
+                            <li class="list-group-item px-0" style="font-size:16px;">
+                                <b style="color:#0747ae;">B.Tech</b> in Computer Science & Engineering
+                                Harcourt Butler Technological Institute, Kanpur.
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+

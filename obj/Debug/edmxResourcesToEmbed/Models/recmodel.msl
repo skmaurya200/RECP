@@ -1,0 +1,337 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="recpModelStoreContainer" CdmEntityContainer="recpEntities">
+    <EntitySetMapping Name="GalleryImages">
+      <EntityTypeMapping TypeName="recpModel.GalleryImage">
+        <MappingFragment StoreEntitySet="GalleryImages">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="recpModel.Category">
+        <MappingFragment StoreEntitySet="Categories">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Academic_Committee">
+      <EntityTypeMapping TypeName="recpModel.Academic_Committee">
+        <MappingFragment StoreEntitySet="Academic_Committee">
+          <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AcademicCalendars">
+      <EntityTypeMapping TypeName="recpModel.AcademicCalendar">
+        <MappingFragment StoreEntitySet="AcademicCalendar">
+          <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+          <ScalarProperty Name="SemesterType" ColumnName="SemesterType" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AICTEs">
+      <EntityTypeMapping TypeName="recpModel.AICTE">
+        <MappingFragment StoreEntitySet="AICTE">
+          <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Circulars">
+      <EntityTypeMapping TypeName="recpModel.Circular">
+        <MappingFragment StoreEntitySet="Circulars">
+          <ScalarProperty Name="doa" ColumnName="doa" />
+          <ScalarProperty Name="urllink" ColumnName="urllink" />
+          <ScalarProperty Name="file" ColumnName="file" />
+          <ScalarProperty Name="notification" ColumnName="notification" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contacts">
+      <EntityTypeMapping TypeName="recpModel.Contact">
+        <MappingFragment StoreEntitySet="Contacts">
+          <ScalarProperty Name="SubmittedAt" ColumnName="SubmittedAt" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Departments">
+      <EntityTypeMapping TypeName="recpModel.Department">
+        <MappingFragment StoreEntitySet="Departments">
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="etenders">
+      <EntityTypeMapping TypeName="recpModel.etender">
+        <MappingFragment StoreEntitySet="etenders">
+          <ScalarProperty Name="doa" ColumnName="doa" />
+          <ScalarProperty Name="urllink" ColumnName="urllink" />
+          <ScalarProperty Name="file" ColumnName="file" />
+          <ScalarProperty Name="notification" ColumnName="notification" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Events">
+      <EntityTypeMapping TypeName="recpModel.Event">
+        <MappingFragment StoreEntitySet="Events">
+          <ScalarProperty Name="doa" ColumnName="doa" />
+          <ScalarProperty Name="urllink" ColumnName="urllink" />
+          <ScalarProperty Name="file" ColumnName="file" />
+          <ScalarProperty Name="notification" ColumnName="notification" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="faculties">
+      <EntityTypeMapping TypeName="recpModel.faculty">
+        <MappingFragment StoreEntitySet="faculties">
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="AreaOfInterest" ColumnName="AreaOfInterest" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="Qualification" ColumnName="Qualification" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="G_O_for_Change">
+      <EntityTypeMapping TypeName="recpModel.G_O_for_Change">
+        <MappingFragment StoreEntitySet="G_O_for_Change">
+          <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Galleries">
+      <EntityTypeMapping TypeName="recpModel.Gallery">
+        <MappingFragment StoreEntitySet="Gallery">
+          <ScalarProperty Name="dos" ColumnName="dos" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="categories" ColumnName="categories" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Grievances">
+      <EntityTypeMapping TypeName="recpModel.Grievance">
+        <MappingFragment StoreEntitySet="Grievance">
+          <ScalarProperty Name="SubmittedAt" ColumnName="SubmittedAt" />
+          <ScalarProperty Name="IncidentDetails" ColumnName="IncidentDetails" />
+          <ScalarProperty Name="Place" ColumnName="Place" />
+          <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+          <ScalarProperty Name="CourseBranch" ColumnName="CourseBranch" />
+          <ScalarProperty Name="RollNumber" ColumnName="RollNumber" />
+          <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+          <ScalarProperty Name="StudentName" ColumnName="StudentName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IQACs">
+      <EntityTypeMapping TypeName="recpModel.IQAC">
+        <MappingFragment StoreEntitySet="IQAC">
+          <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="List_of_Holidays">
+      <EntityTypeMapping TypeName="recpModel.List_of_Holidays">
+        <MappingFragment StoreEntitySet="List_of_Holidays">
+          <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Memorandum_of_Association">
+      <EntityTypeMapping TypeName="recpModel.Memorandum_of_Association">
+        <MappingFragment StoreEntitySet="Memorandum_of_Association">
+          <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Minutes_of_Meeting">
+      <EntityTypeMapping TypeName="recpModel.Minutes_of_Meeting">
+        <MappingFragment StoreEntitySet="Minutes_of_Meeting">
+          <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Mous">
+      <EntityTypeMapping TypeName="recpModel.Mou">
+        <MappingFragment StoreEntitySet="Mous">
+          <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="notifications">
+      <EntityTypeMapping TypeName="recpModel.notification">
+        <MappingFragment StoreEntitySet="notification">
+          <ScalarProperty Name="doa" ColumnName="doa" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="notification1" ColumnName="notification" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="notificationfiles">
+      <EntityTypeMapping TypeName="recpModel.notificationfile">
+        <MappingFragment StoreEntitySet="notificationfile">
+          <ScalarProperty Name="doa" ColumnName="doa" />
+          <ScalarProperty Name="file" ColumnName="file" />
+          <ScalarProperty Name="notification" ColumnName="notification" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RecentActivities">
+      <EntityTypeMapping TypeName="recpModel.RecentActivity">
+        <MappingFragment StoreEntitySet="RecentActivities">
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Silders">
+      <EntityTypeMapping TypeName="recpModel.Silder">
+        <MappingFragment StoreEntitySet="Silders">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Dos" ColumnName="Dos" />
+          <ScalarProperty Name="Paragraph" ColumnName="Paragraph" />
+          <ScalarProperty Name="Heading" ColumnName="Heading" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Society_Bylaws">
+      <EntityTypeMapping TypeName="recpModel.Society_Bylaws">
+        <MappingFragment StoreEntitySet="Society_Bylaws">
+          <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tables">
+      <EntityTypeMapping TypeName="recpModel.Table">
+        <MappingFragment StoreEntitySet="Table">
+          <ScalarProperty Name="DOA" ColumnName="DOA" />
+          <ScalarProperty Name="NotiType" ColumnName="NotiType" />
+          <ScalarProperty Name="link" ColumnName="link" />
+          <ScalarProperty Name="NotiText" ColumnName="NotiText" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TimeTables">
+      <EntityTypeMapping TypeName="recpModel.TimeTable">
+        <MappingFragment StoreEntitySet="TimeTables">
+          <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Semester" ColumnName="Semester" />
+          <ScalarProperty Name="Branch" ColumnName="Branch" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="recpModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="e_tenders">
+      <EntityTypeMapping TypeName="recpModel.e_tenders">
+        <MappingFragment StoreEntitySet="e-tenders">
+          <ScalarProperty Name="doa" ColumnName="doa" />
+          <ScalarProperty Name="urllink" ColumnName="urllink" />
+          <ScalarProperty Name="file" ColumnName="file" />
+          <ScalarProperty Name="notification" ColumnName="notification" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="profiles">
+      <EntityTypeMapping TypeName="recpModel.profile">
+        <MappingFragment StoreEntitySet="profiles">
+          <ScalarProperty Name="CompleteProfileHtml" ColumnName="CompleteProfileHtml" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="ProfileUrl" ColumnName="ProfileUrl" />
+          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MediaCoverages">
+      <EntityTypeMapping TypeName="recpModel.MediaCoverage">
+        <MappingFragment StoreEntitySet="MediaCoverages">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Dos" ColumnName="Dos" />
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PressReleases">
+      <EntityTypeMapping TypeName="recpModel.PressReleas">
+        <MappingFragment StoreEntitySet="PressReleases">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="UploadDate" ColumnName="UploadDate" />
+          <ScalarProperty Name="ImageFile" ColumnName="ImageFile" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

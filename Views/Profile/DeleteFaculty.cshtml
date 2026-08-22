@@ -1,0 +1,29 @@
+﻿
+
+@{
+    ViewBag.Title = "DeleteFaculty";
+    Layout = "~/Views/Shared/admin.cshtml";
+}
+
+<h2>DeleteFaculty</h2>
+@model Rec_Partapgarh.Models.profile
+@{
+    ViewBag.Title = "Delete Faculty";
+}
+
+<h2>Delete Faculty</h2>
+<hr />
+
+<div class="alert alert-danger">
+    Are you sure you want to delete <strong>@Model.FullName</strong>?
+</div>
+
+@using (Html.BeginForm("DeleteFaculty", "Profile", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(m => m.Id)
+
+    <button type="submit" class="btn btn-danger">Yes, Delete</button>
+    <a href="@Url.Action("Faculties", "Admin")" class="btn btn-secondary">Cancel</a>
+}
+

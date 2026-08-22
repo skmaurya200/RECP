@@ -1,0 +1,95 @@
+﻿@model List<Rec_Partapgarh.Models.AcademicCalendar>
+
+@{
+    ViewBag.Title = "Academic Calendar";
+}
+<style>
+    @@media(max-width:1100px) {
+        .gdgd {
+            height: 200px !important;
+        }
+
+        .fgfg {
+            font-size: 1.1em;
+        }
+    }
+</style>
+<div class="row">
+    <div class="col-md-12 p-0" style="margin-top: -20px; background: url('https://img.freepik.com/premium-photo/extensive-collection-books-library_868797-8212.jpg') no-repeat center center; background-size: cover; background-attachment:fixed; ">
+        <div class="container-fluid" style="background-color: rgba(0, 0, 0, 0.5);">
+            <div class="container">
+                <div class="d-flex flex-column justify-content-center" style="min-height: 300px">
+                    <h3 class="display-6 text-white text-uppercase fw-bold">Academic Calendar</h3>
+                    <div class="d-inline-flex text-white">
+                        <p class="m-0 text-uppercase"><a class="text-white" href="/" style="text-decoration:none;">Home</a></p>
+                        <i class="fa fa-angle-double-right pt-1 px-3"></i>
+                        <p class="m-0 text-uppercase text-light">Academic Calendar</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid" style="
+   background-image: url('/Content/myimg/bg1.jpg');
+   background-attachment: fixed;
+   background-repeat: no-repeat;
+   background-size: cover;">
+    <div class="row p-3">
+        <div class="col-sm-12 p-4">
+            <h4 style="color: #0747ae; font-size:21px; font-weight:900;" class="fw-bold">Academic Calendar</h4>
+            <hr style="border:1px solid black;" />
+            <p style="text-align:justify; line-height:34px; font-size:16px;">
+                Academic year consists of two semesters, namely the Odd Semester and the Even Semester, each having ordinarily, duration of 90 working days.
+                All academic programmes of the Institute are administered according to the academic calendar issued by Dr. A.P.J. Abdul Kalam Technical University.
+                The timings observed by the Institute for academic purposes are ordinarily from 9.00 A.M. to 5.00P.M. Any change in the timing is properly notified.
+                No Notices are circulated in the class rooms. Students are advised to see the notice boards of their respective departments, administrative block,
+                library, hostels, workshop etc regularly.
+            </p>
+
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th style="background-color:#0747ae; color:white;">S.NO.</th>
+                        <th style="background-color:#0747ae; color:white;">Academic Calendar</th>
+                        <th style="background-color:#0747ae; color:white;">Semester</th>
+                        <th style="background-color:#0747ae; color:white;">Download</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null && Model.Any())  // Check if there are any records
+                    {
+                        int count = 1;
+                        foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@count</td>
+                                <td>@item.Title</td>
+                                <td>@item.SemesterType</td>
+                                <td>
+                                    @if (!string.IsNullOrEmpty(item.FilePath))
+                                    {
+                                        <a href="@Url.Content(item.FilePath)" target="_blank" class="text-warning">View More</a>
+                                    }
+                                    else
+                                    {
+                                        <span class="text-danger">No File</span>
+                                    }
+                                </td>
+                            </tr>
+                            count++;
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="4" class="text-center text-danger">No Records Found</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</div>

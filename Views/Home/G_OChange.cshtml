@@ -1,0 +1,80 @@
+﻿
+@{
+    ViewBag.Title = " G.O. for Change of College Name";
+}
+<style>
+    @@media(max-width:1100px) {
+        .gdgd {
+            height: 200px !important;
+        }
+
+        .fgfg {
+            font-size: 1.1em;
+        }
+    }
+</style>
+<div class="row">
+    <div class="col-md-12 p-0" style="margin-top: -20px; background: url('https://img.freepik.com/premium-photo/extensive-collection-books-library_868797-8212.jpg') no-repeat center center; background-size: cover; background-attachment:fixed; ">
+        <div class="container-fluid" style="background-color: rgba(0, 0, 0, 0.5);">
+            <div class="container">
+                <div class="d-flex flex-column justify-content-center" style="min-height: 300px">
+                    <h3 class="display-6 text-white text-uppercase fw-bold">G.O. for Change of College Name</h3>
+                    <div class="d-inline-flex text-white">
+                        <p class="m-0 text-uppercase"><a class="text-white" href="/" style="text-decoration:none;">Home</a></p>
+                        <i class="fa fa-angle-double-right pt-1 px-3"></i>
+                        <p class="m-0 text-uppercase text-light">G.O. for Change of College Name</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid" style="
+   background-image: url('/Content/myimg/bg1.jpg');
+   background-attachment: fixed;
+   background-repeat: no-repeat;
+   background-size: cover;
+ ">
+    <div class="row p-3">
+        <div class="col-sm-12 mt-3">
+            <h4 class="fw-bold" style="color: #0747ae; font-size: 22px;">G.O. for Change of College Name</h4>
+            <hr style="border:1px solid black;" />
+            <table class="table table-bordered mt-3">
+                <thead>
+                    <tr class="text-center">
+                        <th style="background-color: #0747ae; color:white;">S.NO</th>
+                        <th style="background-color: #0747ae; color:white;">Subject</th>
+                        <th style="background-color: #0747ae; color:white;">Download</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (ViewBag.TechStaff != null && ViewBag.TechStaff.Count > 0)
+                    {
+                        int sno = 1;
+                        foreach (var item in ViewBag.TechStaff)
+                        {
+                            <tr class="text-center">
+                                <td>@sno</td>
+                                <td>@item.Name</td>
+                                <td>
+                                    <a href="~/Content/recp/upload/Document/@item.FilePath" class="btn btn-primary btn-sm" target="_blank">Download</a>
+                                </td>
+                            </tr>
+                            sno++;
+                        }
+                    }
+                    else
+                    {
+                        <tr class="text-center">
+                            <td colspan="3">Data to be Uploaded Soon</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</div>
+

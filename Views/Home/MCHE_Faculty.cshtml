@@ -1,0 +1,237 @@
+﻿@{
+  
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    .bg-welfare-left {
+        background-color: #0747AE;
+        padding: 15px;
+    }
+
+        .bg-welfare-left h3 {
+            font-size: 21px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .bg-welfare-left ul li {
+            margin-top: 18px;
+            font-size: 17px;
+            color: #fff;
+        }
+
+            .bg-welfare-left ul li a {
+                color: #fff;
+                text-decoration: none;
+            }
+
+                .bg-welfare-left ul li a:hover {
+                    text-decoration: underline;
+                }
+
+    .content-box {
+        border: 1px dashed #000;
+        background: #fff;
+        padding: 20px;
+    }
+
+    .welfare-font {
+        font-size: 17px;
+        color: #000;
+        text-align: justify;
+        line-height: 1.8;
+    }
+
+    hr {
+        border: 1px solid #000;
+    }
+</style>
+
+<!-- ================= BANNER ================= -->
+<div class="row">
+    <div class="col-md-12 p-0" style="margin-top:-20px;
+        background:url('https://img.freepik.com/premium-photo/extensive-collection-books-library_868797-8212.jpg') center/cover fixed;">
+        <div style="background:rgba(0,0,0,0.5)">
+            <div class="container">
+                <div class="d-flex flex-column justify-content-center" style="min-height:300px;">
+                    <h3 class="display-6 text-white fw-bold">
+                        Programme offered
+                    </h3>
+                    <div class="d-inline-flex text-white">
+                        <a href="/" class="text-white text-decoration-none">Home</a>
+                        <i class="fa fa-angle-double-right px-2 pt-1"></i>
+                        <span>Programme offered</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ================= MAIN CONTENT ================= -->
+<div class="container py-5">
+    <div class="row">
+        <style>
+            .bg-welfare-left ul li {
+                margin-top: 20px;
+                font-size: 17px;
+                line-height: 1.5;
+                color: #fff;
+                font-family: Arial, sans-serif;
+            }
+
+            .bg-welfare-left hr {
+                border-bottom: 2px solid white !important;
+            }
+        </style>
+                @Html.Partial("~/Views/Shared/DeptSidebar/_MCHE_Sidebar.cshtml")
+
+        <style>
+                    table {
+                        width: 100%;
+                        border-collapse: collapse;
+                        font-size: 16px;
+                        margin-top: 20px;
+                    }
+
+                        table th {
+                            background-color: #0747AE;
+                            color: #fff;
+                            font-weight: bold;
+                            padding: 10px;
+                            border: 1px solid #0747AE;
+                        }
+
+                        table td {
+                            border: 1px solid #ddd;
+                            padding: 10px;
+                            text-align: center;
+                            background-color: #fafafa;
+                        }
+
+                        table tr:hover td {
+                            background-color: #f1f5ff;
+                        }
+                    /* ================= FACULTY CARD ================= */
+                    .faculty-card {
+                        border: 1px dashed black;
+                        background: #fff;
+                        height: 100%;
+                        transition: 0.3s ease;
+                    }
+
+                        .faculty-card:hover {
+                            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+                            transform: translateY(-5px);
+                        }
+
+                        .faculty-card img {
+                            width: 100%;
+                            height: 260px;
+                            object-fit: center;
+                        }
+
+                        .faculty-card .card-body {
+                            text-align: center;
+                            padding: 15px;
+                        }
+
+                        .faculty-card h5 {
+                            font-size: 15px;
+                            font-weight: 600;
+                            color: #0747AE;
+                            margin-bottom: 6px;
+                        }
+
+                        .faculty-card p {
+                            font-size: 14px;
+                            margin-bottom: 0;
+                            color: #333;
+                            line-height: 1.4;
+                        }
+
+                    /* ================= RESPONSIVE ================= */
+                    @@media (max-width: 768px) {
+                        .content-box {
+                            padding: 25px;
+                        }
+
+                        .faculty-card img {
+                            height: 220px;
+                        }
+                    }
+        </style>
+
+        <!-- RIGHT CONTENT -->
+        <div class="col-lg-9">
+            <div class="content-box">
+
+                <h2 class="fw-bold" style="color:#0747AE;">Faculty</h2>
+                <hr />
+                <div class="row g-4" style="margin-top:10px !important;">
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="faculty-card">
+                            <img src="~/Content/img/Piyush.jpg" alt="Dr Piyush Gupta">
+                            <div class="card-body">
+                                <h5><a href="https://recp.ac.in/home/Dr_Piyush_Gupta" target="_blank">Dr. Piyush Gupta</a></h5>
+                                <p>PhD, NEFTU, AP</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="faculty-card">
+                            <img src="https://recp.ac.in/Content/img/alok.jpg" alt="Dr Alok Sanyal">
+                            <div class="card-body">
+                                <h5><a href="https://recp.ac.in/home/Alok_Sanyal" target="_blank">Dr. Alok Sanyal</a></h5>
+                                <p>PhD, MNNIT Prayagraj</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="faculty-card">
+                            <img src="https://recp.ac.in/Content/img/Er.subham.jpg" alt="Er Shubham Mishra">
+                            <div class="card-body">
+                                <h5><a href="https://recp.ac.in/home/Er_Shubham_Mishra" target="_blank">Er. Shubham Mishra</a></h5>
+                                <p>M.Tech, IET Lucknow<br>PhD (Pursuing), AKTU</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

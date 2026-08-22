@@ -1,0 +1,22 @@
+@{ ViewBag.Title = "NoticeEventsVideos"; Layout = "~/Views/Shared/ManagerMaster.cshtml"; }
+<div id="noticeEventVideoModule"
+     data-notice-list="@Url.Action("List","GeneralNoticeApi")" data-notice-save="@Url.Action("Save","GeneralNoticeApi")" data-notice-toggle="@Url.Action("ToggleStatus","GeneralNoticeApi")" data-notice-delete="@Url.Action("Delete","GeneralNoticeApi")"
+     data-event-list="@Url.Action("List","EventApi")" data-event-save="@Url.Action("Save","EventApi")" data-event-toggle="@Url.Action("ToggleStatus","EventApi")" data-event-delete="@Url.Action("Delete","EventApi")"
+     data-video-list="@Url.Action("List","VideoApi")" data-video-save="@Url.Action("Save","VideoApi")" data-video-toggle="@Url.Action("ToggleStatus","VideoApi")" data-video-delete="@Url.Action("Delete","VideoApi")">
+    @Html.AntiForgeryToken()
+    <section class="section-panel active" id="panel-general-notice">
+        <div class="breadcrumb-row"><div><h4>General Notice</h4><div class="bc-path">Home <i class="bi bi-chevron-right"></i> Notice &amp; Event <i class="bi bi-chevron-right"></i> General Notice</div></div><button class="btn-saffron" type="button" id="addNoticeBtn"><i class="bi bi-plus-lg"></i> Add Notice</button></div>
+        @Html.Partial("_NoticeEventVideoTabs", "notice")
+        <div class="card-panel"><div class="cph"><h6>All <span>General Notices</span></h6></div><div class="table-responsive"><table class="table table-modern" data-datatable="manual"><thead><tr><th>Sr.No</th><th>Notice Type</th><th>Title</th><th>File</th><th>Status</th><th>Created By</th><th>Updated By</th><th>Action</th></tr></thead><tbody id="noticeTableBody"><tr><td colspan="8" class="text-center py-4">Loading...</td></tr></tbody></table></div></div>
+    </section>
+    <section class="section-panel" id="panel-event">
+        <div class="breadcrumb-row"><div><h4>Events</h4><div class="bc-path">Home <i class="bi bi-chevron-right"></i> Notice &amp; Event <i class="bi bi-chevron-right"></i> Events</div></div><button class="btn-saffron" type="button" id="addEventBtn"><i class="bi bi-plus-lg"></i> Add Event</button></div>
+        <div class="subtab-pills"><button onclick="navTo('panel-general-notice')">General Notices</button><button class="active" onclick="navTo('panel-event')">Events</button><button onclick="navTo('panel-video')">Video</button></div>
+        <div class="card-panel"><div class="cph"><h6>All <span>Events</span></h6></div><div class="table-responsive"><table class="table table-modern" data-datatable="manual"><thead><tr><th>Sr.No</th><th>Banner</th><th>Event Name</th><th>Venue</th><th>Date</th><th>Time</th><th>Status</th><th>Created By</th><th>Updated By</th><th>Action</th></tr></thead><tbody id="eventTableBody"><tr><td colspan="10" class="text-center py-4">Loading...</td></tr></tbody></table></div></div>
+    </section>
+    <section class="section-panel" id="panel-video">
+        <div class="breadcrumb-row"><div><h4>Videos</h4><div class="bc-path">Home <i class="bi bi-chevron-right"></i> Notice &amp; Event <i class="bi bi-chevron-right"></i> Video</div></div><button class="btn-saffron" type="button" id="addVideoBtn"><i class="bi bi-plus-lg"></i> Add Video</button></div>
+        <div class="subtab-pills"><button onclick="navTo('panel-general-notice')">General Notices</button><button onclick="navTo('panel-event')">Events</button><button class="active" onclick="navTo('panel-video')">Video</button></div>
+        <div class="card-panel"><div class="cph"><h6>All <span>Videos</span></h6></div><div class="table-responsive"><table class="table table-modern" data-datatable="manual"><thead><tr><th>Sr.No</th><th>Title</th><th>Source</th><th>Status</th><th>Created By</th><th>Updated By</th><th>Action</th></tr></thead><tbody id="videoTableBody"><tr><td colspan="7" class="text-center py-4">Loading...</td></tr></tbody></table></div></div>
+    </section>
+</div>

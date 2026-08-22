@@ -1,0 +1,84 @@
+﻿@model Rec_Partapgarh.Models.notification
+@{
+    ViewBag.Title = "notification";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+
+@using (Html.BeginForm("Addnoti", "Admin", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <div class="container-fluid mt-3">
+        <div class="form-horizontal p-4 shadow" style="width:95%; margin:0px auto; height:auto; background-color:white;">
+            <h4 class=" fw-bold" style="color: #450145;"> Add Notification</h4>
+            <hr />
+            @if (ViewBag.msg != null)
+            {
+
+                <div class="alert alert-primary" style=" border-radius:0px; color:green;" role="alert">
+                    @ViewBag.msg
+                </div>
+            }
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+
+                <div class="col-md-12">
+                    @Html.EditorFor(model => model.notification1, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter Notification ", required = "required", style = "height:50px; border-radius:0px;" } })
+                    @Html.ValidationMessageFor(model => model.notification1, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+
+                <div class="col-md-12 mt-3">
+                    @Html.EditorFor(model => model.url, new { htmlAttributes = new { @class = "form-control", @placeholder = " Enter Links", required = "required", style = "height:50px; border-radius:0px;" } })
+                    @Html.ValidationMessageFor(model => model.url, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group mt-3">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Add Notification" class="btn " style="height: 40px; border-radius: 0px; width:; background-color: #450145; color: white;" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 mt-2 p-2 table-responsive">
+                    <table id="example" class="table table-bordered" style="width:100%;">
+                        <thead>
+                            <tr class="text-dark">
+                                <th class="text-start" style="background-color: #450145; color: white;">S.R No</th>
+                                <th class="text-center" style="background-color:#450145;color:white;">Notification</th>
+                                <th class="text-center" style="background-color:#450145;color:white;">Url</th>
+                                <th class="text-center" style="background-color:#450145;color:white;">Date Of Notification</th>
+                                <th class="text-center" style="background-color:#450145;color:white;">Action</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                                var a = 1;
+                            }
+                            @foreach (var item in ViewBag.Noti)
+                            {
+                                <tr class="text-center">
+
+                                    <td class="text-dark text-center">@a</td>
+                                    <td class="text-dark">@item.notification1</td>
+                                    <td class="text-dark">@item.url</td>
+                                    <td class="text-dark">@item.doa</td>
+                                    <td class="text-dark"><a href="~/Admin/DeleteNoti?id=@item.Id"><input type="button" value="Delete" class="btn btn-danger" style="border-radius:0px;" /></a></td>
+                                    @{
+                                        a++;
+                                    }
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+

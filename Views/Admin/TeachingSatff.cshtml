@@ -1,0 +1,162 @@
+﻿@model Rec_Partapgarh.Models.faculty
+
+@{
+    ViewBag.Title = "TeachingSatff";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+
+@using (Html.BeginForm("TeachingSave", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal border shadow mt-3" style="width:95%; margin:0px auto; padding:30px; height:auto; margin-bottom:50px;">
+        <h4 style="color: #450145;" class="fw-bold">Add Faculty</h4>
+        <hr />
+        @if (ViewBag.msg != null)
+        {
+
+            <div class="alert alert-primary" style=" border-radius:0px; color:green;" role="alert">
+                @ViewBag.msg
+            </div>
+        }
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <h6>Faculty Name</h6>
+                        <div class="col-md-12 mt-3">
+                            @Html.EditorFor(model => model.Teachername, new { htmlAttributes = new { @class = "form-control", style = "width:100%; height:50px; border-radius:0px;" } })
+                            @Html.ValidationMessageFor(model => model.Teachername, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                      <h6>DOB</h6>
+                        <div class="col-md-12 mt-3">
+                            @Html.EditorFor(model => model.Dob, new { htmlAttributes = new { @class = "form-control", @type = "date", style = "width:100%; height:50px; border-radius:0px;" } })
+                            @Html.ValidationMessageFor(model => model.Dob, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <h6>Gender</h6>
+                        <div class="col-md-12 mt-3">
+                            <select name="gender" style="width:100%; height:50px" class="border">
+                                <option value=""> Select Your Gender</option>
+                                <option>Male</option>
+                                <option>Female</option>
+                               
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <h6>Father  Name</h6>
+                        <div class="col-md-12 mt-3">
+                            @Html.EditorFor(model => model.fathername, new { htmlAttributes = new { @class = "form-control", style = "width:100%; height:50px; border-radius:0px;" } })
+                            @Html.ValidationMessageFor(model => model.fathername, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <h6>Mobile No</h6>
+                        <div class="col-md-12 mt-3">
+                            @Html.EditorFor(model => model.mobileno, new { htmlAttributes = new { @class = "form-control", style = "width:100%; height:50px; border-radius:0px;" } })
+                            @Html.ValidationMessageFor(model => model.mobileno, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <h6>Email</h6>
+                        <div class="col-md-12 mt-3">
+                            @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control", style = "width:100%; height:50px; border-radius:0px;" } })
+                            @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <h6>Department</h6>
+                        <div class="col-md-12 mt-3">
+                            @Html.DropDownList("department", ViewBag.Departments as List<SelectListItem>, "-- Select Department --", new { @class = "form-control", style = "width:100%; height:50px; border-radius:0px;" })
+                            @Html.ValidationMessageFor(model => model.department, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <h6>Designation</h6>
+                        <div class="col-md-12 mt-3">
+                            @Html.EditorFor(model => model.designation, new { htmlAttributes = new { @class = "form-control", style = "width:100%; height:50px; border-radius:0px;" } })
+                            @Html.ValidationMessageFor(model => model.designation, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <h6>highest Qualification</h6>
+                        <div class="col-md-12 mt-3">
+                            @Html.EditorFor(model => model.highestQualification, new { htmlAttributes = new { @class = "form-control", style = "width:100%; height:50px; border-radius:0px;" } })
+                            @Html.ValidationMessageFor(model => model.highestQualification, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <h6>Address</h6>
+                        <div class="col-md-12 mt-3">
+                            @Html.EditorFor(model => model.address, new { htmlAttributes = new { @class = "form-control", style = "width:100%; height:50px; border-radius:0px;" } })
+                            @Html.ValidationMessageFor(model => model.address, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <div class="form-group">
+<h6>Profile Pic</h6>                        
+                        <div class="col-md-12 mt-3">
+                            <input type="file" class="border p-3" name="file" style="width:100%" />
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-12 mt-3">
+                <input type="submit" value="Submit" class="btn" style="background-color: #450145; color: white; width: 100px; height: 40px; border-radius: 0px;" />
+            </div>
+        </div>
+    </div>
+
+}
+

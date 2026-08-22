@@ -1,0 +1,472 @@
+﻿@model List<Rec_Partapgarh.Models.PublicPressReleaseViewModel>
+@using Rec_Partapgarh.Models
+@using System.Text.RegularExpressions
+
+@{
+    ViewBag.Title = "Media Coverage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var mediaList = Model;
+    int mediaIndex = 0;
+}
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+    .media-box {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+        background: #f5f5f5;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+        cursor: pointer;
+    }
+
+        .media-box:hover {
+            transform: scale(1.03);
+        }
+
+        .media-box img {
+            width: 100%;
+            height: 250px;
+            object-fit: fill;
+            border-radius: 10px 10px 0 0;
+            display: block;
+        }
+
+    .media-content {
+        background: #fff;
+        padding: 15px;
+        min-height: 120px;
+        border-radius: 0 0 10px 10px;
+    }
+
+    .media-title {
+        font-size: 18px;
+        font-weight: 700;
+        font-family: 'Poppins', sans-serif;
+        color: #0747AE;
+        margin-bottom: 8px;
+        line-height: 1.4;
+    }
+
+    .media-desc {
+        font-size: 14px;
+        color: #333;
+        line-height: 1.6;
+        margin-bottom: 8px;
+        text-align: justify;
+    }
+
+    .media-date {
+        font-size: 13px;
+        color: #777;
+        font-weight: 500;
+    }
+
+    .overlay-icon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.6);
+        width: 100%;
+        height: 250px;
+        opacity: 0;
+        transition: 0.3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px 10px 0 0;
+    }
+
+    .media-box:hover .overlay-icon {
+        opacity: 1;
+    }
+
+    .overlay-icon i {
+        font-size: 2rem;
+        color: #fff;
+    }
+
+    .media-empty {
+        background: #fff;
+        padding: 35px;
+        text-align: center;
+        border-radius: 8px;
+        color: #777;
+        font-size: 17px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    }
+
+    @@media (max-width: 768px) {
+        .media-box img {
+            height: 180px;
+        }
+
+        .overlay-icon {
+            height: 180px;
+        }
+    }
+
+    /* ===== IMAGE MODAL WITH PREV NEXT ===== */
+    .img-modal {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,.88);
+        z-index: 99999;
+        padding: 20px;
+    }
+
+    .img-modal-inner {
+        width: 90%;
+        max-width: 950px;
+        margin: 35px auto 0;
+        background: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .img-modal-img-box {
+        width: 100%;
+        background: #111;
+        text-align: center;
+    }
+
+        .img-modal-img-box img {
+            max-width: 100%;
+            max-height: 70vh;
+            object-fit: contain;
+        }
+
+    .img-modal-content {
+        padding: 15px 20px;
+        background: #fff;
+    }
+
+    .img-modal-title {
+        color: #0747AE;
+        font-size: 22px;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    .img-modal-desc {
+        color: #333;
+        font-size: 15px;
+        line-height: 1.7;
+        margin-bottom: 0;
+    }
+
+    .img-modal .close {
+        position: absolute;
+        top: 12px;
+        right: 18px;
+        font-size: 40px;
+        color: #fff;
+        cursor: pointer;
+        z-index: 100000;
+        line-height: 1;
+    }
+
+    .modal-nav-btn {
+        position: absolute;
+        top: 42%;
+        transform: translateY(-50%);
+        width: 45px;
+        height: 45px;
+        border: none;
+        border-radius: 50%;
+        background: #fff;
+        color: #0747AE;
+        font-size: 26px;
+        z-index: 100000;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+        .modal-nav-btn:hover {
+            background: #0747AE;
+            color: #fff;
+        }
+
+    .prev-btn {
+        left: 30px;
+    }
+
+    .next-btn {
+        right: 30px;
+    }
+
+    @@media (max-width: 576px) {
+        .img-modal-inner {
+            width: 96%;
+            margin-top: 55px;
+        }
+
+        .img-modal-title {
+            font-size: 18px;
+        }
+
+        .modal-nav-btn {
+            width: 38px;
+            height: 38px;
+            font-size: 22px;
+        }
+
+        .prev-btn {
+            left: 8px;
+        }
+
+        .next-btn {
+            right: 8px;
+        }
+    }
+</style>
+
+<!-- ===== BANNER ===== -->
+<div class="row">
+    <div class="col-md-12 p-0" style="margin-top:-20px;
+        background:url('https://img.freepik.com/premium-photo/extensive-collection-books-library_868797-8212.jpg') no-repeat center;
+        background-size:cover; background-attachment:fixed;">
+        <div class="container-fluid" style="background-color:rgba(0,0,0,0.5);">
+            <div class="container">
+                <div class="d-flex flex-column justify-content-center" style="min-height:300px">
+                    <h3 class="display-6 text-white text-uppercase fw-bold">Media Coverage</h3>
+                    <div class="d-inline-flex text-white">
+                        <p class="m-0 text-uppercase">
+                            <a class="text-white" href="/" style="text-decoration:none;">Home</a>
+                        </p>
+                        <i class="fa fa-angle-double-right pt-1 px-3"></i>
+                        <p class="m-0 text-uppercase text-light">Media Coverage</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ===== MEDIA COVERAGE ===== -->
+<div class="our-featues-area inc-trending-courses about-area mt-0"
+     data-aos="fade-up"
+     style="background-image: url(assets/img/bg1.jpg); padding-top: 40px !important; margin-bottom:50px;">
+
+    <div class="container mb-5" style="margin-top:-10px;">
+        <div class="row">
+            @if (mediaList != null && mediaList.Count > 0)
+            {
+                foreach (var item in mediaList)
+                {
+                    string imgPath = Url.Content(item.ImagePath);
+                    string desc = "";
+                    string shortDesc = desc;
+
+                    if (!string.IsNullOrWhiteSpace(shortDesc) && shortDesc.Length > 110)
+                    {
+                        shortDesc = shortDesc.Substring(0, 110) + "...";
+                    }
+
+                    <div class="col-md-3 mb-4">
+                        <div class="media-box"
+                             data-index="@mediaIndex"
+                             data-full="@imgPath"
+                             data-title="@item.Title"
+                             data-desc="@desc"
+                             onclick="openImg(this)">
+
+                            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw="
+                                 data-src="@imgPath"
+                                 alt="@item.Title"
+                                 loading="lazy"
+                                 decoding="async"
+                                 class="media-lazy" />
+
+                            <div class="overlay-icon">
+                                <i class="fa fa-plus"></i>
+                            </div>
+
+                            @*<div class="media-content">
+                                <div class="media-title">@item.Title</div>
+
+                                @if (!string.IsNullOrWhiteSpace(shortDesc))
+                                {
+                                    <div class="media-desc">@shortDesc</div>
+                                }
+
+                                <div class="media-date">
+                                    <i class="fa fa-calendar"></i>
+                                    @String.Format("{0:dd MMM yyyy}", item.Dos)
+                                </div>
+                            </div>*@
+                        </div>
+                    </div>
+
+                    mediaIndex++;
+                }
+            }
+            else
+            {
+                <div class="col-md-12">
+                    <div class="media-empty">
+                        No Media Coverage Found
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<!-- ===== IMAGE MODAL ===== -->
+<div id="imgModal" class="img-modal">
+    <span class="close" onclick="closeImg()">&times;</span>
+
+    <button type="button" class="modal-nav-btn prev-btn" onclick="prevImg(event)">
+        <i class="fa fa-angle-left"></i>
+    </button>
+
+    <button type="button" class="modal-nav-btn next-btn" onclick="nextImg(event)">
+        <i class="fa fa-angle-right"></i>
+    </button>
+
+    <div class="img-modal-inner">
+        <div class="img-modal-img-box">
+            <img id="imgModalSrc" />
+        </div>
+
+        <div class="img-modal-content">
+            <h4 class="img-modal-title" id="imgModalTitle"></h4>
+            <p class="img-modal-desc" id="imgModalDesc"></p>
+        </div>
+    </div>
+</div>
+
+<script>
+    var currentIndex = 0;
+    var mediaBoxes = [];
+
+    function refreshMediaBoxes() {
+        mediaBoxes = Array.prototype.slice.call(document.querySelectorAll(".media-box"));
+    }
+
+    function openImg(box) {
+        refreshMediaBoxes();
+
+        currentIndex = parseInt(box.getAttribute("data-index")) || 0;
+
+        showImage(currentIndex);
+
+        document.getElementById("imgModal").style.display = "block";
+        document.body.style.overflow = "hidden";
+    }
+
+    function showImage(index) {
+        if (!mediaBoxes || mediaBoxes.length === 0) {
+            return;
+        }
+
+        if (index < 0) {
+            index = mediaBoxes.length - 1;
+        }
+
+        if (index >= mediaBoxes.length) {
+            index = 0;
+        }
+
+        currentIndex = index;
+
+        var box = mediaBoxes[currentIndex];
+
+        document.getElementById("imgModalSrc").src = box.getAttribute("data-full");
+        document.getElementById("imgModalTitle").innerText = box.getAttribute("data-title") || "";
+        document.getElementById("imgModalDesc").innerText = box.getAttribute("data-desc") || "";
+    }
+
+    function closeImg() {
+        document.getElementById("imgModal").style.display = "none";
+        document.getElementById("imgModalSrc").src = "";
+        document.body.style.overflow = "";
+    }
+
+    function prevImg(e) {
+        if (e) {
+            e.stopPropagation();
+        }
+
+        showImage(currentIndex - 1);
+    }
+
+    function nextImg(e) {
+        if (e) {
+            e.stopPropagation();
+        }
+
+        showImage(currentIndex + 1);
+    }
+
+    document.getElementById("imgModal").addEventListener("click", function (e) {
+        if (e.target.id === "imgModal") {
+            closeImg();
+        }
+    });
+
+    document.addEventListener("keydown", function (e) {
+        var modal = document.getElementById("imgModal");
+
+        if (modal.style.display !== "block") {
+            return;
+        }
+
+        if (e.key === "Escape") {
+            closeImg();
+        }
+
+        if (e.key === "ArrowLeft") {
+            showImage(currentIndex - 1);
+        }
+
+        if (e.key === "ArrowRight") {
+            showImage(currentIndex + 1);
+        }
+    });
+
+    // ===== LAZY LOADING SAME AS GALLERY =====
+    (function () {
+        function loadMediaImage(img) {
+            var src = img.getAttribute("data-src");
+
+            if (!src) return;
+
+            img.src = src;
+            img.removeAttribute("data-src");
+        }
+
+        var lazyImages = document.querySelectorAll(".media-lazy");
+
+        if ("IntersectionObserver" in window) {
+            var imageObserver = new IntersectionObserver(function (entries, observer) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        loadMediaImage(entry.target);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                root: null,
+                rootMargin: "0px",
+                threshold: 0.01
+            });
+
+            lazyImages.forEach(function (img) {
+                imageObserver.observe(img);
+            });
+        } else {
+            lazyImages.forEach(function (img) {
+                loadMediaImage(img);
+            });
+        }
+    })();
+</script>

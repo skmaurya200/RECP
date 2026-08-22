@@ -1,0 +1,6 @@
+@model string
+<div class="subtab-pills">
+    <button class="@(Model=="notice"?"active":"")" onclick="navTo('panel-general-notice')">General Notices</button>
+    <button class="@(Model=="event"?"active":"")" onclick="navTo('panel-event')">Events</button>
+    <button class="@(Model=="video"?"active":"")" onclick="navTo('panel-video')">Video</button>
+</div>

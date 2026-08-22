@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7ff10ec8a5e94ec3a0c288e13efa2050" Name="Diagram1">
+        <EntityTypeShape EntityType="recpModel.GalleryImage" Width="1.375" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="recpModel.Category" Width="1.5" PointX="0.75" PointY="1" />
+        <AssociationConnector Association="recpModel.FK__GalleryIm__Categ__38996AB5" />
+        <EntityTypeShape EntityType="recpModel.Academic_Committee" Width="1.5" PointX="3.75" PointY="3.75" />
+        <EntityTypeShape EntityType="recpModel.AcademicCalendar" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="recpModel.AICTE" Width="1.5" PointX="5.75" PointY="3.75" />
+        <EntityTypeShape EntityType="recpModel.Circular" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="recpModel.Contact" Width="1.5" PointX="2.75" PointY="6.75" />
+        <EntityTypeShape EntityType="recpModel.Department" Width="1.5" PointX="4.75" PointY="6.75" />
+        <EntityTypeShape EntityType="recpModel.etender" Width="1.5" PointX="6.75" PointY="6.75" />
+        <EntityTypeShape EntityType="recpModel.Event" Width="1.5" PointX="7.75" PointY="3.75" />
+        <EntityTypeShape EntityType="recpModel.faculty" Width="1.5" PointX="8.75" PointY="6.75" />
+        <EntityTypeShape EntityType="recpModel.G_O_for_Change" Width="1.5" PointX="9.75" PointY="0.75" />
+        <EntityTypeShape EntityType="recpModel.Gallery" Width="1.5" PointX="0.75" PointY="9.75" />
+        <EntityTypeShape EntityType="recpModel.Grievance" Width="1.5" PointX="2.75" PointY="9.75" />
+        <EntityTypeShape EntityType="recpModel.IQAC" Width="1.5" PointX="9.75" PointY="3.75" />
+        <EntityTypeShape EntityType="recpModel.List_of_Holidays" Width="1.5" PointX="4.75" PointY="9.75" />
+        <EntityTypeShape EntityType="recpModel.Memorandum_of_Association" Width="1.5" PointX="10.75" PointY="6.75" />
+        <EntityTypeShape EntityType="recpModel.Minutes_of_Meeting" Width="1.5" PointX="6.75" PointY="10.75" />
+        <EntityTypeShape EntityType="recpModel.Mou" Width="1.5" PointX="8.75" PointY="10.75" />
+        <EntityTypeShape EntityType="recpModel.notification" Width="1.5" PointX="10.75" PointY="9.75" />
+        <EntityTypeShape EntityType="recpModel.notificationfile" Width="1.5" PointX="11.75" PointY="0.75" />
+        <EntityTypeShape EntityType="recpModel.RecentActivity" Width="1.5" PointX="11.75" PointY="3.75" />
+        <EntityTypeShape EntityType="recpModel.Silder" Width="1.5" PointX="12.75" PointY="6.75" />
+        <EntityTypeShape EntityType="recpModel.Society_Bylaws" Width="1.5" PointX="12.75" PointY="9.75" />
+        <EntityTypeShape EntityType="recpModel.Table" Width="1.5" PointX="10.75" PointY="12.75" />
+        <EntityTypeShape EntityType="recpModel.TimeTable" Width="1.5" PointX="12.75" PointY="12.75" />
+        <EntityTypeShape EntityType="recpModel.User" Width="1.5" PointX="13.75" PointY="0.75" />
+        <EntityTypeShape EntityType="recpModel.e_tenders" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="recpModel.profile" Width="1.5" PointX="0.75" PointY="13.75" />
+        <EntityTypeShape EntityType="recpModel.MediaCoverage" Width="1.5" PointX="3.375" PointY="13.75" />
+        <EntityTypeShape EntityType="recpModel.PressReleas" Width="1.5" PointX="5.375" PointY="13.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

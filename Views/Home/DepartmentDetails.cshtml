@@ -1,0 +1,79 @@
+﻿@model REC_MIRZAPUR.Models.Department
+@{
+    ViewBag.Title = "Home";
+}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 p-0">
+            <div class="container-fluid page-header">
+                <div class="container">
+                    <div class="d-flex flex-column justify-content-center" style="min-height: 300px">
+                        <h3 class="display-7 text-white text-uppercase">@Model.DepartmentName</h3>
+                        <div class="d-inline-flex text-white">
+                           <p class="m-0 text-uppercase"><a class="text-white" href="/" style="text-decoration:none;">Home</a></p>
+                            <i class="fa fa-angle-double-right pt-1 px-3"></i>
+                            <p class="m-0 text-uppercase">@Model.DepartmentName</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="
+   background-image: url('/Content/myimg/bg1.jpg');
+   background-attachment: fixed;
+   background-repeat: no-repeat;
+   background-size: cover;
+">
+    <div class="container py-5">
+        <h2 class="fw-bold text-center" style="color:#0747ae;">@Model.DepartmentName</h2>
+        <hr style="border: 1.5px solid #0747ae; width: 80px; margin: 10px auto;">
+
+        <!-- ✅ Flexbox Layout for Responsive Image and Content -->
+        <div class="row align-items-center mt-4">
+            <div class="col-lg-5 text-center d-flex align-items-center justify-content-center">
+                <img src="~/Content/recp/upload/Department/@Model.ImagePath"
+                     class="img-fluid rounded"
+                     style="max-width: 100%; height: auto; max-height: 400px; object-fit: cover; border: 1px solid #ddd; padding: 5px;"
+                     alt="@Model.DepartmentName">
+            </div>
+            <div class="col-lg-7 mt-4 mt-lg-0 d-flex align-items-center">
+                <p class="text-dark" style="text-align: justify; font-size: 17px; line-height: 30px;">
+                    @Model.Content
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ✅ Responsive Table -->
+    <div class="container-fluid p-3">
+        <div class="row">
+            <div class="col-md-12">
+                <h4 style="color:#0747ae;" class="fw-bold">Faculty of Information Technology</h4>
+                <hr style="border:1px solid black;" />
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr class="text-center">
+                                <th style="background-color:#0747ae;color:white;">Name</th>
+                                <th style="background-color:#0747ae;color:white;">Designation</th>
+                                <th style="background-color:#0747ae;color:white;">Date of Joining</th>
+                                <th style="background-color:#0747ae;color:white;">Qualifications</th>
+                                <th style="background-color:#0747ae;color:white;">Experiences</th>
+                                <th style="background-color:#0747ae;color:white;">Area of Interest</th>
+                                <th style="background-color:#0747ae;color:white;">E-mail</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="text-center">
+                                <td colspan="8">Data to be Uploaded Soon ...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

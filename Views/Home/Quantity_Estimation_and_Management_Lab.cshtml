@@ -1,0 +1,156 @@
+﻿@{
+  
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    .bg-welfare-left {
+        background-color: #0747AE;
+        padding: 15px;
+    }
+
+        .bg-welfare-left h3 {
+            font-size: 21px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .bg-welfare-left ul li {
+            margin-top: 18px;
+            font-size: 17px;
+            color: #fff;
+        }
+
+            .bg-welfare-left ul li a {
+                color: #fff;
+                text-decoration: none;
+            }
+
+                .bg-welfare-left ul li a:hover {
+                    text-decoration: underline;
+                }
+
+    .content-box {
+        border: 1px dashed #000;
+        background: #fff;
+        padding: 20px;
+    }
+
+    .welfare-font {
+        font-size: 17px;
+        color: #000;
+        text-align: justify;
+        line-height: 1.8;
+    }
+
+    hr {
+        border: 1px solid #000;
+    }
+</style>
+
+<!-- ================= BANNER ================= -->
+<div class="row">
+    <div class="col-md-12 p-0" style="margin-top:-20px;
+        background:url('https://img.freepik.com/premium-photo/extensive-collection-books-library_868797-8212.jpg') center/cover fixed;">
+        <div style="background:rgba(0,0,0,0.5)">
+            <div class="container">
+                <div class="d-flex flex-column justify-content-center" style="min-height:300px;">
+                    <h3 class="display-6 text-white fw-bold">
+                        Quantity Estimation and Management Lab
+                    </h3>
+                    <div class="d-inline-flex text-white">
+                        <a href="/" class="text-white text-decoration-none">Home</a>
+                        <i class="fa fa-angle-double-right px-2 pt-1"></i>
+                        <span>Quantity Estimation and Management Lab</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ================= MAIN CONTENT ================= -->
+<div class="container py-5">
+    <div class="row">
+        <style>
+            .bg-welfare-left ul li {
+                margin-top: 20px;
+                font-size: 17px;
+                line-height: 1.5;
+                color: #fff;
+                font-family: Arial, sans-serif;
+            }
+
+            .bg-welfare-left hr {
+                border-bottom: 2px solid white !important;
+            }
+        </style>
+                @Html.Partial("~/Views/Shared/DeptSidebar/_CVLE_Sidebar.cshtml")
+
+        <!-- RIGHT CONTENT -->
+        <div class="col-lg-9">
+            <div class="content-box">
+
+                <h2 class="fw-bold" style="color:#0747AE;">Quantity Estimation and Management Lab</h2>
+                <hr />
+                <div class="row mt-2">
+                    <div class="col-lg-5">
+                        <img src="~/Content/img/Quantity_Estimation_and_Management_Lab.jpg" class="p-1" style="height:250px;width:100%;border:1px dashed #000;object-fit:cover" />
+                    </div>
+                    <div class="col-lg-7">
+                        <p class="welfare-font">
+                            The Quantity Estimation and Management Lab focuses on teaching students how to calculate material quantities required for construction projects and estimate their overall cost. Students learn to interpret building drawings, prepare detailed estimates, and develop cost schedules while becoming familiar with standard measurement practices, rates, and budgeting techniques. The lab helps students understand the financial aspect of construction work and prepares them for practical tasks in project planning and management.
+                        </p>
+                    </div>
+                   
+                </div>
+
+                <p class="welfare-font fw-bold">List of Experiments</p>
+                <ul class="welfare-font" style="list-style-type:disc !important;">
+                    <li>Interpret and analyze DSR (Delhi Schedule of Rates), CPWD (Central Public Works Department) specifications.</li>
+                    <li>Estimate and analyze quantities of various items of work of a building.</li>
+                    <li>Develop and prepare a Bill of Quantities (BOQ) for a project.</li>
+                    <li>Utilize and apply MS Project to manage a project.</li>
+                    <li>Evaluate a complete set of tender documents of a building.</li>
+                </ul>
+            </div>
+           
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

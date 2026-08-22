@@ -1,0 +1,876 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ========== Meta Tags ========== -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description"
+        content="Bharat Ratna Babasaheb Bhimrao Ambedkar Rajkiya Engineering College, Pratapgarh is dedicated to fostering an inclusive and equitable environment that empowers students with knowledge, skills, and innovation." />
+    <meta name="keywords"
+        content="Bharat Ratna Babasaheb Bhimrao Ambedkar Rajkiya Engineering College, Pratapgarh, Engineering College UP, B.Tech Uttar Pradesh, Technical Education UP" />
+    <meta name="author" content="REC Pratapgarh" />
+    <meta name="application-name" content="REC Pratapgarh">
+    <script type="application/ld+json">
+    {
+      "@@context": "https://schema.org",
+      "@@type": "WebSite",
+      "url": "https://recp.ac.in/",
+      "name": "REC Pratapgarh",
+      "alternateName": "REC Pratapgarh"
+    }
+    </script>
+    <link rel="icon" href="~/Content/img/image/recp2.png" />
+    <title>Bharat Ratna Babasaheb Bhimrao Ambedkar Rajkiya Engineering College, Pratapgarh || @ViewBag.Title</title>
+    <link rel="stylesheet" href="~/Content/css/main.css" />
+    <!-- ========== Favicon Icon ========== -->
+    <link rel="shortcut icon" href="@Url.Content("~/Content/recp/assets/img/logo.png")" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- ========== Start Stylesheet ========== -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link href="~/Content/recp/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/recp/assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="~/Content/recp/assets/css/flaticon-set.css" rel="stylesheet" />
+    <link href="~/Content/recp/assets/css/elegant-icons.css" rel="stylesheet" />
+    <link href="~/Content/recp/assets/css/magnific-popup.css" rel="stylesheet" />
+    <link href="~/Content/recp/assets/css/owl.carousel.min.css" rel="stylesheet" />
+    <link href="~/Content/recp/assets/css/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="~/Content/recp/assets/css/animate.css" rel="stylesheet" />
+    <link href="~/Content/recp/assets/css/bootsnav.css" rel="stylesheet" />
+    <link href="~/Content/recp/assets/css/style.css" rel="stylesheet">
+    <link href="~/Content/recp/assets/css/responsive.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Akshar:wght@300..700&family=Jaini&family=Kalam:wght@300;400;700&family=Palanquin+Dark:wght@400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <!-- ========== End Stylesheet ========== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
+
+    <!-- ========== Google Fonts ========== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Akshar:wght@300..700&family=Cabin:ital,wght@0,400..700;1,400..700&family=Cal+Sans&family=Comic+Relief:wght@400;700&family=Jost:ital,wght@0,100..900;1,100..900&family=Kalam:wght@300;400;700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lexend:wght@100..900&family=Lobster&family=Mukta:wght@200;300;400;500;600;700;800&family=Noto+Sans+Devanagari:wght@100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Satisfy&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Font Awesome (optional) -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Akshar:wght@300..700&family=Jaini&family=Kalam:wght@300;400;700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans+JP:wght@100..900&family=Palanquin+Dark:wght@400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="@Url.Content("~/Content/recp/assets/css/style.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/recp/assets/css/responsive.css")" rel="stylesheet" />
+    <script src="@Url.Content("~/Content/recp/assets/js/jquery-1.12.4.min.js")"></script>
+    <script src="@Url.Content("~/Content/recp/assets/js/owl.carousel.min.js")"></script>
+
+</head>
+
+<body
+    style="font-family: Arial, sans-serif; background-image: linear-gradient(rgba(255, 255, 255, 0.50),rgba(255, 255, 255,0.50)), url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZ6meXZcttUivbZvv4x8vR_0-C47NuqheKlA&s') ">
+
+    <div class="container-fluid">
+
+        <div class="row" style="background-color: #0747ae;">
+            <div class="col-sm-12 my_top p-0">
+
+                <!-- Start Header Top
+            ============================================= -->
+                <style>
+                </style>
+
+
+                <!-- TOP BAR -->
+                <div class="top-bar d-flex justify-content-between align-items-center">
+
+                    <!-- Left: Date-Time -->
+                    <div class="d-flex align-items-center">
+                        <span id="time-display" style="font-size:16px;font-weight:500;"></span>
+                    </div>
+
+                    <!-- Right: Menu & Controls -->
+                    <div class="d-flex align-items-center flex-wrap gap-2">
+                        <a href="https://email.recp.ac.in" target="_blank">
+                            <div class="lang-switch">EMAIL</div>
+                        </a>
+                        <div>
+
+                            <a href="#">LANDING PAGE</a> |
+                            <a href="#">MAIN HOME</a> |
+                        </div>
+
+
+                        <!-- Icons -->
+                        <i class="fa-solid fa-volume-high" onclick="handleClick('Volume')"></i>
+                        <i class="fa-solid fa-sitemap" onclick="handleClick('Sitemap')"></i>
+                        <i class="fa-solid fa-power-off" onclick="handleClick('Logout')"></i>
+
+                        <!-- Font Size Control -->
+                        <div class="font-size-controls">
+                            <div onclick="handleClick('A-')">A<sup>-</sup></div>
+                            <div onclick="handleClick('A')">A</div>
+                            <div onclick="handleClick('A+')">A<sup>+</sup></div>
+                        </div>
+
+                        <!-- Theme Color Switch -->
+                        <div class="theme-switch">
+                            <div style="background:#f00;" onclick="handleClick('Red Theme')">T</div>
+                            <div style="background:#008000; color:white;" onclick="handleClick('Green Theme')">T</div>
+                            <div style="background:orange; color:white;" onclick="handleClick('orange Theme')">T</div>
+                            <div style="background:#000; color:white;" onclick="handleClick('Black Theme')">T</div>
+                        </div>
+
+                        <!-- Hindi Button -->
+                        <div class="lang-switch" onclick="handleClick('Hindi')">हिंदी</div>
+
+                        <!-- Search Box -->
+                        @* <div class="search-box">
+                            <input1 type="text" id="search-input" style="height:20px !important;" placeholder="Search here">
+
+                        </div>*@
+
+                        <!-- Right Icons -->
+                        <i class="fa-solid fa-phone" onclick="handleClick('Phone')"></i>
+                        <i class="fa-solid fa-location-dot" onclick="handleClick('Location')"></i>
+                        <i class="fa-solid fa-file-pen" onclick="handleClick('Apply Now')"></i>
+                        <i class="fa-solid fa-users" onclick="handleClick('Users')"></i>
+                    </div>
+                </div>
+
+                <!-- JS Script -->
+
+
+            </div>
+        </div>
+
+
+        <style>
+            .college-heading {
+                text-align: left !important;
+            }
+
+            @@media (max-width: 991.98px) {
+                .college-heading {
+                    text-align: center !important;
+                }
+
+                .college-heading h6,
+                .college-heading h5,
+                .college-heading p {
+                    margin-left: 0 !important;
+                }
+            }
+        </style>
+
+        <div class="container-fluid">
+            <div class="row py-3 align-items-center text-center">
+
+                <!-- Left Logo -->
+                <div class="col-lg-1 col-md-2 col-12 mb-lg-4">
+                    <img src="/Content/img/logoREC2.png" class="mainlogo pb-lg-4 rounded-circle" height="120"
+                        width="150"
+                        alt="BHARAT RATNA BABASAHEB BHIMRAO AMBEDKAR RAJKIYA ENGINEERING COLLEGE PRATAPGARH" />
+                </div>
+
+                <!-- College Name -->
+                <div class="col-sm-9 college-heading mb-2">
+
+                    <h5
+                        style="color: #dd572a; margin-top: 10px; font-family: Arial; font-weight: 700; font-size: 30px; ">
+                        भारत रत्न बाबासाहब भीमराव अम्बेडकर राजकीय इंजीनियरिंग कॉलेज प्रतापगढ़
+                    </h5>
+                    <h6
+                        style="color:#0747ae; font-size:20px; font-weight:700; font-family:Noto Sans JP,sans-serif; margin-top:3px;">
+
+                        BHARAT RATNA BABASAHEB BHIMRAO AMBEDKAR RAJKIYA ENGINEERING COLLEGE PRATAPGARH
+                    </h6>
+
+                    <p class="fw-bold text-dark " style="font-size:20px; margin-top:10px;">
+                        (State Funded Government Autonomous Institute and Affiliated to AKTU Lucknow)
+                    </p>
+                </div>
+
+
+                <!-- Spacer -->
+                <!-- AKTU Logo -->
+                <div class="col-sm-2 aktulogo text-center">
+                    <img src="~/Content/recp/img/aktulogo.png" height="110" width="110" style="margin-top:10px;"
+                        alt="AKTU Logo" />
+                    <h4 style="" class="fw-bold mt-3">College Code-1216</h4>
+                </div>
+
+
+            </div>
+        </div>
+
+
+        <style>
+            .navbar-nav .nav-link {
+                font-size: 16px !important;
+                color: white;
+                font-weight: 700;
+
+            }
+
+
+            .dropdown-submenu {
+                position: relative;
+            }
+
+            .dropdown-submenu .dropdown-menu {
+                top: 0;
+                left: 100%;
+                font-size: 17px;
+                margin-top: -1px;
+            }
+
+            .dropdown-item {
+                font-size: 15px !important;
+                border-bottom: 1px solid white;
+            }
+
+            .site-navbar-wrap {
+                z-index: 1090 !important;
+                overflow: visible !important;
+            }
+
+            .site-navbar-wrap .navbar,
+            .site-navbar-wrap .navbar-collapse,
+            .site-navbar-wrap .navbar-nav {
+                overflow: visible !important;
+            }
+
+            #navbarSupportedContent .navbar-nav > .dropdown > .dropdown-menu.show,
+            #navbarSupportedContent .dropdown-submenu > .dropdown-menu.show {
+                display: block !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+                pointer-events: auto !important;
+                z-index: 1100 !important;
+            }
+
+            #navbarSupportedContent .navbar-nav > .dropdown:hover > .dropdown-menu,
+            #navbarSupportedContent .navbar-nav > .dropdown:focus-within > .dropdown-menu,
+            #navbarSupportedContent .dropdown-submenu:hover > .dropdown-menu,
+            #navbarSupportedContent .dropdown-submenu:focus-within > .dropdown-menu {
+                display: block !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+                pointer-events: auto !important;
+                z-index: 1100 !important;
+            }
+
+            #navbarSupportedContent .navbar-nav > .dropdown > .dropdown-menu {
+                top: 100% !important;
+                left: 0 !important;
+                margin-top: 0 !important;
+            }
+
+            #navbarSupportedContent .dropdown-submenu > .dropdown-menu {
+                top: 0 !important;
+                left: 100% !important;
+                margin-top: 0 !important;
+            }
+            
+        </style>
+        <style>
+            .navbar .container-fluid {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+
+            .navbar-nav {
+                width: 100%;
+                justify-content: center;
+                gap: 72px;
+            }
+
+            .navbar-nav .nav-item {
+                flex: unset;
+                text-align: center;
+            }
+
+            .navbar-nav .nav-link {
+                font-weight: 600;
+                letter-spacing: .4px;
+                white-space: nowrap;
+                padding-left: 4px !important;
+                padding-right: 4px !important;
+            }
+
+            @@media (max-width: 767px) {
+                .navbar-nav {
+                    width: auto;
+                    gap: 0;
+                }
+
+                .navbar-nav .nav-item {
+                    flex: unset;
+                    text-align: left;
+                }
+
+                .navbar-nav .nav-link {
+                    padding-left: 12px !important;
+                    padding-right: 12px !important;
+                }
+            }
+        </style>
+        <div class="row">
+            <div class="col-md-12 p-0 sticky-top site-navbar-wrap">
+                <nav class="navbar navbar-expand-md navbar-dark p-2"
+                    style="background-color:#0747ae; border-radius:0px !important;">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#"></a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav w-100 mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link text-uppercase" href="/">Home</a>
+                                </li>
+
+                                <!-- ABOUT RECP -->
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-uppercase" href="#" id="aboutDropdown"
+                                       role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        INSTITUTE
+                                    </a>
+                                    <ul class="dropdown-menu rounded-0" aria-labelledby="aboutDropdown">
+                                        <li>
+                                            <a class="dropdown-item text-uppercase" href="~/home/vision">
+                                                <i class="fa-solid fa-arrow-up-right-from-square"></i> VISION &
+                                                MISSION
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item text-uppercase" href="#">
+                                                <i class="fa-solid fa-arrow-up-right-from-square"></i> BOARD OF
+                                                GOVERNORS
+                                            </a>
+                                        </li>
+                                        @*<li><a class="dropdown-item text-uppercase" href="~/home/About"><i class="fa-solid fa-arrow-up-right-from-square"></i> ABOUT RECP</a></li>*@
+                                        <li>
+                                            <a class="dropdown-item text-uppercase"
+                                               href="~/home/STRATEGIC_GROWTH_PLAN">
+                                                <i class="fa-solid fa-arrow-up-right-from-square"></i> STRETEGIC GROWTH
+                                                PLAN
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <!-- ACADEMIC -->
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-uppercase" href="#" id="academicDropdown"
+                                       role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Academics
+                                    </a>
+
+                                    <ul class="dropdown-menu rounded-0" aria-labelledby="academicDropdown">
+
+                                        <!-- ================= DEPARTMENTS ================= -->
+                                        <li class="dropdown-submenu">
+                                            <a class="dropdown-item dropdown-toggle text-uppercase" href="#">
+                                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Departments
+                                            </a>
+                                            <ul class="dropdown-menu rounded-0">
+                                                <li>
+                                                    <a class="dropdown-item text-uppercase" href="~/department/computer-science-and-engineering/about">
+                                                        Computer
+                                                        Science and Engineering
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item text-uppercase" href="~/department/electrical-engineering/about">
+                                                        Electrical
+                                                        Engineering
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item text-uppercase" href="~/department/civil-engineering/about">
+                                                        Civil
+                                                        Engineering
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item text-uppercase"
+                                                       href="~/department/mechanical-engineering/about">Mechanical Engineering</a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item text-uppercase" href="~/department/applied-sciences-and-humanities/about">
+                                                        Applied
+                                                        Science & Humanities
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <!-- ================= ACADEMIC OFFICES ================= -->
+                                        <li class="dropdown-submenu">
+                                            <a class="dropdown-item dropdown-toggle text-uppercase" href="#">
+                                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Academic Offices
+                                            </a>
+                                            <ul class="dropdown-menu rounded-0">
+                                                <li>
+                                                    <a class="dropdown-item text-uppercase"
+                                                       href="~/home/Dean_Academics">Dean of Academics</a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item text-uppercase"
+                                                       href="~/home/Dean_Student_Welfare">Dean of Student Welfare</a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item text-uppercase"
+                                                       href="~/home/Scholarship">Scholarships</a>
+                                                </li>
+                                                @*<li><a class="dropdown-item text-uppercase"
+                        href="~/home/TrainingPlacementOfficer">Training & Placements</a></li>*@
+                                            </ul>
+                                        </li>
+
+                                        <!-- ================= SINGLE ITEMS ================= -->
+                                        <li>
+                                            <a class="dropdown-item text-uppercase"
+                                               href="https://uptac.admissions.nic.in/" target="_blank">
+                                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Admissions
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a class="dropdown-item text-uppercase" href="~/home/TimeTable">
+                                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Time Table
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a class="dropdown-item text-uppercase" href="~/home/Syllabus">
+                                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Syllabus
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a class="dropdown-item text-uppercase" href="#">
+                                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Committees
+                                            </a>
+                                        </li>
+
+                                    </ul>
+                                </li>
+
+
+
+
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-uppercase" href="#" id="peopleDropdown"
+                                       role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        People
+                                    </a>
+                                    <ul class="dropdown-menu rounded-0" aria-labelledby="peopleDropdown">
+                                        <li>
+                                            <a class="dropdown-item text-uppercase" href="~/home/Faculty">
+                                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Faculty
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item text-uppercase" href="#">
+                                                <i class="fa-solid fa-arrow-up-right-from-square"></i> STUDENTS
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                @*<li class="nav-item">
+                                    <a class="nav-link text-uppercase" href="#">Committees</a>
+                                </li>*@
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-uppercase" href="#" id="campusDropdown"
+                                       role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Campus Facilities
+                                    </a>
+
+                                    <ul class="dropdown-menu rounded-0" aria-labelledby="campusDropdown">
+                                        <li>
+                                            <a class="dropdown-item text-uppercase" href="~/home/CENTRAL_LIBRARY">
+                                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Central Library
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a class="dropdown-item text-uppercase"
+                                               href="~/home/TRAINING_PLACEMENT_CELL">
+                                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Training &
+                                                Placement Cell
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a class="dropdown-item text-uppercase" href="~/home/IIC">
+                                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Institute
+                                                Innovation Council
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                @* <li class="nav-item">
+                                    <a class="nav-link text-uppercase" href="~/home/TrainingPlacementOfficer">Training & Placement</a>
+                                </li>*@
+                                <li class="nav-item">
+                                    <a class="nav-link text-uppercase" href="#">Achievements</a>
+                                </li>
+                                @* <li class="nav-item">
+                                    <a class="nav-link text-uppercase" href="#">NEWS</a>
+                                </li> *@
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-uppercase" href="#" id="galleryDropdown"
+                                       role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                       Gallery
+                                    </a>
+
+                                    <ul class="dropdown-menu rounded-0" aria-labelledby="galleryDropdown">
+                                        <li>
+                                            <a href="~/home/gallery1"
+                                               class="dropdown-item text-uppercase">
+                                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Photo Gallery</a>
+                                        </li>
+
+                                        <li>
+                                            <a class="dropdown-item text-uppercase"
+                                               href="~/home/Media_Coverage">
+                                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Media Coverage
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                @*<li class="nav-item">
+                                    <a class="nav-link text-uppercase" href="~/home/gallery1">Gallery</a>
+                                </li>*@
+                                @*<li class="nav-item">
+                                    <a class="nav-link text-uppercase" href="https://rhythm-2026.vercel.app/" target="_blank">RHYTHM 2026</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-uppercase" href="#">Contact Us</a>
+                                </li>*@
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <!-- JS to stop submenu from closing -->
+        @* <script>
+            document.querySelectorAll('.dropdown-submenu > a').forEach(function (element) {
+                element.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    this.nextElementSibling.classList.toggle("show");
+                });
+            });
+
+            // Close other open submenus when opening a new one
+            window.addEventListener('click', function (e) {
+                document.querySelectorAll('.dropdown-submenu .dropdown-menu').forEach(function (submenu) {
+                    if (!submenu.contains(e.target)) {
+                        submenu.classList.remove('show');
+                    }
+                });
+            });
+        </script> *@
+        <script>
+            (function () {
+                var navbar = document.getElementById('navbarSupportedContent');
+                if (!navbar) return;
+
+                function directChild(parent, className) {
+                    for (var i = 0; i < parent.children.length; i++) {
+                        if (parent.children[i].classList.contains(className)) return parent.children[i];
+                    }
+                    return null;
+                }
+
+                function closeMenus(exceptItem) {
+                    navbar.querySelectorAll('.navbar-nav > .nav-item.dropdown').forEach(function (item) {
+                        if (item === exceptItem) return;
+                        var toggle = directChild(item, 'dropdown-toggle');
+                        var menu = directChild(item, 'dropdown-menu');
+                        item.classList.remove('show');
+                        if (menu) {
+                            menu.classList.remove('show');
+                            menu.querySelectorAll('.dropdown-menu.show').forEach(function (submenu) {
+                                submenu.classList.remove('show');
+                            });
+                        }
+                        if (toggle) toggle.setAttribute('aria-expanded', 'false');
+                    });
+                }
+
+                document.addEventListener('click', function (event) {
+                    var toggle = event.target.closest ? event.target.closest('.dropdown-toggle') : null;
+
+                    if (toggle && navbar.contains(toggle)) {
+                        var item = toggle.parentElement;
+                        var menu = directChild(item, 'dropdown-menu');
+
+                        if (item.classList.contains('nav-item') && item.classList.contains('dropdown') && item.parentElement.classList.contains('navbar-nav')) {
+                            event.preventDefault();
+                            event.stopImmediatePropagation();
+                            var willOpen = !menu.classList.contains('show');
+                            closeMenus(item);
+                            item.classList.toggle('show', willOpen);
+                            menu.classList.toggle('show', willOpen);
+                            toggle.setAttribute('aria-expanded', String(willOpen));
+                            return;
+                        }
+
+                        if (item.classList.contains('dropdown-submenu') && menu) {
+                            event.preventDefault();
+                            event.stopImmediatePropagation();
+                            var willOpenSubmenu = !menu.classList.contains('show');
+                            item.parentElement.querySelectorAll('.dropdown-submenu > .dropdown-menu.show').forEach(function (submenu) {
+                                submenu.classList.remove('show');
+                            });
+                            menu.classList.toggle('show', willOpenSubmenu);
+                            toggle.setAttribute('aria-expanded', String(willOpenSubmenu));
+                            return;
+                        }
+                    }
+
+                    if (!event.target.closest || !event.target.closest('#navbarSupportedContent .dropdown-menu')) closeMenus();
+                }, true);
+
+                document.addEventListener('keydown', function (event) {
+                    if (event.key === 'Escape') closeMenus();
+                }, true);
+            }());
+        </script>
+
+
+
+
+
+        <div class="row">
+
+            <div class="col-sm-12 p-0">
+                @RenderBody()
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        <div class="row">
+            <div class="col-sm-12 p-0">
+                <footer class="footer-secure">
+                    <div class="footer-top">
+                        <div class="container">
+                            <div class="row">
+
+                                <!-- College Info -->
+                                <div class="col-md-4 col-sm-6 footer-about">
+                                    <h5 class="fw-bold">Bharat Ratna Babasaheb Bhimrao Ambedkar Rajkiya Engineering
+                                        College Pratapgarh</h5>
+                                    <p>
+                                        Village: Chalakpur Badfaroshan, Post: Dandupur (Mufrid), Tehsil: Raniganj,
+                                        Pratapgarh - 230127 (UP).
+                                    </p>
+                                    <p><i class="fas fa-phone-alt"></i> 05343-297424</p>
+                                    <p><i class="fas fa-envelope"></i> director@recp.ac.in</p>
+                                    <!--<a href="#" class="btn-orange" data-bs-toggle="modal" data-bs-target="#webInfoManagerModal">Web Information Manager</a>-->
+
+                                    <iframe
+                                        src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3588.6735735298116!2d82.0270118754054!3d25.913099277257235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjXCsDU0JzQ3LjIiTiA4MsKwMDEnNDYuNSJF!5e0!3m2!1sen!2sin!4v1755240355715!5m2!1sen!2sin"
+                                        width="90%" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+                                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                </div>
+
+                                <!-- Quick Links -->
+                                <div class="col-md-2 col-sm-6 footer-links">
+                                    <h5 class="fw-bold">Quick Links</h5>
+                                    <ul>
+                                        <li><a href="https://aktu.ac.in/" target="_blank">AKTU</a></li>
+                                        <li><a href="https://www.aicte-india.org/" target="_blank">AICTE</a></li>
+                                        <li><a href="https://aktu.ac.in/circulars.html" target="_blank">Circulars</a>
+                                        </li>
+                                        <li><a href="https://nptel.ac.in/" target="_blank">NPTEL</a></li>
+                                        <li><a href="https://erp.aktu.ac.in/Login.aspx" target="_blank">AKTU ERP</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- College Cell -->
+                                <div class="col-md-3 col-sm-6 footer-links">
+                                    <h5 class="fw-bold">College Cell</h5>
+                                    <ul>
+                                        <li><a href="/home/AntiRaggingComplaint" >Anti-Ragging Cell</a>
+                                        </li>
+                                        <li><a href="#">Placement Cell</a></li>
+                                        <li><a href="/home/GrievancePortal" >Grievance Redressal</a>
+                                        </li>
+                                        <li><a href="/home/IQAC">IQAC Cell</a></li>
+                                        <li><a href="/home/Faculty">Faculty
+                                                Directory</a></li>
+                                        <li><a href="#">Departments</a></li>
+                                    </ul>
+                                </div>
+
+                                <!-- Policies -->
+                                <div class="col-md-3 col-sm-6 footer-links">
+                                    <h5 class="fw-bold">Policies</h5>
+                                    <ul>
+                                        <li><a href="#">Disclaimer</a></li>
+                                        <li><a href="#">Privacy Policy</a></li>
+                                        <li><a href="#">Hyperlinking Policy</a></li>
+                                        <li><a href="#">Copyright Policy</a></li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="footer-bottom">
+                        <div class="container text-center">
+                            <p>© 2026 Bharat Ratna Babasaheb Bhimrao Ambedkar Rajkiya Engineering College Pratapgarh |
+                                Powered by <b>Softpro India Computer Technologies (P) Ltd.</b></p>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--Footer-->
+    <!--footer link-->
+    <script src="~/Content/recp/assets/js/bootstrap.min.js"></script>
+    <script src="~/Content/recp/assets/js/equal-height.min.js"></script>
+    <script src="~/Content/recp/assets/js/jquery.appear.js"></script>
+    @*<script src="~/assets/js/jquery.easing.min.js"></script>*@
+    <script src="~/Content/recp/assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="~/Content/recp/assets/js/modernizr.custom.13711.js"></script>
+    <script src="~/Content/recp/assets/js/wow.min.js"></script>
+    <script src="~/Content/recp/assets/js/isotope.pkgd.min.js"></script>
+    <script src="~/Content/recp/assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="~/Content/recp/assets/js/count-to.js"></script>
+    <script src="~/Content/recp/assets/js/loopcounter.js"></script>
+    <script src="~/Content/recp/assets/js/jquery.nice-select.min.js"></script>
+    <script src="~/Content/recp/assets/js/bootsnav.js"></script>
+    <script src="~/Content/recp/assets/js/main.js"></script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        AOS.init();
+    </script>
+    <!--footer link-->
+
+
+    <script>
+        document.addEventListener('click', function (event) {
+            const navbarToggler = document.querySelector('.navbar-toggler');
+            const navbarCollapse = document.querySelector('#navbarNav');
+
+            if (navbarCollapse && navbarToggler && navbarCollapse.classList.contains('show') && !navbarCollapse.contains(event.target) && !navbarToggler.contains(event.target)) {
+                navbarToggler.click();
+            }
+        });
+    </script>
+    <script>
+        // Live Date-Time Function
+        function updateDateTime() {
+            const now = new Date();
+            const options = {
+                weekday: 'long',
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            };
+            const timeDisplay = document.getElementById("time-display");
+            if (timeDisplay) timeDisplay.textContent = now.toLocaleString("en-US", options);
+        }
+        setInterval(updateDateTime, 1000);
+        updateDateTime();
+
+        // Dummy Event Handlers
+        function handleClick(name) {
+            alert(name + " clicked!");
+        }
+
+        function searchNow() {
+            let query = document.getElementById("search-input").value;
+            alert("Searching for: " + query);
+        }
+    </script>
+    <!-- End Header Top -->
+
+    <script>
+        function formatDateTime() {
+            const now = new Date();
+            const options = {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: 'numeric',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: true
+            };
+            return now.toLocaleString('en-US', options);
+        }
+
+        function updateTime() {
+            const timeElement = document.getElementById('time');
+            if (timeElement) timeElement.innerText = formatDateTime();
+        }
+
+        setInterval(updateTime, 1000);
+        updateTime();
+    </script>
+
+
+    </div>
+    </div>
+    </div>
+
+</body>
+
+</html>

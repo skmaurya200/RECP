@@ -1,0 +1,119 @@
+﻿
+@{
+    ViewBag.Title = "TimeTable";
+    var newTimeTables = ViewBag.NewTimeTables as List<Rec_Partapgarh.Models.PublicAcademicDocumentViewModel> ?? new List<Rec_Partapgarh.Models.PublicAcademicDocumentViewModel>();
+}
+<style>
+    @@media(max-width:1100px) {
+        .gdgd {
+            height: 200px !important;
+        }
+
+        .fgfg {
+            font-size: 1.1em;
+        }
+
+        .bggws {
+            font-size: 19px;
+        }
+    }
+</style>
+<div class="row">
+    <div class="col-md-12 p-0" style="margin-top: -20px; background: url('https://img.freepik.com/premium-photo/extensive-collection-books-library_868797-8212.jpg') no-repeat center center; background-size: cover; background-attachment:fixed; ">
+        <div class="container-fluid" style="background-color: rgba(0, 0, 0, 0.5);">
+            <div class="container">
+                <div class="d-flex flex-column justify-content-center" style="min-height: 300px">
+                    <h3 class="display-6 text-white text-uppercase fw-bold">Time Table</h3>
+                    <div class="d-inline-flex text-white">
+                        <p class="m-0 text-uppercase"><a class="text-white" href="/" style="text-decoration:none;">Home</a></p>
+                        <i class="fa fa-angle-double-right pt-1 px-3"></i>
+                        <p class="m-0 text-uppercase text-light">Time Table</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@*<div class="container-fluid" style="
+         background-image: url(' /Content/myimg/bg1.jpg');
+         background-attachment: fixed;
+         background-repeat: no-repeat;
+         background-size: cover;
+         ">
+        <div class="row">
+            <div class="col-sm-12 p-4">
+
+
+
+                <div class="container bggws">
+                    <h1 class="mt-3 mb-3 fw-bold" style="color:#0747ae">
+                        TimeTable
+                    </h1>
+                    <hr style="border:1px solid black;" />
+                    <p></p>
+                    <div class="row">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr class="text-center">
+                                    <th style="background-color:#0747ae; color:white;">S. No.</th>
+                                    <th style="background-color:#0747ae; color:white;">Academic Session </th>
+                                    <th style="background-color:#0747ae; color:white;">SEMESTER </th>
+                                    <th style="background-color:#0747ae; color:white;">BRANCH </th>
+                                    <th style="background-color:#0747ae; color:white;">Download Link </th>
+
+                                </tr>
+
+                            </thead>
+                            <tbody>
+
+                                <tr class="text-center">
+                                    <td>1</td>
+                                    <td>2025-26</td>
+                                    <td>II<sup>th</sup> Semester</td>
+                                    <td>CSE/EE/CE/ME</td>
+
+                                    <td><a href="~/Content/RECfiles/timetable2.pdf" target="_blank" style="color:blue; text-decoration:underline;">Click Here</a></td>
+
+                                </tr>
+                                <tr class="text-center">
+                                    <td>2</td>
+                                    <td>2025-26</td>
+
+                                    <td>IV<sup>th</sup> Semester</td>
+                                    <td>CSE/EE/CE/ME</td>
+                                    <td><a href="~/Content/RECfiles/timetable1.pdf" target="_blank" style="color:blue; text-decoration:underline;">Click Here</a></td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>*@
+
+<div class="container-fluid" style="background-image:url('/Content/myimg/bg1.jpg');background-attachment:fixed;background-repeat:no-repeat;background-size:cover;">
+    <div class="row">
+        <div class="col-sm-12 p-4">
+            <div class="container bggws">
+                <h1 class="mt-3 mb-3 fw-bold" style="color:#0747ae">TimeTable</h1>
+                <hr style="border:1px solid black;" />
+                <div class="row table-responsive">
+                    <table class="table table-bordered">
+                        <thead><tr class="text-center"><th style="background-color:#0747ae;color:white;">S. No.</th><th style="background-color:#0747ae;color:white;">Academic Session</th><th style="background-color:#0747ae;color:white;">Semester</th><th style="background-color:#0747ae;color:white;">Branch</th><th style="background-color:#0747ae;color:white;">Download Link</th></tr></thead>
+                        <tbody>@for (var i = 0; i < newTimeTables.Count; i++)
+                        {
+                            var item = newTimeTables[i];<tr class="text-center"><td>@(i+1)</td><td>@item.SessionName</td><td>@item.SemesterType</td><td>@item.BranchNames</td><td><a href="@Url.Content(item.FilePath)" target="_blank" rel="noopener" style="color:blue;text-decoration:underline;">Click Here</a></td></tr>}@if (!newTimeTables.Any())
+                        {<tr class="text-center"><td colspan="5">No new time table available.</td></tr>}</tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

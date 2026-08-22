@@ -1,0 +1,134 @@
+﻿@{
+  
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    .bg-welfare-left {
+        background-color: #0747AE;
+        padding: 15px;
+    }
+
+        .bg-welfare-left h3 {
+            font-size: 21px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .bg-welfare-left ul li {
+            margin-top: 18px;
+            font-size: 17px;
+            color: #fff;
+        }
+
+            .bg-welfare-left ul li a {
+                color: #fff;
+                text-decoration: none;
+            }
+
+                .bg-welfare-left ul li a:hover {
+                    text-decoration: underline;
+                }
+
+    .content-box {
+        border: 1px dashed #000;
+        background: #fff;
+        padding: 20px;
+    }
+
+    .welfare-font {
+        font-size: 17px;
+        color: #000;
+        text-align: justify;
+        line-height: 1.8;
+    }
+
+    hr {
+        border: 1px solid #000;
+    }
+</style>
+
+<!-- ================= BANNER ================= -->
+<div class="row">
+    <div class="col-md-12 p-0" style="margin-top:-20px;
+        background:url('https://img.freepik.com/premium-photo/extensive-collection-books-library_868797-8212.jpg') center/cover fixed;">
+        <div style="background:rgba(0,0,0,0.5)">
+            <div class="container">
+                <div class="d-flex flex-column justify-content-center" style="min-height:300px;">
+                    <h3 class="display-6 text-white fw-bold">
+                        Engineering Chemistry Laboratory
+                    </h3>
+                    <div class="d-inline-flex text-white">
+                        <a href="/" class="text-white text-decoration-none">Home</a>
+                        <i class="fa fa-angle-double-right px-2 pt-1"></i>
+                        <span>Engineering Chemistry Laboratory</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ================= MAIN CONTENT ================= -->
+<div class="container py-5">
+    <div class="row">
+        <style>
+            .bg-welfare-left ul li {
+                margin-top: 20px;
+                font-size: 17px;
+                line-height: 1.5;
+                color: #fff;
+                font-family: Arial, sans-serif;
+            }
+
+            .bg-welfare-left hr {
+                border-bottom: 2px solid white !important;
+            }
+        </style>
+                @Html.Partial("~/Views/Shared/DeptSidebar/_ASH_Sidebar.cshtml")
+
+        <!-- RIGHT CONTENT -->
+        <div class="col-lg-9">
+            <div class="content-box">
+
+                <h5 class="fw-bold mt-4" style="font-size: 18px;">Engineering Chemistry Laboratory</h5>
+                <p class="welfare-font" style="margin-top:-5px;">
+                    The engineering chemistry laboratory of the department supports engineering students in their foundational and applied studies. It provides a safe working environment, high-quality chemicals, and modern instruments to facilitate hands-on experiments in engineering chemistry. Key equipment includes pH meters, conductometers, viscometers, digital weighing balances, and high-precision glassware, enabling students to develop practical skills, analytical thinking and experimental competence essential for engineering applications and research.
+                </p>
+
+                <p class="welfare-font" style="font-size: 18px;"><b>List of experiments</b></p>
+                <ul class="welfare-font" style="margin-top:-10px; list-style-type:disc; margin-left:20px;">
+                    <li>Analytical and volumetric chemistry</li>
+                    <li>Water hardness and water-quality analysis</li>
+                    <li>Polymer chemistry and viscosity measurements</li>
+                    <li>Polymer chemistry and viscosity measurements</li>
+                    <li>Corrosion studies and electrochemical methods</li>
+                    <li>Instrumental analysis and material characterization</li>
+                </ul>
+               
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

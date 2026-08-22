@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/admin.cshtml";
+}
+
+@model Rec_Partapgarh.Models.GalleryImage
+
+@{
+    Layout = "~/Views/Shared/admin.cshtml";
+    ViewBag.Title = "Edit Gallery Image";
+}
+
+<div class="container mt-4">
+    <div class="card shadow-lg border-0 rounded-3">
+        <div class="card-header text-white" style="background-color:#450145;">
+            <h4 class="mb-0">Edit Gallery Image</h4>
+        </div>
+        <div class="card-body">
+            @using (Html.BeginForm("Edit", "Gallery", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                @Html.HiddenFor(m => m.Id)
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">Category:</label>
+                    <input type="text" name="CategoryName" value="@Model.Category.Name" class="form-control" required />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">Current Image:</label><br />
+                    <img src="@Url.Content(Model.ImagePath)" width="120" height="100" class="img-thumbnail" />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">Upload New Image (optional):</label>
+                    <input type="file" name="ImageFile" class="form-control" />
+                </div>
+                <button type="submit" class="btn btn-primary px-4">Update</button>
+            }
+        </div>
+    </div>
+</div>

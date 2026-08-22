@@ -1,0 +1,179 @@
+﻿@{
+  
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    .bg-welfare-left {
+        background-color: #0747AE;
+        padding: 15px;
+    }
+
+        .bg-welfare-left h3 {
+            font-size: 21px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .bg-welfare-left ul li {
+            margin-top: 18px;
+            font-size: 17px;
+            color: #fff;
+        }
+
+            .bg-welfare-left ul li a {
+                color: #fff;
+                text-decoration: none;
+            }
+
+                .bg-welfare-left ul li a:hover {
+                    text-decoration: underline;
+                }
+
+    .content-box {
+        border: 1px dashed #000;
+        background: #fff;
+        padding: 20px;
+    }
+
+    .welfare-font {
+        font-size: 17px;
+        color: #000;
+        text-align: justify;
+        line-height: 1.8;
+    }
+
+    hr {
+        border: 1px solid #000;
+    }
+</style>
+
+<!-- ================= BANNER ================= -->
+<div class="row">
+    <div class="col-md-12 p-0" style="margin-top:-20px;
+        background:url('https://img.freepik.com/premium-photo/extensive-collection-books-library_868797-8212.jpg') center/cover fixed;">
+        <div style="background:rgba(0,0,0,0.5)">
+            <div class="container">
+                <div class="d-flex flex-column justify-content-center" style="min-height:300px;">
+                    <h3 class="display-6 text-white fw-bold">
+                        Workshop Practice Laboratory
+                    </h3>
+                    <div class="d-inline-flex text-white">
+                        <a href="/" class="text-white text-decoration-none">Home</a>
+                        <i class="fa fa-angle-double-right px-2 pt-1"></i>
+                        <span>Workshop Practice Laboratory</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ================= MAIN CONTENT ================= -->
+<div class="container py-5">
+    <div class="row">
+        <style>
+            .bg-welfare-left ul li {
+                margin-top: 20px;
+                font-size: 17px;
+                line-height: 1.5;
+                color: #fff;
+                font-family: Arial, sans-serif;
+            }
+
+            .bg-welfare-left hr {
+                border-bottom: 2px solid white !important;
+            }
+        </style>
+                @Html.Partial("~/Views/Shared/DeptSidebar/_MCHE_Sidebar.cshtml")
+
+        <style>
+                    table {
+                        width: 100%;
+                        border-collapse: collapse;
+                        font-size: 16px;
+                        margin-top: 20px;
+                    }
+
+                        table th {
+                            background-color: #0747AE;
+                            color: #fff;
+                            font-weight: bold;
+                            padding: 10px;
+                            border: 1px solid #0747AE;
+                        }
+
+                        table td {
+                            border: 1px solid #ddd;
+                            padding: 10px;
+                            text-align: center;
+                            background-color: #fafafa;
+                        }
+
+                        table tr:hover td {
+                            background-color: #f1f5ff;
+                        }
+        </style>
+
+        <!-- RIGHT CONTENT -->
+        <div class="col-lg-9">
+            <div class="content-box">
+
+                <h2 class="fw-bold" style="color:#0747AE;">Workshop Practice Laboratory</h2>
+                <hr />
+                <div class="row">
+				<div class="col-sm-7">
+				<p class="welfare-font" style="margin-top:10px;">
+                    The workshop practice lab offers students essential hands-on exposure to fundamental manufacturing and fabrication processes. It bridges the gap between theoretical concepts and real-world industrial practices while fostering practical skills, precision, and a strong awareness of safety protocols. Through direct interaction with tools, machines, and materials, students develop confidence in their workmanship and acquire problem-solving skills essential for mechanical engineers. The lab includes the following sections.
+                </p>
+				</div>
+				<div class="col-sm-5">
+				<img src="~/Content/DEPIMG/Workshop Practice Laboratory.jpg"  style="border:1px dashed black; padding:5px; margin-top:10px;"/>
+				</div>
+				</div>
+
+                <ul class="welfare-font" style="list-style-type:disc !important; margin-left:20px; margin-top:-15px;">
+                    <li>Machine Shop: Students learn basic machining operations, including turning, facing, drilling, boring, and threading, using lathe machines, drilling machines, and grinding machines.</li>
+                    <li>Fitting Shop: This section focuses on marking, filing, sawing, chipping, drilling, tapping, and assembly work using hand tools, vices, and measuring instruments to achieve precise fits</li>
+                    <li>Carpentry Shop: Students practice wood cutting, planning, chiselling, drilling, and joint making, gaining knowledge of different types of wood and carpentry tools used in basic fabrication.</li>
+                    <li>Welding Shop: Students are introduced to gas and arc welding processes, safety practices, and basic welding joints, enabling them to understand the metal joining techniques used in fabrication and repair.</li>
+                    <li>Moulding and Casting Shop: This section introduces students to sand moulding, pattern making, core making, and basic casting operations, providing an overview of foundry practices and component production.</li>
+                </ul>
+                <p class="welfare-font" style="margin-top:10px;">
+                    Overall, the workshop practice laboratory establishes a strong practical foundation, preparing students to confidently progress to advanced courses in manufacturing, design, and industrial engineering.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

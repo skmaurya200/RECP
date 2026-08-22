@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Gallery - " + ViewBag.Category;
+}
+
+<div class="container mt-5">
+    <h2 class="fw-bold text-center" style="color: #0747ae;">@ViewBag.Category</h2>
+    <hr style="border-bottom: 2px solid black; width: 60px; margin: auto;">
+
+    <div class="row mt-4">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-3 mb-3">
+                <img src="~/Content/recp/upload/Gallery/@item.Image" class="img-fluid rounded shadow-sm" alt="Gallery Image">
+            </div>
+        }
+    </div>
+
+    <div class="text-center mt-4">
+        <a href="@Url.Action("Gallery", "Admin")" class="btn btn-dark">Back to Gallery</a>
+    </div>
+</div>
