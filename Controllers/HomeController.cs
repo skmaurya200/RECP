@@ -860,6 +860,10 @@ namespace RAC_GONDA.Controllers
         {
             return View();
         }
+        public ActionResult testpage()
+        {
+            return View();
+        }
     }
 
 }

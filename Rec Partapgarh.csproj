@@ -3298,6 +3298,7 @@
     <Content Include="Views\ManagerAccount\Login.cshtml" />
     <Content Include="Views\Manager\Manage_User.cshtml" />
     <Content Include="Views\Home\Dept_Faculty.cshtml" />
+    <Content Include="Views\Home\testpage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\upload\faculty\" />
